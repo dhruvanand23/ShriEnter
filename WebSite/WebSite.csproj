@@ -94,6 +94,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="imageslider\home1.jpg" />
+    <Content Include="imageslider\home2.jpg" />
+    <Content Include="imageslider\home3.jpg" />
     <Content Include="images\home1.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
