@@ -18,17 +18,18 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <div class="navbar navabar-default navbar-fixed-top" role="navigation">
-            <div class"container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar>
+        <div class ="navbar navbar-default navbar-fixed-top" role ="navigation">
+            <div class ="container ">
+                <div class ="navbar-header">
+                    <button type="button" class ="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only>Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+
                     </button>
-                    <a class="navbar-brand" href="first.aspx"><span><img src="images/logo1.jpg" alt="Home Decor"width="80" height="80"/></span><h2>Home Decor</h2></a>
-                </div
+                    <a class="navbar-brand" href="first.aspx"><span><img src="images/logo1.png" alt="Home Decor" height="30"/>Home Decor</span></a>
+                </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li ><a href="first.aspx">HOME</a></li>
@@ -52,13 +53,11 @@
                             </ul>
 
                         </li>
-                        <li ><a href="signup.aspx">REGISTRATION</a></li>
-                        <li ><a href="#">LOGIN</a></li>
+                        <li ><a href="signup.aspx">SignUp</a></li>
+                        <li ><a href="signin.aspx">SignIn</a></li>
                     </ul>
                 </div>
-
             </div>
-
         </div> 
         <!--image slider-->
 
@@ -165,11 +164,11 @@
         
         <!--footer start here -->
 
-        <footer class="footer-pos">
+        <footer>
 
             <div class="container">
                 <p class="pull-right"><a href="first.aspx">Back To Top</a></p>
-                <p>&copy;HomeDecor.in &middot;<a href="first.aspx">Home</a> &middot;<a href="#">About</a> &middot;<a href="#">Contact Us</a> &middot;<a href="#">Products</a> </p>
+                <p>&copy;HomeDecor.in &middot; <a href="first.aspx">Home</a> &middot;<a href="#">About</a> &middot;<a href="#">Contact Us</a> &middot;<a href="#">Products</a> </p>
             </div>
 
 
