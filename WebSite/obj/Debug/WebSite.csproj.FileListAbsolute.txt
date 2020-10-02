@@ -31,3 +31,38 @@ C:\Users\Dell\Documents\Visual Studio 2015\Projects\WebSite\WebSite\bin\Microsof
 C:\Users\Dell\Documents\Visual Studio 2015\Projects\WebSite\WebSite\obj\Debug\WebSite.csprojResolveAssemblyReference.cache
 C:\Users\Dell\Documents\Visual Studio 2015\Projects\WebSite\WebSite\obj\Debug\WebSite.dll
 C:\Users\Dell\Documents\Visual Studio 2015\Projects\WebSite\WebSite\obj\Debug\WebSite.pdb
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\ApplicationInsights.config
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\csc.exe
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\vbc.exe
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\VBCSCompiler.exe
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\WebSite.dll.config
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\WebSite.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\WebSite.pdb
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.Web.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.Web.xml
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csprojAssemblyReference.cache
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csproj.CoreCompileInputs.cache
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csproj.CopyComplete
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.dll
+C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.pdb
