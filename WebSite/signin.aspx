@@ -19,6 +19,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        
         <div>
         <div class ="navbar navbar-default navbar-fixed-top" role ="navigation">
             <div class ="container ">
@@ -56,11 +57,63 @@
 
                         </li>
                         <li ><a href="signup.aspx">SignUp</a></li>
-                        <li ><a href="signin.aspx">SignIn</a></li>
+                        <li class="active" ><a href="signin.aspx">SignIn</a></li>
                     </ul>
                 </div>
             </div>
-        </div> 
+        </div>
+        </div>
+
+            <!--SignIn start-->
+            <div class="container">
+                <div class="form-horizontal">
+                    <hr />
+                    <hr />
+                    <h2>SignIn Form</h2>
+                    <hr />
+                    <div class="form-group">
+                        <label class="col-xs-11">UserName:</label>                        
+                        <div class="col-xs-11">
+                            <asp:TextBox ID="txtUname" runat="server" Class="form-control" placeholder="Enter Your UserName"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUname" ErrorMessage="UserName Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                       
+                        <label class="col-xs-11">Password:</label>
+                        <div class="col-xs-11">
+                            <asp:TextBox ID="txtPass" runat="server" TextMode="Password" Class="form-control" placeholder="Enter Your password"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPass" ErrorMessage="Password Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                        
+                        
+                        <label class="col-xs-11"><asp:CheckBox ID="CheckBox1" runat="server"/>&nbsp;&nbsp;Remember Me</label>
+                        &nbsp;<div class="col-xs-11">
+                        </div>
+                                                
+                        <div class="col-xs-11">
+                            <asp:Button ID="btnlogin" cssclass="btn btn-success" runat="server" Text="SignIn" />&raquo;
+                            <asp:HyperLink ID="HyperLink1" runat="server">Sign Up</asp:HyperLink>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+
+            <!--SignInEnd Here-->
+
+         <!--footer start here -->
+
+        <footer>
+
+            <div class="container">
+                <p class="pull-right"><a href="first.aspx">Back To Top</a></p>
+                <p>&copy;HomeDecor.in &middot; <a href="first.aspx">Home</a> &middot;<a href="#">About</a> &middot;<a href="#">Contact Us</a> &middot;<a href="#">Products</a> </p>
+            </div>
+
+
+        </footer>
+
+
+        <!--footer end here-->
     </form>
 </body>
 </html>

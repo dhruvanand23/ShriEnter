@@ -32,7 +32,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li ><a href="first.aspx">HOME</a></li>
+                        <li class="active" ><a href="first.aspx">HOME</a></li>
                         <li ><a href="#">ABOUT</a></li>
                         <li ><a href="#">CONTACT US</a></li>
                         <li ><a href="#">BLOG</a></li>
