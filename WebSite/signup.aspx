@@ -119,8 +119,7 @@
 
                         <label class="col-xs-11"></label>
                         <div class="col-xs-11">
-                        <asp:Button ID="txtsignup" Class="btn btn-success" runat="server" Text="SignUP"/>
-                        &nbsp;<asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
+                        <asp:Button ID="txtsignup" Class="btn btn-success" runat="server" Text="SignUP" OnClick="txtsignup_Click"/>
                         </div>
 
                     </div>
