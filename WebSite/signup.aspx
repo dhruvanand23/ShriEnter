@@ -87,14 +87,7 @@
                         <div class="col-xs-11">
                         <asp:TextBox ID="txtCPass" runat="server" TextMode="Password" Class="form-control" placeholder="Enter Your Confirm password"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtCPass" EnableViewState="False" ErrorMessage="Confirm Password Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
-                            <br />
                             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPass" ControlToValidate="txtCPass" ErrorMessage="Password does not match." Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:CompareValidator>
-                        </div>
-
-                        <label class="col-xs-11">Your Full Name:</label>
-                        <div class="col-xs-11">
-                        <asp:TextBox ID="txtName" runat="server" Class="form-control" placeholder="Enter Your Name"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtName" ErrorMessage="Your Name Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
 
                         <label class="col-xs-11">Your Address:</label>

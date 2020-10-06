@@ -36,6 +36,13 @@ namespace WebSite
                 cmd.ExecuteReader();
                 cmd.Dispose();
 
+                txtUname.Text = "";
+                txtPass.Text = "";
+                txtadd.Text = "";
+                txtCPass.Text = "";
+                txtEmail.Text = "";
+                txtmob.Text = "";
+
             }
             catch (Exception e1)
             {
