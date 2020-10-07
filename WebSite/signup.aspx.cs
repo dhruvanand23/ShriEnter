@@ -32,7 +32,7 @@ namespace WebSite
             {
                 cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into user_Details(u_name,u_pass,u_add,u_mob,u_mail) values('" + txtUname.Text + "','" + txtPass.Text + "','" + txtadd.Text + "','" + txtmob.Text + "','" + txtEmail.Text + "')";
+                cmd.CommandText = "insert into user_Details(u_name,u_pass,u_add,u_mob,u_mail,u_type) values('" + txtUname.Text + "','" + txtPass.Text + "','" + txtadd.Text + "','" + txtmob.Text + "','" + txtEmail.Text + "','User')";
                 cmd.ExecuteReader();
                 cmd.Dispose();
 

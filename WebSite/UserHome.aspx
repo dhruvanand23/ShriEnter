@@ -53,7 +53,9 @@
                             </ul>
 
                         </li>
-                        <asp:Button ID="btnlogout" CssClass="btn btn-default navbar-btn" runat="server" Text="Sign Out" />
+                        <li>
+                             <asp:Button ID="btnlogout" CssClass ="btn btn-default navbar-btn " runat="server" Text="Sign Out" />
+                        </li>
                     </ul>
                 </div>
             </div>
