@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="AdminHome.aspx" />
     <Content Include="css\custom.css" />
+    <Content Include="ForgorPassword.aspx" />
     <Content Include="imageslider\home1.jpg" />
     <Content Include="imageslider\home2.jpg" />
     <Content Include="imageslider\home3.jpg" />
@@ -149,6 +150,13 @@
     </Compile>
     <Compile Include="first.aspx.designer.cs">
       <DependentUpon>first.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgorPassword.aspx.cs">
+      <DependentUpon>ForgorPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgorPassword.aspx.designer.cs">
+      <DependentUpon>ForgorPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

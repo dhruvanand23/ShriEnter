@@ -23,5 +23,10 @@ namespace WebSite
             } 
 
         }
+        protected void btnlogout_Click(object sender,EventArgs e)
+        {
+            Response.Redirect("~/signin.aspx");
+            Session["Username"] = null;
+        }
     }
 }

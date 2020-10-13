@@ -84,18 +84,29 @@
                         </div>
                         
                         
-                        <label class="col-xs-11"><asp:CheckBox ID="CheckBox1" runat="server"/>&nbsp;&nbsp;Remember Me<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        <label class="col-xs-11"><asp:CheckBox ID="CheckBox1" runat="server"/>&nbsp;&nbsp;Remember Me<asp:Label ID="Label1" runat="server"></asp:Label>
                         </label>
                         &nbsp;&nbsp;<div class="col-xs-11">
                         </div>
-                                                
-                        <div class="col-xs-11">
-                            <asp:Button ID="btnlogin" cssclass="btn btn-success" runat="server" Text="SignIn" OnClick="btnlogin_Click" />&raquo;
-                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/signup.aspx">Sign Up</asp:HyperLink>
+                        
+                        <div>
+                            <div class="col-xs-11">
+                                <asp:Button ID="btnlogin" cssclass="btn btn-success" runat="server" Text="SignIn" OnClick="btnlogin_Click" />&raquo;
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/signup.aspx">Sign Up</asp:HyperLink>
+                            </div>
+                        </div>                        
+                        
+                        <!--forrgot password-->
+                        <div>
+                            <div class="col-xs-11">
+                                <asp:HyperLink ID="HyForgotPassword" runat="server" NavigateUrl="~/ForgorPassword.aspx">Forgot Password</asp:HyperLink>
+                            </div>
                         </div>
 
-                        <div class="col-xs-11">
-                            <asp:Label ID="lblError" CssClass="txt-danger" runat="server" ></asp:Label>
+                        <div>
+                            <div class="col-xs-11">
+                                <asp:Label ID="lblError" CssClass="txt-danger" runat="server" ></asp:Label>
+                            </div>
                         </div>
                        
                     </div>

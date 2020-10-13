@@ -7,16 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace WebSite
 {
-    public partial class AdminMasterPage : System.Web.UI.MasterPage
+    public partial class ForgorPassword : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void btnAdminlogout_Click(object sender, EventArgs e)
+
+        protected void btnResetPass_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/signin.aspx");
-            Session["Username"] = null;
+            using()
         }
     }
 }
