@@ -19,8 +19,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-
-           <!-- <div class ="navbar navbar-default navbar-fixed-top" role ="navigation">
+           <div class ="navbar navbar-default navbar-fixed-top" role ="navigation">
             <div class ="container ">
                 <div class ="navbar-header">
                     <button type="button" class ="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,7 +57,7 @@
                     </ul>
                 </div>
             </div>
-        </div> -->       
+        </div>        
 
         </div>
 
@@ -76,9 +75,10 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-2">    </div>
+                    <div class="col-md-2"></div>
                     <div class="col-md-6">
                         <asp:Button ID="btnResetPass" CssClass="btn btn-default" runat="server" Text="Send" OnClick="btnResetPass_Click" />
+                        <asp:Label ID="lblResetPassMsg" CssClass="txt-success" runat="server" ></asp:Label>
                     </div>
                 </div>
 

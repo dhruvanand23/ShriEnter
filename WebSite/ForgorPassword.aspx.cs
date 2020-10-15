@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+
 namespace WebSite
 {
     public partial class ForgorPassword : System.Web.UI.Page
@@ -38,8 +40,18 @@ namespace WebSite
 
                     SqlCommand cmd1 = new SqlCommand("Insert into ForgotPass(Id,Uid,RequestDateTime) values('" + myGUID + "','" + Uid + "',GETDATE())", con);
                     cmd1.ExecuteNonQuery();
-                    Response.Write("sucessful");
+                    lblResetPassMsg.Text = "Reset Link send | Please check Your Email";
+                    lblResetPassMsg.ForeColor=System.Drawing.Color.Green;
+                    txtEmailID.Text = string.Empty;
                 }
+                else
+                {
+                    lblResetPassMsg.Text = "Oops ! This Email Does not Exist...Try Again";
+                    lblResetPassMsg.ForeColor = System.Drawing.Color.Red;
+                    txtEmailID.Text = string.Empty;
+                    txtEmailID.Focus();
+                }
+               
             }
             catch (Exception e1)
             {
