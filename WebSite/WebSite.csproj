@@ -123,6 +123,7 @@
   <ItemGroup>
     <Content Include="first.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="RecovePassword.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="signin.aspx" />
@@ -162,6 +163,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecovePassword.aspx.cs">
+      <DependentUpon>RecovePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecovePassword.aspx.designer.cs">
+      <DependentUpon>RecovePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

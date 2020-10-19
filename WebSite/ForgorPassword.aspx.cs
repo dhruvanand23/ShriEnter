@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Net.Mail;
+using System.Net;
 
 namespace WebSite
 {
@@ -40,6 +42,28 @@ namespace WebSite
 
                     SqlCommand cmd1 = new SqlCommand("Insert into ForgotPass(Id,Uid,RequestDateTime) values('" + myGUID + "','" + Uid + "',GETDATE())", con);
                     cmd1.ExecuteNonQuery();
+
+                    //sender resent link
+
+                    String ToEmailAddress = dt.Rows[0][5].ToString();
+                    String Username = dt.Rows[0][2].ToString();
+                    String EmailBody = "Hi ,"+ Username + ",<br/><br/>Click the link below To Reset Your Password<br/><br/>http://localhost:56255/RecovePassword.aspx?Uid"+myGUID;
+                    MailMessage PassRecMail = new MailMessage("your email",ToEmailAddress );
+                    PassRecMail.Body = EmailBody;
+                    PassRecMail.IsBodyHtml = true;
+                    PassRecMail.Subject = "ResetPass Password";
+
+                    SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
+                    SMTP.Credentials = new NetworkCredential();
+                    {
+                        UserName ="YourEmail@Gmail.com,
+                        Password ="YourPassword"
+                    };
+                    SMTP.EnableSsl = true;
+                    SMTP.Send(PassRecMail);
+
+                    //------
+
                     lblResetPassMsg.Text = "Reset Link send | Please check Your Email";
                     lblResetPassMsg.ForeColor=System.Drawing.Color.Green;
                     txtEmailID.Text = string.Empty;
