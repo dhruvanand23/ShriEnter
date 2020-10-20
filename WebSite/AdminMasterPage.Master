@@ -40,17 +40,9 @@
                         <li class ="drodown">
                             <a href ="#" class ="dropdown-toggle" data-toggle="dropdown">Products<b class ="caret"></b></a>
                             <ul class ="dropdown-menu ">
-                                <li class ="dropdown-header ">Item1</li>
-                                <li role="separator" class ="divider "></li> 
-                                <li> <a href ="#">Subitem1</a></li>
-                                <li> <a href ="#">Subitem2</a></li>
-                                <li> <a href ="#">Subitem3</a></li>
-                                <li role="separator" class ="divider "></li>
-                                <li class ="dropdown-header ">Item2</li>
-                                <li role="separator" class ="divider "></li>
-                                <li> <a href ="#">Subitem4</a></li>
-                                <li> <a href ="#">Subitem5</a></li>
-                                <li> <a href ="#">Subitem6</a></li>
+                                
+                                <li> <a href ="AddProduct.aspx">AddProduct</a></li>
+                                
                             </ul>
 
                         </li>
