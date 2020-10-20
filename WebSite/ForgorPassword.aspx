@@ -57,25 +57,37 @@
                     </ul>
                 </div>
             </div>
-        </div>        
+        </div>      
 
         </div>
 
         <div class="Container" >
-            <div class="form-horizontal">                
+            <div class="form-horizontal">   
+                <br /><br />
                 <h2>Recover Password</h2>
                 <hr />                   
-                <h3>Please Enter Email Address,We will send you the recovery link for your password</h3>                   
+                <h3>Please Enter Email Address</h3>                   
                 <div class="form-group">
-                    <asp:Label ID="lblEmail" CssClass="col-md-2 control-label" runat="server" Text=" Your Email Address"></asp:Label>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="txtEmailID" CssClass="form-control" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" CssClass="text-danger" runat="server" ErrorMessage="Enter Your Email" ControlToValidate="txtEmailID" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
-                    </div>
+                    <label class="col-xs-11">Enter your Email ID:</label>
+                        <div class="col-xs-11">
+                        <asp:TextBox ID="txtEmailID" runat="server" Class="form-control" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtEmailID" ErrorMessage="Email ID Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    <label class="col-xs-11">New Password:</label>
+                        <div class="col-xs-11">
+                        <asp:TextBox ID="txtPassFP" runat="server" Class="form-control" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPassFP" ErrorMessage="Password Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    <label class="col-xs-11">Confirm New Password:</label>
+                        <div class="col-xs-11">
+                        <asp:TextBox ID="txtConPassFP" runat="server" Class="form-control" ></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtConPassFP" ErrorMessage="Confirm Password Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                    </div>
                     <div class="col-md-6">
                         <asp:Button ID="btnResetPass" CssClass="btn btn-default" runat="server" Text="Send" OnClick="btnResetPass_Click" />
                         <asp:Label ID="lblResetPassMsg" CssClass="txt-success" runat="server" ></asp:Label>

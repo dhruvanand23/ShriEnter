@@ -30,43 +30,22 @@ namespace WebSite
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("Select * from user_Details where u_mail=@Email", con);
-                cmd.Parameters.AddWithValue("@Email", txtEmailID.Text);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                if (dt.Rows.Count != 0)
-                {
-                    String myGUID = Guid.NewGuid().ToString();
-                    int Uid = Convert.ToInt32(dt.Rows[0][0]);
-
-                    SqlCommand cmd1 = new SqlCommand("Insert into ForgotPass(Id,Uid,RequestDateTime) values('" + myGUID + "','" + Uid + "',GETDATE())", con);
-                    cmd1.ExecuteNonQuery();
-
-                    //sender resent link
-
-                    String ToEmailAddress = dt.Rows[0][5].ToString();
-                    String Username = dt.Rows[0][2].ToString();
-                    String EmailBody = "Hi ,"+ Username + ",<br/><br/>Click the link below To Reset Your Password<br/><br/>http://localhost:56255/RecovePassword.aspx?Uid"+myGUID;
-                    MailMessage PassRecMail = new MailMessage("your email",ToEmailAddress );
-                    PassRecMail.Body = EmailBody;
-                    PassRecMail.IsBodyHtml = true;
-                    PassRecMail.Subject = "ResetPass Password";
-
-                    SmtpClient SMTP = new SmtpClient("smtp.gmail.com", 587);
-                    SMTP.Credentials = new NetworkCredential();
-                    {
-                        UserName ="YourEmail@Gmail.com,
-                        Password ="YourPassword"
-                    };
-                    SMTP.EnableSsl = true;
-                    SMTP.Send(PassRecMail);
-
-                    //------
-
-                    lblResetPassMsg.Text = "Reset Link send | Please check Your Email";
-                    lblResetPassMsg.ForeColor=System.Drawing.Color.Green;
+                 SqlCommand cmd = new SqlCommand("Select * from user_Details where u_mail=@Email", con);
+                 cmd.Parameters.AddWithValue("@Email", txtEmailID.Text);
+                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                 DataTable dt = new DataTable();
+                 sda.Fill(dt);
+                 if (dt.Rows.Count != 0)
+                 {
+                    SqlCommand SqlComm = new SqlCommand("UPDATE user_Details SET u_pass = '"+ txtPassFP.Text + "' WHERE u_mail = '"+ txtEmailID.Text + "'", con);
+                    SqlComm.ExecuteReader();
+                    Response.Write("Successful");
+                    lblResetPassMsg.Text = "Password Changed";
+                    lblResetPassMsg.ForeColor = System.Drawing.Color.Green;
                     txtEmailID.Text = string.Empty;
+                    txtConPassFP.Text = string.Empty;
+                    txtPassFP.Text = string.Empty;
+
                 }
                 else
                 {
@@ -75,7 +54,6 @@ namespace WebSite
                     txtEmailID.Text = string.Empty;
                     txtEmailID.Focus();
                 }
-               
             }
             catch (Exception e1)
             {
