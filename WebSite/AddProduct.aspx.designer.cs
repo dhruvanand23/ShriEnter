@@ -24,13 +24,13 @@ namespace WebSite
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// txtProductName control.
+        /// txtProduceName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProductName;
+        protected global::System.Web.UI.WebControls.TextBox txtProduceName;
 
         /// <summary>
         /// Label2 control.
@@ -123,42 +123,6 @@ namespace WebSite
         protected global::System.Web.UI.WebControls.DropDownList ddlSubCategory;
 
         /// <summary>
-        /// Label19 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label19;
-
-        /// <summary>
-        /// dllGender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dllGender;
-
-        /// <summary>
-        /// Label7 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label7;
-
-        /// <summary>
-        /// txtDynamicSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDynamicSize;
-
-        /// <summary>
         /// Label8 control.
         /// </summary>
         /// <remarks>
@@ -186,13 +150,13 @@ namespace WebSite
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// txtPDetails control.
+        /// txtPDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPDetails;
+        protected global::System.Web.UI.WebControls.TextBox txtPDetail;
 
         /// <summary>
         /// Label10 control.
@@ -348,13 +312,13 @@ namespace WebSite
         protected global::System.Web.UI.WebControls.Label Label18;
 
         /// <summary>
-        /// chCOD control.
+        /// cbCOD control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chCOD;
+        protected global::System.Web.UI.WebControls.CheckBox cbCOD;
 
         /// <summary>
         /// btnAdd control.

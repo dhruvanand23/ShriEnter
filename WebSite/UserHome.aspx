@@ -28,7 +28,7 @@
                         <span class="icon-bar"></span>
 
                     </button>
-                    <a class="navbar-brand" href="first.aspx"><span><img src="images/logo1.png" alt="Home Decor" height="30"/>Home Decor</span></a>
+                    <a class="navbar-brand" href="first.aspx"><span><img src="images/logo1.png" alt="Space Decor" height="30"/>Home Decor</span></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
@@ -39,7 +39,7 @@
                         <li class ="drodown">
                             <a href ="#" class ="dropdown-toggle" data-toggle="dropdown">Products<b class ="caret"></b></a>
                             <ul class ="dropdown-menu ">
-                                <li class ="dropdown-header ">Item1</li>
+                                <li class ="dropdown-header "></li>
                                 <li role="separator" class ="divider "></li> 
                                 <li> <a href ="#">Subitem1</a></li>
                                 <li> <a href ="#">Subitem2</a></li>
@@ -67,7 +67,7 @@
 
             <div class="container">
                 <p class="pull-right"><a href="first.aspx">Back To Top</a></p>
-                <p>&copy;HomeDecor.in &middot; <a href="first.aspx">Home</a> &middot;<a href="#">About</a> &middot;<a href="#">Contact Us</a> &middot;<a href="#">Products</a> </p>
+                <p>&copy;SpaceDecor.in &middot; <a href="first.aspx">Home</a> &middot;<a href="#">About</a> &middot;<a href="#">Contact Us</a> &middot;<a href="#">Products</a> </p>
             </div>
 
 

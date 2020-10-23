@@ -29,7 +29,7 @@
                         <span class="icon-bar"></span>
 
                     </button>
-                    <a class="navbar-brand" href="first.aspx"><span><img src="images/logo1.png" alt="Home Decor" height="30"/>Home Decor</span></a>
+                    <a class="navbar-brand" href="first.aspx"><span><img src="images/logo1.png" alt="Space Decor" height="30"/>Home Decor</span></a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
