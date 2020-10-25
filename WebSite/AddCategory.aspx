@@ -22,6 +22,54 @@
                         </div>
                     </div>
                 </div>
+
+         <h1>Categories</h1>
+        <hr />
+
+ <div class="panel panel-default">
+
+               <div class="panel-heading"> All Categories</div>
+
+
+     <asp:repeater ID="rCat" runat="server">
+
+         <HeaderTemplate>
+             <table class="table">
+                  <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Categories</th>
+                        <th>Edit</th>
+
+                    </tr>
+
+                </thead>
+
+
+
+            <tbody>
+         </HeaderTemplate>
+
+
+         <ItemTemplate>
+             <tr>
+                    <th><%#Eval("CatID") %> </th>
+                    <td><%#Eval("CatName") %></td>
+
+                    <td>Edit</td>
+                </tr>
+         </ItemTemplate>
+
+
+         <FooterTemplate>
+             </tbody>
+
+              </table>
+         </FooterTemplate>
+
+     </asp:repeater>
+
+
             </div>
     
 </asp:Content>

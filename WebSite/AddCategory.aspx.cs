@@ -21,6 +21,24 @@ namespace WebSite
                 con.Close();
             }
             con.Open();
+            if (!IsPostBack)
+            {
+                BindCatRepeater();
+            }
+        }
+
+        private void BindCatRepeater()
+        {
+            cmd = new SqlCommand("Select * from tblCategory", con);
+            { 
+                using(SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    rptrCategory.DataSource = dt;
+                    rCat.DataBind();
+                }        
+            }
         }
         protected void btnAddCategory_Click(object Sender, EventArgs e)
         {

@@ -21,6 +21,24 @@ namespace WebSite
                 con.Close();
             }
             con.Open();
+            if(!IsPostBack)
+            {
+                BindBrandRepeater();
+            }
+        }
+
+        private void BindBrandRepeater()
+        {
+            cmd = new SqlCommand("select * from tblBrands", con);
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    rptrBrands.DataSource = dt;
+                    rptrBrands.DataBind();
+                }
+            }
         }
 
         protected void btnAddBrand_Click(object sender, EventArgs e)
