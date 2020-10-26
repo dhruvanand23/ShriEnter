@@ -29,7 +29,7 @@ namespace WebSite
 
         private void BindBrandRepeater()
         {
-            cmd = new SqlCommand("select * from tblBrands", con);
+            cmd = new SqlCommand("select * from mydata1.dbo.tblBrands", con);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {

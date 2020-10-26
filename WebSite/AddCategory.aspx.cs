@@ -26,7 +26,7 @@ namespace WebSite
 
         private void BindCategoryRepeater()
         {
-            cmd = new SqlCommand("select * from tblCategory", con);
+            cmd = new SqlCommand("select * from mydata1.dbo.tblCategory", con);
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {

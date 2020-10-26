@@ -47,7 +47,7 @@ namespace WebSite
             {
                 cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into tblSubCategory(SubCatName,MainCatID) values('" + txtSubCategory.Text + "','" + ddlMainCatID.SelectedItem.Value + "')";
+                cmd.CommandText = "insert into mydata1.dbo.tblSubCategory(SubCatName,MainCatID) values('" + txtSubCategory.Text + "','" + ddlMainCatID.SelectedItem.Value + "')";
                 cmd.ExecuteReader();
                 cmd.Dispose();
                 Response.Write("SubCategory Added Sucessfully");
@@ -69,7 +69,7 @@ namespace WebSite
             {
                 cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = " select * from tblCategory";
+                cmd.CommandText = " select * from tblSubCategory";
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable ds = new DataTable();
                 sda.Fill(ds);
