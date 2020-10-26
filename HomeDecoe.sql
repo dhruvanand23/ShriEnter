@@ -1,2 +1,1 @@
-select * from tblSubCategory;
-select * from tblCategory;
+select * from tblBrands;

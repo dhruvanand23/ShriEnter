@@ -24,8 +24,23 @@ namespace WebSite
             if (!IsPostBack)
             {
                 BindMainCat();
+                BindSubCatRptr(); 
             }
         }
+        private void BindSubCatRptr()
+        {
+            cmd = new SqlCommand("select A.*,B.* from mydata1.dbo.tblSubCategory A inner join mydata1.dbo.tblCategory B on B.CatID = A.MainCatID", con);
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    rptrSubCategory.DataSource = dt;
+                    rptrSubCategory.DataBind();
+                }
+            } 
+        }
+
         protected void btnAddSubCategory_Click(object sender, EventArgs e)
         {
             try
@@ -44,7 +59,7 @@ namespace WebSite
                 Response.Write(e1);
             }
             ddlMainCatID.ClearSelection();
-            ddlMainCatID.Items.FindByValue("0").Selected = true;
+            ddlMainCatID.Items.FindByValue("0").Selected = true;            
             txtSubCategory.Focus();
         }
 
