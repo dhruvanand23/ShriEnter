@@ -21,12 +21,12 @@ namespace WebSite
                 con.Close();
             }
             con.Open();
-            BindCategoryRepeater();
+            BindCategoryReapter();
         }
 
-        private void BindCategoryRepeater()
+        private void BindCategoryReapter()
         {
-            cmd = new SqlCommand("select * from mydata1.dbo.tblCategory", con);
+            using (SqlCommand cmd = new SqlCommand("select * from tblCategory", con))
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {
@@ -37,7 +37,8 @@ namespace WebSite
                 }
             }
         }
-            protected void btnAddCategory_Click(object Sender, EventArgs e)
+
+        protected void btnAddCategory_Click(object Sender, EventArgs e)
         {
             try
             {

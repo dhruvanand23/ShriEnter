@@ -35,8 +35,8 @@ namespace WebSite
                 {
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
-                    rptrSubCategory.DataSource = dt;
-                    rptrSubCategory.DataBind();
+                    rptrSubCat.DataSource = dt;
+                    rptrSubCat.DataBind();
                 }
             } 
         }
@@ -60,22 +60,20 @@ namespace WebSite
             }
             ddlMainCatID.ClearSelection();
             ddlMainCatID.Items.FindByValue("0").Selected = true;            
-            txtSubCategory.Focus();
+            
         }
 
         private void BindMainCat()
         {
             try
             {
-                cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = " select * from tblSubCategory";
+                SqlCommand cmd = new SqlCommand("Select * from tblCategory", con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable ds = new DataTable();
-                sda.Fill(ds);
-                if (ds.Rows.Count != 0)
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count != 0)
                 {
-                    ddlMainCatID.DataSource = ds;
+                    ddlMainCatID.DataSource = dt;
                     ddlMainCatID.DataTextField = "CatName";
                     ddlMainCatID.DataValueField = "CatID";
                     ddlMainCatID.DataBind();

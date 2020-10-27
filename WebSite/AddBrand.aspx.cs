@@ -21,7 +21,7 @@ namespace WebSite
                 con.Close();
             }
             con.Open();
-            if(!IsPostBack)
+            if (!IsPostBack)
             {
                 BindBrandRepeater();
             }
@@ -29,29 +29,30 @@ namespace WebSite
 
         private void BindBrandRepeater()
         {
-            cmd = new SqlCommand("select * from mydata1.dbo.tblBrands", con);
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+            using (SqlCommand cmd = new SqlCommand("select * from tblBrands", con))
                 {
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    rptrBrands.DataSource = dt;
-                    rptrBrands.DataBind();
-                }
-            }
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptrBrands.DataSource = dt;
+                        rptrBrands.DataBind();
+                    }
+                }            
         }
 
         protected void btnAddBrand_Click(object sender, EventArgs e)
         {
             try
             {
-                cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into tblBrands(Name) values('" +txtBrand.Text+ "')";
-                cmd.ExecuteReader();
-                cmd.Dispose();
-                Response.Write("Brand Added Sucessfully");
-                txtBrand.Text = "";               
+                SqlCommand cmd = new SqlCommand("Insert into tblBrands(Name) Values('" + txtBrand.Text + "')", con);
+                cmd.ExecuteNonQuery();
+
+                Response.Write("<script> alert('Brand Added Successfully ');  </script>");
+                txtBrand.Text = string.Empty;
+
+                con.Close();                
+                txtBrand.Focus();
 
             }
             catch (Exception e1)

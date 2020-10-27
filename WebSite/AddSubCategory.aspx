@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeFile="AddSubCategory.aspx.cs" Inherits="WebSite.AddSubCategory" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server"> 
 
      <div class="container">
                 <div class="form-horizontal">
@@ -36,7 +36,7 @@
       <div class="panel panel-default">
                 <div class="panel-heading"> All SubCategories</div>
 
-          <asp:Repeater ID="rptrSubCategory" runat="server">
+          <asp:Repeater ID="rptrSubCat" runat="server">
               
               <HeaderTemplate>
                   <table class="table">
@@ -54,9 +54,9 @@
 
               <ItemTemplate>
                    <tr>
-                       <th><%# Eval("SubCatID") %></th>
-                       <td><%# Eval("SubCatName") %></td>
-                       <td><%# Eval("CatName") %></td>
+                       <th><%# DataBinder.Eval(Container.DataItem, "SubCatID") %></th>
+                       <td><%# DataBinder.Eval(Container.DataItem, "SubCatName") %></td>
+                       <td><%# DataBinder.Eval(Container.DataItem, "CatName") %></td>
                        <td>edit</td>
                    </tr>
               </ItemTemplate>

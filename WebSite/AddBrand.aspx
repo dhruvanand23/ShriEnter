@@ -25,7 +25,6 @@
 
           <h1>Brand</h1>
       <hr />
-
       <div class="panel panel-default">
                 <div class="panel-heading"> All Brands</div>
 
@@ -58,6 +57,8 @@
               </FooterTemplate>
               
           </asp:Repeater>
+
+        </div>
                 
       </div>            
 

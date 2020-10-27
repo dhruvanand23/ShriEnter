@@ -60,7 +60,8 @@
               
           </asp:Repeater>
 
+        </div>
 
-            </div>
+    </div>
     
 </asp:Content>
