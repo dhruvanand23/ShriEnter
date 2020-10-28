@@ -24,13 +24,13 @@ namespace WebSite
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// txtProduceName control.
+        /// txtProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProduceName;
+        protected global::System.Web.UI.WebControls.TextBox txtProductName;
 
         /// <summary>
         /// Label2 control.
@@ -67,6 +67,24 @@ namespace WebSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtsellPrice;
+
+        /// <summary>
+        /// Label7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+
+        /// <summary>
+        /// txtquantity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtquantity;
 
         /// <summary>
         /// Label4 control.

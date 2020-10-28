@@ -50,8 +50,8 @@
                             <a href="#" class ="dropdown-toggle" data-toggle="dropdown">Manage<b class="caret"></b></a>
                             <ul class ="dropdown-menu">
                                  <li ><a href="AddBrand.aspx">Brand</a></li>
-                                <li ><a href="AddCategory.aspx">Category</a></li>
-                                <li ><a href="AddSubCategory.aspx">SubCategory</a></li>
+                                <li ><a href="AddCategory1.aspx">Category</a></li>
+                                <li ><a href="AddSubCategory1.aspx">SubCategory</a></li>
                             </ul>
                         </li> 
 

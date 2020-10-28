@@ -12,7 +12,7 @@
            <div class ="form-group">
                <asp:Label ID="Label1" runat="server" CssClass ="col-md-2 control-label" Text="Proudct Name"></asp:Label>
                <div class ="col-md-3">
-                   <asp:TextBox ID="txtProduceName" CssClass ="form-control" runat="server"></asp:TextBox>
+                   <asp:TextBox ID="txtProductName" CssClass ="form-control" runat="server"></asp:TextBox>
 
 
                </div>
@@ -30,6 +30,13 @@
                <asp:Label ID="Label3" runat="server" CssClass ="col-md-2 control-label" Text="SellingPrice"></asp:Label>
                <div class ="col-md-3">
                    <asp:TextBox ID="txtsellPrice" CssClass ="form-control" runat="server"></asp:TextBox>
+               </div>
+           </div>
+
+           <div class ="form-group">
+               <asp:Label ID="Label7" runat="server" CssClass ="col-md-2 control-label" Text="Quantity"></asp:Label>
+               <div class ="col-md-3">
+                   <asp:TextBox ID="txtquantity" CssClass ="form-control" runat="server"></asp:TextBox>
                </div>
            </div>
 

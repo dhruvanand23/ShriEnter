@@ -96,9 +96,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddBrand.aspx" />
-    <Content Include="AddCategory.aspx" />
+    <Content Include="AddCategory1.aspx" />
     <Content Include="AddProduct.aspx" />
-    <Content Include="AddSubCategory.aspx" />
+    <Content Include="AddSubCategory1.aspx" />
     <Content Include="AdminHome.aspx" />
     <Content Include="css\custom.css" />
     <Content Include="ForgorPassword.aspx" />
@@ -143,12 +143,12 @@
     <Compile Include="AddBrand.aspx.designer.cs">
       <DependentUpon>AddBrand.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddCategory.aspx.cs">
-      <DependentUpon>AddCategory.aspx</DependentUpon>
+    <Compile Include="AddCategory1.aspx.cs">
+      <DependentUpon>AddCategory1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddCategory.aspx.designer.cs">
-      <DependentUpon>AddCategory.aspx</DependentUpon>
+    <Compile Include="AddCategory1.aspx.designer.cs">
+      <DependentUpon>AddCategory1.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddProduct.aspx.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
@@ -157,12 +157,12 @@
     <Compile Include="AddProduct.aspx.designer.cs">
       <DependentUpon>AddProduct.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddSubCategory.aspx.cs">
-      <DependentUpon>AddSubCategory.aspx</DependentUpon>
+    <Compile Include="AddSubCategory1.aspx.cs">
+      <DependentUpon>AddSubCategory1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddSubCategory.aspx.designer.cs">
-      <DependentUpon>AddSubCategory.aspx</DependentUpon>
+    <Compile Include="AddSubCategory1.aspx.designer.cs">
+      <DependentUpon>AddSubCategory1.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminHome.aspx.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
@@ -173,6 +173,7 @@
     </Compile>
     <Compile Include="AdminMasterPage.Master.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminMasterPage.Master.designer.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>

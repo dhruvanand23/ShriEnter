@@ -11,8 +11,17 @@ namespace WebSite
 {
 
 
-    public partial class AddSubCategory
+    public partial class AddSubCategory1
     {
+
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// ddlMainCatID control.
@@ -33,6 +42,15 @@ namespace WebSite
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorMainCatID;
 
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
         /// txtSubCategory control.
         /// </summary>
         /// <remarks>
@@ -42,13 +60,13 @@ namespace WebSite
         protected global::System.Web.UI.WebControls.TextBox txtSubCategory;
 
         /// <summary>
-        /// RequiredFieldValidatorSubCategory control.
+        /// RequiredFieldValidatortxtSubCategoryName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorSubCategory;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatortxtSubCategoryName;
 
         /// <summary>
         /// btnAddSubCategory control.
@@ -58,5 +76,14 @@ namespace WebSite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddSubCategory;
+
+        /// <summary>
+        /// rptrSubCat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptrSubCat;
     }
 }
