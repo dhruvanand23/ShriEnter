@@ -34,14 +34,6 @@
            </div>
 
            <div class ="form-group">
-               <asp:Label ID="Label7" runat="server" CssClass ="col-md-2 control-label" Text="Quantity"></asp:Label>
-               <div class ="col-md-3">
-                   <asp:TextBox ID="txtquantity" CssClass ="form-control" runat="server"></asp:TextBox>
-               </div>
-           </div>
-
-
-           <div class ="form-group">
                <asp:Label ID="Label4" runat="server" CssClass ="col-md-2 control-label" Text="Brand"></asp:Label>
                <div class ="col-md-3">
                    <asp:DropDownList ID="ddlBrand" CssClass ="form-control" runat="server"></asp:DropDownList>
@@ -79,15 +71,7 @@
                    <asp:TextBox ID="txtPDetail" TextMode ="MultiLine" CssClass ="form-control" runat="server"></asp:TextBox>
                </div>
            </div>
-
            
-            <div class ="form-group">
-               <asp:Label ID="Label10" runat="server" CssClass ="col-md-2 control-label" Text="Materials and Care"></asp:Label>
-               <div class ="col-md-3">
-                   <asp:TextBox ID="txtMatCare" TextMode ="MultiLine" CssClass ="form-control" runat="server"></asp:TextBox>
-               </div>
-           </div>
-
             <div class ="form-group">
                <asp:Label ID="Label11" runat="server" CssClass ="col-md-2 control-label" Text="Upload Image"></asp:Label>
                <div class ="col-md-3">
