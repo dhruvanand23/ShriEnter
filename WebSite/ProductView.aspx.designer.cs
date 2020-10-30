@@ -11,7 +11,7 @@ namespace WebSite
 {
 
 
-    public partial class ProductsView
+    public partial class ProductView
     {
     }
 }

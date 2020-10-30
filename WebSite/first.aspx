@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Space Decor</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
 
     <link href="css/custom.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -22,7 +22,7 @@
             <div class ="container ">
                 <div class ="navbar-header">
                     <button type="button" class ="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only>Toggle Navigation</span>
+                        <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -74,7 +74,7 @@
         <div class="carousel-inner">
 
             <div class="item active">
-                <img src="imageslider/home1.jpg" alt="Los Angeles" style="width:100%; height:700px;">
+                <img src="imageslider/home1.jpg" alt="Los Angeles" style="width:100%; height:700px;"/>
                 <div class="carousel-caption">
                      <h3>Your Product Shopping </h3>
                      <p>explore what You Need </p>
@@ -83,7 +83,7 @@
             </div>
 
             <div class="item">
-                <img src="imageslider/home2.jpg" alt="Chicago" style="width:100%; height:700px;">
+                <img src="imageslider/home2.jpg" alt="Chicago" style="width:100%; height:700px;"/>
                      <div class="carousel-caption">
                         <h3>Designs </h3>
                         <p>Many More</p>
@@ -92,7 +92,7 @@
            
     
             <div class="item">
-                <img src="imageslider/home3.jpg" alt="New york" style="width:100%; height:700px;">
+                <img src="imageslider/home3.jpg" alt="New york" style="width:100%; height:700px;"/>
                  <div class="carousel-caption">
                        <h3>Beautiful World</h3>
                        <p>Started here</p>

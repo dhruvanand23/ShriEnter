@@ -60,7 +60,7 @@
 
          <ItemTemplate>
              <tr>
-                    <th> <%# Eval("CatID") %> </th>
+                    <th><%# Eval("CatID") %> </th>
                     <td><%# Eval("CatName") %>   </td>
 
                     <td>Edit</td>
