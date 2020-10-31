@@ -112,6 +112,17 @@
     <Content Include="images\mirror1.jpg" />
     <Content Include="images\mirror2.jpg" />
     <Content Include="images\painting1.jpg" />
+    <Content Include="images\ProductImages\home1.jpg" />
+    <Content Include="images\ProductImages\home2.jpg" />
+    <Content Include="images\ProductImages\home3.jpg" />
+    <Content Include="images\ProductImages\logo1.png" />
+    <Content Include="images\ProductImages\mirror1.jpg" />
+    <Content Include="images\ProductImages\mirror2.jpg" />
+    <Content Include="images\ProductImages\painting1.jpg" />
+    <Content Include="images\ProductImages\showpiece1.jpg" />
+    <Content Include="images\ProductImages\wall hanging1.jpg" />
+    <Content Include="images\ProductImages\wall hanging3.jpg" />
+    <Content Include="images\ProductImages\wallHanging2.jpg" />
     <Content Include="images\wall hanging1.jpg" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -121,7 +132,6 @@
     <Content Include="Products.aspx" />
     <Content Include="ProductView.aspx" />
     <Content Include="User.Master" />
-    <Content Include="images\ProductImages\homedecor2.webp" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
