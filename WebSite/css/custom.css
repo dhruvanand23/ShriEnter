@@ -24,7 +24,7 @@
     margin :auto;
 }
 
-/* ProudctsView css*/
+/* Proudcts css*/
 .probrand {
     font-size: 15px;
     font-weight: 600;
@@ -60,4 +60,63 @@
     font-family: sans-serif;
     font-weight: 400;
     color: deeppink;
+}
+
+/*ProductView*/
+.proNameView {
+    font-size: 20px;
+    line-height: 25px;
+    font-family: sans-serif;
+    color: #696e80;
+}
+
+.proOgPriceView {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: gray;
+}
+
+.proPriceDiscountView {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: red;
+}
+
+.proPriceView {
+    font-size: 16px;
+    line-height: 17px;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.divDet1 {
+    border-bottom: 1px dashed #D5D6D8;
+    margin-bottom: 20px;
+}
+
+.h5size {
+    font-weight: 600;
+}
+
+.input[type=radio] {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.mainButton {
+    border-radius: 3px;
+    outline: 0;
+    margin-top: 10px;
+    min-height: 22px;
+    font-size: 13px;
+    min-width: 108px;
+    font-weight: 500;
+    background-color: #FF5722;
+    padding: 10px 15px;
+    border: 1px solid #FF5722;
+    color: #fff;
 }
