@@ -129,8 +129,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="AdminMasterPage.Master" />
-    <Content Include="Products.aspx" />
-    <Content Include="ProductView.aspx" />
+    <Content Include="Products1.aspx" />
+    <Content Include="ProductView1.aspx" />
     <Content Include="User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -210,19 +210,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Products.aspx.cs">
-      <DependentUpon>Products.aspx</DependentUpon>
+    <Compile Include="Products1.aspx.cs">
+      <DependentUpon>Products1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Products.aspx.designer.cs">
-      <DependentUpon>Products.aspx</DependentUpon>
+    <Compile Include="Products1.aspx.designer.cs">
+      <DependentUpon>Products1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductView.aspx.cs">
-      <DependentUpon>ProductView.aspx</DependentUpon>
+    <Compile Include="ProductView1.aspx.cs">
+      <DependentUpon>ProductView1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ProductView.aspx.designer.cs">
-      <DependentUpon>ProductView.aspx</DependentUpon>
+    <Compile Include="ProductView1.aspx.designer.cs">
+      <DependentUpon>ProductView1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecovePassword.aspx.cs">

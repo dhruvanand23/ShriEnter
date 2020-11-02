@@ -10,8 +10,8 @@ using System.Configuration;
 
 namespace WebSite
 {
-    public partial class Products : System.Web.UI.Page
-    {
+    public partial class Products1 : System.Web.UI.Page
+    {      
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
