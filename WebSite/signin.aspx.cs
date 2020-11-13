@@ -11,7 +11,7 @@ namespace WebSite
 {
     public partial class signin : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-U4214QS\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
 
         {
@@ -87,7 +87,7 @@ namespace WebSite
 
             try
             {
-                cmd.CommandText = "Select * from [user_Details] where u_mail=@uname and u_pass = @pass";
+                cmd.CommandText = "Select * from [tblUsers] where Email=@uname and Password= @pass";
                 cmd.Parameters.AddWithValue("@uname", txtUname.Text);
                 cmd.Parameters.AddWithValue("@pass", txtPass.Text);
                 cmd.Connection = con;

@@ -66,3 +66,7 @@ C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csproj.CoreC
 C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csproj.CopyComplete
 C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.dll
 C:\Users\Dhruv\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.pdb
+C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csprojAssemblyReference.cache
+C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.dll
+C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.pdb
