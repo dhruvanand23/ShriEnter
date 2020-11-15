@@ -41,15 +41,6 @@ Constraint [FK_tblProducts_ToTable2] FOREIGN KEY ([PSubCatID]) REFERENCES [tblSu
 )
 
 
-create table tblProductImages
-(
-PIMGID int identity(1,1) primary key,
-PID   int,
-Name nvarchar(MAX),
-Extention nvarchar(500),
-Constraint [FK_tblProductImages_ToTable] FOREIGN KEY ([PID]) REFERENCES [tblProducts] ([PID]),
-)
-
 Create procedure sp_InsertProduct
 (
 @PName nvarchar(MAX),
@@ -66,10 +57,23 @@ Create procedure sp_InsertProduct
 )
 AS
 
-insert into tblProducts values(@PName,@PPrice,@PSelPrice,@PBrandID,@PCategoryID,
-@PSubCatID,@PDescription,@PProductDetails,@FreeDelivery,
-@30DayRet,@COD) 
+insert into tblProducts values(@PName,@PPrice,@PSelPrice,@PBrandID,@PCategoryID,@PSubCatID,@PDescription,
+@PProductDetails,@FreeDelivery,@30DayRet,@COD) 
 select SCOPE_IDENTITY()
 Return 0
+
+select * from tblProducts;
+
+create procedure procBindAllProducts
+AS
+select A.*,B.*,C.Name ,A.PPrice-A.PSelPrice as DiscAmount,B.Name as ImageName, C.Name as BrandName from tblProducts A
+inner join tblBrands C on C.BrandID =A.PBrandID
+cross apply(
+select top 1 * from tblProductImages B where B.PID= A.PID order by B.PID desc
+)B
+order by A.PID desc
+Return 0
+
+
 
 

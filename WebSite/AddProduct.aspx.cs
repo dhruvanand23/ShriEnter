@@ -67,7 +67,7 @@ namespace WebSite
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("sp_InsertProduct3", con);
+            SqlCommand cmd = new SqlCommand("sp_InsertProduct", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@PName", txtProductName.Text);
             cmd.Parameters.AddWithValue("@PPrice", txtPrice.Text);

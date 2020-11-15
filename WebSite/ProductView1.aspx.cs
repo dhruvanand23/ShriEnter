@@ -31,7 +31,7 @@ namespace WebSite
         private void BindProductImage()
         {
             Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-U4214QS\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
             {
                 using (SqlCommand cmd = new SqlCommand("select * from tblProductImages where PID='" + PID + "'", con))
                 {
@@ -63,7 +63,7 @@ namespace WebSite
         private void BindProductDetails()
         {
             Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-U4214QS\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
             {
                 using (SqlCommand cmd = new SqlCommand("select * from tblProducts where PID='" + PID + "'", con))
                 {

@@ -23,7 +23,7 @@ namespace WebSite
 
         private void BindProductRepeater()
         {
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-U4214QS\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
             {
                 using (SqlCommand cmd = new SqlCommand("procBindAllProducts", con))
                 {
