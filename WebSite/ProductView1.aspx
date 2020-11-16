@@ -59,7 +59,8 @@
             </div>
            
             <div class="divDet1">
-                <asp:button ID="btnAddtoCart" CssClass="mainButton" runat="server" text="ADD TO CART" />
+                <asp:button ID="btnAddtoCart" CssClass="mainButton" runat="server" text="ADD TO CART" OnClick="btnAddtoCart_Click" />
+                <asp:Label ID="lblError" CssClass ="text-danger " runat="server" ></asp:Label>
             </div>
             <div class="divDet1">
                 <h5 class="h5size"> Description</h5>

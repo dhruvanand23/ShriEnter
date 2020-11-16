@@ -36,7 +36,8 @@
                         <li ><a href="#">ABOUT</a></li>
                         <li ><a href="#">CONTACT US</a></li>
                         <li ><a href="#">BLOG</a></li>
-                        <li class ="drodown">
+                        <li ><a href="Products1.aspx">PRODUCTS</a></li>
+                        <!---<li class ="drodown">
                             <a href ="#" class ="dropdown-toggle" data-toggle="dropdown">Products<b class ="caret"></b></a>
                             <ul class ="dropdown-menu ">
                                 <li class ="dropdown-header "></li>
@@ -52,9 +53,20 @@
                                 <li> <a href ="#">Subitem6</a></li>
                             </ul>
 
-                        </li>
+                        </li>--->
+
                         <li>
-                             <asp:Button ID="btnlogout" CssClass ="btn btn-default navbar-btn " runat="server" Text="Sign Out"  OnClick="btnlogout_Click"/>
+                            <button id="btnCart" class="btn btn-primary navbar-btn" type="button">
+                                Cart<span class="badge" id="pCount" runat="server"></span>
+
+                            </button>
+                        </li>
+
+                        <li >
+
+                            <asp:Button ID="btnLogin" CssClass ="btn btn-default navbar-btn " runat="server" Text="SignIn" OnClick="btnLogin_Click" />
+                            <asp:Button ID="btnlogout" CssClass ="btn btn-default navbar-btn " runat="server" Text="Sign Out" OnClick="btnlogout_Click" />
+                            
                         </li>
                     </ul>
                 </div>

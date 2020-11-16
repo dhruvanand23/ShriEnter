@@ -88,5 +88,27 @@ namespace WebSite
                 string SubCatID = (e.Item.FindControl("hfSubCatID") as HiddenField).Value;    
             }
         }
+
+        protected void btnAddtoCart_Click(object sender, EventArgs e)
+        {
+            Int64 PID = Convert.ToInt64(Request.QueryString["PID"]);
+            if (Request.Cookies["CartPID"] != null)
+            {
+                string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+                CookiePID = CookiePID + "," + PID;
+                HttpCookie CartProducts = new HttpCookie("CartPID");
+                CartProducts.Values["CartPID"] = CookiePID;
+                CartProducts.Expires = DateTime.Now.AddDays(30);
+                Response.Cookies.Add(CartProducts);
+            }
+            else
+            {
+                HttpCookie CartProducts = new HttpCookie("CartPID");
+                CartProducts.Values["CartPID"] = PID.ToString();
+                CartProducts.Expires = DateTime.Now.AddDays(30);
+                Response.Cookies.Add(CartProducts);
+            }
+            Response.Redirect("~/ProductView1.aspx?PID=" + PID);
+        }
     }
 }

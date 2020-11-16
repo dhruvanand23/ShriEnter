@@ -11,19 +11,42 @@ namespace WebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            BindCartNumber();
             if (Session["Username"] != null)
             {
-                lblsuccess.Text = "Login Success,Welcome" + Session["Username"].ToString();
+                //lblsuccess.Text = "Login Success,Welcome" + Session["Username"].ToString();
+                btnlogout.Visible = true;
+                btnLogin.Visible = false;
             }
             else
             {
-                Response.Redirect("signin.aspx");
+                btnlogout.Visible = false;
+                btnLogin.Visible = true;
+                Response.Redirect("~/first.aspx");
             }
         }
-        protected void btnlogout_Click(object sender,EventArgs e)
+        protected void btnlogout_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/signin.aspx");
+            Response.Redirect("~/first.aspx");
             Session["Username"] = null;
+        }
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/SignIn.aspx");
+        }
+        public void BindCartNumber()
+        {
+            if (Request.Cookies["CartPID"] != null)
+            {
+                string CookiePID = Request.Cookies["CartPID"].Value.Split('=')[1];
+                string[] ProductArray = CookiePID.Split(',');
+                int ProductCount = ProductArray.Length;
+                pCount.InnerText = ProductCount.ToString();
+            }
+            else
+            {
+                pCount.InnerText = 0.ToString();
+            }
         }
     }
 }

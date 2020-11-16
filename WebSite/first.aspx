@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Space Decor</title>
+    <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous">
+
+    </script>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
@@ -14,6 +17,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+
+        $(document).ready(function myfunction() {
+            $("#btnCart").click(function myfunction() {
+                window.location.href = "/Cart.aspx";
+            });
+        });
+
+    </script>   
 </head>
 <body>
     <form id="form1" runat="server">
@@ -53,8 +65,20 @@
                             </ul>
 
                         </li>
-                        <li ><a href="signup.aspx">SignUp</a></li>
-                        <li ><a href="signin.aspx">SignIn</a></li>
+                        <li>
+                            <button id="btnCart" class="btn btn-primary navbar-btn " type="button">
+                                Cart <span class="badge " id="pCount" runat="server"></span>
+
+                            </button>
+                        </li>
+
+                        <li id="btnSignUP" runat="server"><a href="signup.aspx">SignUp</a></li>
+                        <li id="btnSignIN" runat="server"><a href="signin.aspx">SignIn</a></li>
+                        
+                        <li>
+                            <asp:Button ID="btnlogout" CssClass ="btn btn-default navbar-btn" runat="server" Text="Sign Out" OnClick="btnlogout_Click" />
+                        </li>
+
                     </ul>
                 </div>
             </div>
