@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="first.aspx.cs" Inherits="WebSite.first" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="first.aspx.cs" Inherits="WebSite.first" %>
 
 <!DOCTYPE html>
 
@@ -48,7 +48,8 @@
                         <li ><a href="#">ABOUT</a></li>
                         <li ><a href="#">CONTACT US</a></li>
                         <li ><a href="#">BLOG</a></li>
-                        <li class ="drodown">
+                        <li ><a href="Products.aspx">PRODUCTS</a></li>
+                        <!---<li class ="drodown">
                             <a href ="#" class ="dropdown-toggle" data-toggle="dropdown">Products<b class ="caret"></b></a>
                             <ul class ="dropdown-menu ">
                                 <li class ="dropdown-header ">Item1</li>
@@ -64,7 +65,7 @@
                                 <li> <a href ="#">Subitem6</a></li>
                             </ul>
 
-                        </li>
+                        </li>--->
                         <li>
                             <button id="btnCart" class="btn btn-primary navbar-btn " type="button">
                                 Cart <span class="badge " id="pCount" runat="server"></span>

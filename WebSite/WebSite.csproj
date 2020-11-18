@@ -100,6 +100,7 @@
     <Content Include="AddProduct.aspx" />
     <Content Include="AddSubCategory1.aspx" />
     <Content Include="AdminHome.aspx" />
+    <Content Include="cart.aspx" />
     <Content Include="css\custom.css" />
     <Content Include="ForgorPassword.aspx" />
     <Content Include="imageslider\home1.jpg" />
@@ -192,6 +193,13 @@
     </Compile>
     <Compile Include="AdminMasterPage.Master.designer.cs">
       <DependentUpon>AdminMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="first.aspx.cs">
       <DependentUpon>first.aspx</DependentUpon>
