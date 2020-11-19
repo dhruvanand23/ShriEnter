@@ -39,7 +39,7 @@ namespace WebSite
                         string PID = CookieDataArray[i].ToString().Split('-')[0];
                         using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
                         {
-                            using (SqlCommand cmd = new SqlCommand("select A.* from tblProducts A where A.PID="+ PID + "", con))
+                            using (SqlCommand cmd = new SqlCommand("select A.*,SizeData.Name,SizeData.Extention from tblProducts A cross apply( select top 1 B.Name,Extention from tblProductImages B where B.PID=A.PID )SizeData where A.PID=" + PID + "", con))
                             {
                                 cmd.CommandType = CommandType.Text;
                                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
