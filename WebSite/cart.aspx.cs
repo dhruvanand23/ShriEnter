@@ -16,7 +16,6 @@ namespace WebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 BindProductCart();
@@ -29,8 +28,6 @@ namespace WebSite
             {
                 string CookieData = Request.Cookies["CartPID"].Value.Split('=')[1];
                 string[] CookieDataArray = CookieData.Split(',');
-
-
                 if (CookieDataArray.Length > 0)
                 {
                     h4Noitems.InnerText = "MY CART (" + CookieDataArray.Length + " Items)";
@@ -40,14 +37,9 @@ namespace WebSite
                     for (int i = 0; i < CookieDataArray.Length; i++)
                     {
                         string PID = CookieDataArray[i].ToString().Split('-')[0];
-                        //string SizeID = CookieDataArray[i].ToString().Split('-')[1];
-
-
-                       /* using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
+                        using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
                         {
-                            using (SqlCommand cmd = new SqlCommand("select A.*,dbo.getSizeName(" + SizeID + ") as SizeNamee,"
-                              + SizeID + " as SizeIDD,SizeData.Name,SizeData.Extention from tblProducts A cross apply( select top 1 B.Name,Extention from tblProductImages B where B.PID=A.PID ) SizeData where A.PID="
-                                 + PID + "", con))
+                            using (SqlCommand cmd = new SqlCommand("select A.* from tblProducts A where A.PID="+ PID + "", con))
                             {
                                 cmd.CommandType = CommandType.Text;
                                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
@@ -55,11 +47,10 @@ namespace WebSite
                                     sda.Fill(dt);
                                 }
                             }
-                        }*/
-                        CartTotal += 1800 /*Convert.ToInt64(dt.Rows[i]["PPrice"])*/;
-                        Total += 1800/*Convert.ToInt64(/*dt.Rows[i]["PSelPrice"])*/;
-                }
-
+                        }
+                        CartTotal += Convert.ToInt64(dt.Rows[i]["PPrice"]);
+                        Total += Convert.ToInt64(dt.Rows[i]["PSelPrice"]);
+                    }
                     rptrCartProducts.DataSource = dt;
                     rptrCartProducts.DataBind();
                     divpricedetails.Visible = true;
@@ -75,7 +66,6 @@ namespace WebSite
             }
             else
             {
-
                 h4Noitems.InnerText = "Your Shopping Cart is Empty";
                 divpricedetails.Visible = false;
             }
@@ -86,10 +76,10 @@ namespace WebSite
 
             Button btn = (Button)(sender);
 
-            //string PIDSIZE = btn.CommandArgument;
+            string PIDSIZE = btn.CommandArgument;
 
             List<String> CookiePIDList = CookiePID.Split(',').Select(i => i.Trim()).Where(i => i != string.Empty).ToList();
-            //CookiePIDList.Remove(PIDSIZE);
+            CookiePIDList.Remove(PIDSIZE);
             string CookiePIDUpdated = String.Join(",", CookiePIDList.ToArray());
             if (CookiePIDUpdated == "")
             {

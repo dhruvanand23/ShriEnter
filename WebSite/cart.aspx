@@ -3,10 +3,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <br />
-    <br />
-
-<div class="row" style="padding-top: 20px;">
+    <div class="row" style="padding-top: 20px;">
  
        <div class="col-md-9">
   
@@ -18,9 +15,7 @@
               <ItemTemplate>
                     <div class="media my-3" style="border: 1px solid #eaeaec;">
                         <div class=" media-left align-self-center mr-3">
-                            <a href="ProductView.aspx?PID=<%#Eval("PID") %>" target="_blank">
-                                <img width="110px" class="media-object" src="Images/ProductImages/<%#Eval("PID") %>/<%#Eval("Name") %><%#Eval("Extention") %>" alt="<%#Eval("Name") %>" onerror="this.src='images/noimage.jpg'">
-                            </a>
+                           
                         </div>
                         <div class="media-body">
                             <h5 class="media-heading proNameViewCart"><%#Eval("PName") %></h5>
@@ -63,5 +58,4 @@
        </div>
    
  </div>
-
 </asp:Content>
