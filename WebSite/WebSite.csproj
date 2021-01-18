@@ -101,6 +101,7 @@
     <Content Include="AddSubCategory1.aspx" />
     <Content Include="AdminHome.aspx" />
     <Content Include="Cart.aspx" />
+    <Content Include="ContactUs.aspx" />
     <Content Include="css\custom.css" />
     <Content Include="ForgorPassword.aspx" />
     <Content Include="imageslider\home1.jpg" />
@@ -125,6 +126,7 @@
     <Content Include="images\ProductImages\wall hanging3.jpg" />
     <Content Include="images\ProductImages\wallHanging2.jpg" />
     <Content Include="images\wall hanging1.jpg" />
+    <Content Include="order.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -201,6 +203,13 @@
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="first.aspx.cs">
       <DependentUpon>first.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -217,6 +226,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="order.aspx.cs">
+      <DependentUpon>order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order.aspx.designer.cs">
+      <DependentUpon>order.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products1.aspx.cs">
       <DependentUpon>Products1.aspx</DependentUpon>
@@ -256,6 +272,7 @@
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>

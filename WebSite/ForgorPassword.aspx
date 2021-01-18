@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgorPassword.aspx.cs" Inherits="WebSite.ForgorPassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ForgorPassword.aspx.cs" Inherits="WebSite.ForgorPassword" %>
 
 <!DOCTYPE html>
 

@@ -55,12 +55,11 @@
 
                         </li>--->
 
-                        <li>
+                        <!--<li>
                             <button id="btnCart" class="btn btn-primary navbar-btn" type="button">
                                 Cart<span class="badge" id="pCount" runat="server"></span>
-
                             </button>
-                        </li>
+                        </li>-->
 
                         <li >
 

@@ -14,7 +14,7 @@ namespace WebSite
 {
     public partial class ForgorPassword : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-U4214QS\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
