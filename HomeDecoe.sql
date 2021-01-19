@@ -74,6 +74,14 @@ select top 1 * from tblProductImages B where B.PID= A.PID order by B.PID desc
 order by A.PID desc
 Return 0
 
-
+create table tblContact
+(
+CID int identity(1,1) primary key,
+UName   nvarchar(500),
+UAdd   nvarchar(500),
+UMoblie   nvarchar(500),
+USuggestion   nvarchar(500),
+UEmail   nvarchar(500)
+)
 
 

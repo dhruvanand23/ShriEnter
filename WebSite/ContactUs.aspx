@@ -29,13 +29,13 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtmob" ErrorMessage="Mobile Number Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
 
-                        <label class="col-xs-11">Your Suggetion:</label>
+                        <label class="col-xs-11">Your Suggestion:</label>
                         <div class="col-xs-11">
-                        <asp:TextBox ID="TextBox1" runat="server" Class="form-control" placeholder="Enter Your Suggetion Here"></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" Class="form-control" placeholder="Enter Your Suggestion"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator" ControlToValidate="TextBox1" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
 
-                        <label class="col-xs-11">Email:</label>
+                        <label class="col-xs-11">Your Email:</label>
                         <div class="col-xs-11">
                         <asp:TextBox ID="txtEmail" runat="server" Class="form-control" placeholder="Enter Your Email"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email ID Required" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>

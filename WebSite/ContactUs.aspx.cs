@@ -31,19 +31,12 @@ namespace WebSite
             {
                 cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into Contact(uname,uadd,umob,umail,suggest) values('" + txtUname.Text + "','" + txtadd.Text + "','" + txtmob.Text + "','" + txtEmail.Text + "','" + TextBox1.Text + "','User')";
-                cmd.ExecuteNonQuery();
+                cmd.CommandText = "insert into tblContact(UName,UAdd,UMoblie,USuggestion,UEmail) " +
+                    "values('" + txtUname.Text + "','" + txtadd.Text + "','" + txtmob.Text + "','" + TextBox1.Text + "','" + txtEmail.Text + "')";
                 cmd.ExecuteReader();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds, "Contact");
                 cmd.Dispose();
 
-                txtUname.Text = "";
-                txtEmail.Text = "";
-                txtadd.Text = "";
-                TextBox1.Text = "";                
-                txtmob.Text = "";
+
 
             }
             catch (Exception e1)
@@ -51,5 +44,7 @@ namespace WebSite
                 Response.Write(e1);
             }
         }
+
+       
     }
 }
