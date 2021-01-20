@@ -36,7 +36,11 @@ namespace WebSite
                 cmd.ExecuteReader();
                 cmd.Dispose();
 
-
+                txtUname.Text = "";
+                txtmob.Text = "";
+                txtadd.Text = "";
+                TextBox1.Text = "";
+                txtEmail.Text = "";                
 
             }
             catch (Exception e1)
