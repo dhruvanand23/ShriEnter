@@ -40,6 +40,14 @@ namespace WebSite
 
         protected void Submit_Details_Click(object sender, EventArgs e)
         {
+            string value = "";
+            bool isChecked = RadioButton1.Checked;
+            if (isChecked)
+                value = RadioButton1.Text;
+            else
+                value = RadioButton2.Text;
+            
+            Label1.Text = value;
 
         }
     }

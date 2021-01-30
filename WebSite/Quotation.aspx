@@ -15,9 +15,9 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
     <div>
-        <div class="center-page">
+    <div>
+        <div >
             <hr />
             <br />
             <br />
@@ -25,7 +25,7 @@
             <hr />
             <br />
         </div>
-        <div class="col-xs-11">
+        <div >
             <asp:CheckBox ID="CheckBox1" runat="server" Text="BedRoom"/><br />            
             <asp:CheckBox ID="CheckBox2" runat="server" Text="LivingRoom"/><br />
             <asp:CheckBox ID="CheckBox3" runat="server" Text="Kitchen"/><br />
@@ -35,7 +35,7 @@
         </div>
     </div>
     <div>
-        <div class="auto-style1">
+        <div >
             <hr />
             <br />
             <br />
@@ -43,7 +43,7 @@
             <hr />
             <br />
         </div>
-        <div class="col-xs-11">
+        <div >
             <asp:CheckBox ID="CheckBox6" runat="server" Text="Office" /><br />
             <asp:CheckBox ID="CheckBox7" runat="server" Text="Restaurant"/><br />
             <asp:CheckBox ID="CheckBox8" runat="server" Text="Hospital"/><br />
@@ -56,6 +56,9 @@
     </div>
         <div>
             <asp:Button ID="Submit_Details" CssClass="btn-btn-success" runat="server" Text="Submit&raquo;" OnClick="Submit_Details_Click" />
+        
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+
         </div>
     </div>
 </asp:Content>
