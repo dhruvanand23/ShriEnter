@@ -85,3 +85,10 @@ UEmail   nvarchar(500)
 )
 
 
+create table tblQuotationType
+(
+QID int identity(1,1) primary key,
+QType nvarchar(MAX),
+Uid int,
+FOREIGN KEY (Uid) REFERENCES tblUsers(Uid)
+)

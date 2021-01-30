@@ -30,7 +30,7 @@
             <asp:CheckBox ID="CheckBox2" runat="server" Text="LivingRoom"/><br />
             <asp:CheckBox ID="CheckBox3" runat="server" Text="Kitchen"/><br />
             <asp:CheckBox ID="CheckBox4" runat="server" Text="WholeRoom"/><br />
-            <asp:CheckBox ID="CheckBox5" runat="server" Text="Other"/><br />
+            <asp:Label ID="Label1" runat="server" Text="Other"></asp:Label>
             <input id="Text1" type="text" /><br /><hr />
         </div>
     </div>
@@ -48,7 +48,7 @@
             <asp:CheckBox ID="CheckBox7" runat="server" Text="Restaurant"/><br />
             <asp:CheckBox ID="CheckBox8" runat="server" Text="Hospital"/><br />
             <asp:CheckBox ID="CheckBox9" runat="server" Text="Lobbies"/><br />
-            <asp:CheckBox ID="CheckBox10" runat="server" Text="Other"/><br />           
+            <asp:Label ID="Label2" runat="server" Text="Other"></asp:Label>
             <input id="Text2" type="text" /><br /><hr />
              
         </div>
@@ -56,9 +56,6 @@
     </div>
         <div>
             <asp:Button ID="Submit_Details" CssClass="btn-btn-success" runat="server" Text="Submit&raquo;" OnClick="Submit_Details_Click" />
-        
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-
         </div>
     </div>
 </asp:Content>
