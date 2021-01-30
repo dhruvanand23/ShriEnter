@@ -20,10 +20,22 @@ namespace WebSite
                 con.Close();
             }
             con.Open();
-            if (!IsPostBack)
+            
+            //Getting userId using email id
+            string username = (string)Session["Username"];
+            try
             {
-                
+                cmd = new SqlCommand("Select Uid from [tblUsers] where Email=@uname", con);
+                cmd.Parameters.AddWithValue("@uname", username);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    string userID = dr.GetValue(0).ToString();
+                    dr.Close();
+                }
             }
+            catch (Exception exp) { Response.Write(exp); }
+
         }
 
         protected void Submit_Details_Click(object sender, EventArgs e)

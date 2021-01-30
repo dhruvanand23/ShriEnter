@@ -33,58 +33,7 @@ namespace WebSite
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            /*using (con)
-            {
-                //con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from user_Details where u_name=@username and u_pass=@pwd", con);
-                cmd.Parameters.AddWithValue("@username", txtUname.Text);
-
-                cmd.Parameters.AddWithValue("@pwd", txtPass.Text);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                if (dt.Rows.Count != 0)
-                {
-                    if (CheckBox1.Checked)
-                    {
-                        Response.Cookies["UNAME"].Value = txtUname.Text;
-                        Response.Cookies["UPWD"].Value = txtPass.Text;
-
-                        Response.Cookies["UNAME"].Expires = DateTime.Now.AddDays(10);
-
-                        Response.Cookies["UPWD"].Expires = DateTime.Now.AddDays(10);
-
-                    }
-                    else
-                    {
-                        Response.Cookies["UNAME"].Expires = DateTime.Now.AddDays(-1);
-
-                        Response.Cookies["UPWD"].Expires = DateTime.Now.AddDays(-1);
-                    }
-
-                    string Utype;
-                    Utype = dt.Rows[0][6].ToString().Trim();
-
-                    if (Utype == "User")
-                    {
-                        Session["Username"] = txtUname.Text;
-                        Response.Redirect("~/UserHome.aspx");
-                    }
-                    if (Utype == "Admin")
-                    {
-                        Session["Username"] = txtUname.Text;
-                        Response.Redirect("~/AdminHome.aspx");
-                    }
-                }
-                else
-                {
-                    lblError.Text = "Invalid Username and password";
-                }
-                con.Close();
-            }*/
             SqlCommand cmd = new SqlCommand();
-            
-
             try
             {
                 cmd.CommandText = "Select * from [tblUsers] where Email=@uname and Password= @pass";
@@ -123,7 +72,6 @@ namespace WebSite
                         Session["Username"] = txtUname.Text;
                         Response.Redirect("~/AdminHome.aspx");
                     }
-
                 }
                 else
                 {

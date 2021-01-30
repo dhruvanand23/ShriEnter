@@ -50,7 +50,9 @@
             <asp:CheckBox ID="CheckBox9" runat="server" Text="Lobbies"/><br />
             <asp:CheckBox ID="CheckBox10" runat="server" Text="Other"/><br />           
             <input id="Text2" type="text" /><br /><hr />
+             
         </div>
+       
     </div>
         <div>
             <asp:Button ID="Submit_Details" CssClass="btn-btn-success" runat="server" Text="Submit&raquo;" OnClick="Submit_Details_Click" />
