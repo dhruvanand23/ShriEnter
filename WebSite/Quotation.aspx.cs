@@ -43,7 +43,8 @@ namespace WebSite
 
         protected void Submit_Details_Click(object sender, EventArgs e)
         {
-            string value = "";
+            string value = "", Qid="";
+            //int QuoteId;
             bool isChecked = RadioButton1.Checked;
             if (isChecked)
             {
@@ -104,10 +105,31 @@ namespace WebSite
 
             try
             {
-                cmd = new SqlCommand("Insert into tblQuotationHome(BedRoom,LivingRoom,Kitchen,WholeHouse,Others,QID) Values('" + bedroom + "','" + livingroom + "','" + kitchen + "','" + wholehouse + "','" + Text1.Text + "')", con);
+                cmd = new SqlCommand("SELECT TOP 1 Qid FROM [tblQuotationType] ORDER BY Qid DESC", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    Qid = dr.GetValue(0).ToString();
+                    //QuoteId = Convert.ToInt32(Qid);
+                    dr.Close();
+                }
+            }
+            catch (Exception exp) { Response.Write(exp); }
+
+            try
+            {
+                cmd = new SqlCommand("Insert into tblQuotationHome(BedRoom,LivingRoom,Kitchen,WholeHouse,Others,QID) Values('" + bedroom + "','" + livingroom + "','" + kitchen + "','" + wholehouse + "','" + TextBox1.Text + "','" + Qid + "')", con);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e1) { Response.Write(e1); }
+
+            try
+            {
+                cmd = new SqlCommand("Insert into tblQuotationCom(Office,Restaurant,Hospital,Lobbies,Others,QID) Values('" + office + "','" + restaurant + "','" + hospital + "','" + lobbies + "','" + TextBox2.Text + "','" + Qid + "')", con);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
         }
     }
 }

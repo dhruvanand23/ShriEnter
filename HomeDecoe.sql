@@ -92,3 +92,29 @@ QType nvarchar(MAX),
 Uid int,
 FOREIGN KEY (Uid) REFERENCES tblUsers(Uid)
 )
+
+create table tblQuotationHome
+(
+QHomeID int identity(1,1) primary key,
+BedRoom int,
+LivingRoom int,
+Kitchen int,
+WholeHouse int,
+Others varchar(max),
+QID int,
+FOREIGN KEY (QID) REFERENCES tblQuotationType(QID)
+);
+
+SELECT TOP 1 Uid FROM tblUsers Where Usertype='User' ORDER BY Uid DESC;
+
+create table tblQuotationCom
+(
+QComID int identity(1,1) primary key,
+Office int,
+Restaurant int,
+Hospital int,
+Lobbies int,
+Others varchar(max),
+QID int,
+FOREIGN KEY (QID) REFERENCES tblQuotationType(QID)
+);

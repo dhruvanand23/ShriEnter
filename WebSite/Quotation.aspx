@@ -1,18 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User.Master" AutoEventWireup="true" CodeFile="Quotation.aspx.cs" Inherits="WebSite.Quotation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width : 300px;
-            height : 300px;
-            position : absolute;
-            top: 48px;
-            bottom: 305px;
-            left: 28px;
-            right: 951px;
-            margin : auto;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
@@ -31,7 +19,8 @@
             <asp:CheckBox ID="CheckBox3" runat="server" Text="Kitchen"/><br />
             <asp:CheckBox ID="CheckBox4" runat="server" Text="WholeRoom"/><br />
             <asp:Label ID="Label1" runat="server" Text="Other"></asp:Label>
-            <input id="Text1" type="text" /><br /><hr />
+            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <br /><hr />
         </div>
     </div>
     <div>
@@ -49,7 +38,8 @@
             <asp:CheckBox ID="CheckBox8" runat="server" Text="Hospital"/><br />
             <asp:CheckBox ID="CheckBox9" runat="server" Text="Lobbies"/><br />
             <asp:Label ID="Label2" runat="server" Text="Other"></asp:Label>
-            <input id="Text2" type="text" /><br /><hr />
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <br /><hr />
              
         </div>
        
