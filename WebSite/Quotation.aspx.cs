@@ -127,9 +127,41 @@ namespace WebSite
             {
                 cmd = new SqlCommand("Insert into tblQuotationCom(Office,Restaurant,Hospital,Lobbies,Others,QID) Values('" + office + "','" + restaurant + "','" + hospital + "','" + lobbies + "','" + TextBox2.Text + "','" + Qid + "')", con);
                 cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
             }
             catch (Exception e1) { Response.Write(e1); }
 
+        }
+
+        protected void InteriorType_CheckedChanged(Object sender, EventArgs e)
+        {
+            if (RadioButton1.Checked)
+            {
+                CheckBox1.Enabled = true;
+                CheckBox2.Enabled = true;
+                CheckBox3.Enabled = true;
+                CheckBox4.Enabled = true;
+                TextBox1.Enabled = true;
+                CheckBox6.Enabled = false;
+                CheckBox7.Enabled = false;
+                CheckBox8.Enabled = false;
+                CheckBox9.Enabled = false;
+                TextBox2.Enabled = false;
+            }
+
+            if (RadioButton2.Checked)
+            {
+                CheckBox6.Enabled = true;
+                CheckBox7.Enabled = true;
+                CheckBox8.Enabled = true;
+                CheckBox9.Enabled = true;
+                TextBox2.Enabled = true;
+                CheckBox1.Enabled = false;
+                CheckBox2.Enabled = false;
+                CheckBox3.Enabled = false;
+                CheckBox4.Enabled = false;
+                TextBox1.Enabled = false;
+            }
         }
     }
 }
