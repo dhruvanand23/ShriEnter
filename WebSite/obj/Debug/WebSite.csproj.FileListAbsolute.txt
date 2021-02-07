@@ -70,3 +70,7 @@ C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csprojAssembl
 C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.csproj.CoreCompileInputs.cache
 C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.dll
 C:\Users\DELL\Source\Repos\HomeDecor-Web\WebSite\obj\Debug\WebSite.pdb
+C:\Users\DELL\Source\Repos\dhruvanand23\ShriEnter\WebSite\obj\Debug\WebSite.csprojAssemblyReference.cache
+C:\Users\DELL\Source\Repos\dhruvanand23\ShriEnter\WebSite\obj\Debug\WebSite.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Source\Repos\dhruvanand23\ShriEnter\WebSite\obj\Debug\WebSite.dll
+C:\Users\DELL\Source\Repos\dhruvanand23\ShriEnter\WebSite\obj\Debug\WebSite.pdb
