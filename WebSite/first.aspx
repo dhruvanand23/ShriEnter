@@ -147,11 +147,12 @@
         <div class="container center">
             <div class="row">
                 <div class="col-lg-4">
-                    <img class="img-circle" src="images/wall hanging1.jpg" alt="thumb" width="140" height="140" />
-                    <h2>Wall Hangings</h2>
-                    <p>Designs For better look.
-                        Craftter Iron Floating Wall Hanging Sculpture Frame and Center Piece Metal Art (30.5 X 41.5 X 1 Inch, Multicolored Antique Contemporary Framed)
-                        Handmade ( Made in India )
+                    <img class="img-circle" src="images/grillgate.jpg" alt="thumb" width="140" height="140" />
+                    <h2>Grill Gate</h2>
+                    <p>
+                        One of the main security of the house is determined by the gates.
+                        And just because you wish to have the highest security for your house that doesn’t mean that you need to invest in heavy gates. 
+                        Simple iron gates like this are good enough too!
                     </p>
                     
                     <p><a class="btn btn-default" href="#" role="button">View More &raquo;</a></p>
