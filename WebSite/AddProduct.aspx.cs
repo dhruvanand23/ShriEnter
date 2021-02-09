@@ -182,8 +182,18 @@ namespace WebSite
                 SqlCommand cmd7 = new SqlCommand("insert into tblProductImages values('" + PID + "','" + txtProductName.Text.ToString().Trim() + "05" + "','" + Extention + "')", con);
                 cmd7.ExecuteNonQuery();
             }
-
-
+            Response.Write("<script> alert('Product Added Successfully');  </script>");
+            txtDescription.Text = " ";
+            txtPDetail.Text = " ";
+            txtPrice.Text = " ";
+            txtProductName.Text = " ";
+            txtsellPrice.Text = " ";
+            ddlBrand.SelectedIndex = 0;
+            ddlCategory.SelectedIndex = 0;
+            ddlSubCategory.SelectedIndex = 0;
+            chFD.Checked = false;
+            ch30Ret.Checked = false;
+            cbCOD.Checked = false;
         }
 
         protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)

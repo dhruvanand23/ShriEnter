@@ -35,24 +35,9 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li ><a href="first.aspx">HOME</a></li>
                         <li ><a href="#">ABOUT</a></li>
-                        <li ><a href="#">CONTACT US</a></li>
-                        <li ><a href="#">BLOG</a></li>
-                        <li class ="drodown">
-                            <a href ="#" class ="dropdown-toggle" data-toggle="dropdown">Products<b class ="caret"></b></a>
-                            <ul class ="dropdown-menu ">
-                                <li class ="dropdown-header ">Item1</li>
-                                <li role="separator" class ="divider "></li> 
-                                <li> <a href ="#">Subitem1</a></li>
-                                <li> <a href ="#">Subitem2</a></li>
-                                <li> <a href ="#">Subitem3</a></li>
-                                <li role="separator" class ="divider "></li>
-                                <li class ="dropdown-header ">Item2</li>
-                                <li role="separator" class ="divider "></li>
-                                <li> <a href ="#">Subitem4</a></li>
-                                <li> <a href ="#">Subitem5</a></li>
-                                <li> <a href ="#">Subitem6</a></li>
-                            </ul>
-
+                        <li ><a href="#">CONTACT US</a></li>                        
+                        <li >
+                            <a href ="Products1.aspx" >Products</a>
                         </li>
                         <li class="active"><a href="signup.aspx">SignUp</a></li>
                         <li ><a href="signin.aspx">SignIn</a></li>
@@ -127,7 +112,7 @@
 
             <div class="container">
                 <p class="pull-right"><a href="first.aspx">Back To Top</a></p>
-                <p>&copy;SpaceDecor.in &middot; <a href="first.aspx">Home</a> &middot;<a href="#">About</a> &middot;<a href="#">Contact Us</a> &middot;<a href="#">Products</a> </p>
+                <p>&copy;ShriEnterprises.in &middot; <a href="first.aspx">Home</a> &middot;<a href="#">About</a> &middot;<a href="#">Contact Us</a> &middot;<a href="#">Products</a> </p>
             </div>
 
 
