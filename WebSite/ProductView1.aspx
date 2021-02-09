@@ -59,7 +59,7 @@
             </div>
            
             <div class="divDet1">
-                <asp:button ID="btnAddtoCart" CssClass="mainButton" runat="server" text="ADD TO CART" OnClick="btnAddtoCart_Click" />
+                <asp:button ID="btnAddtoCart" CssClass="mainButton" runat="server" text="ADD TO FAV" OnClick="btnAddtoCart_Click" />
                 <asp:Label ID="lblError" CssClass ="text-danger " runat="server" ></asp:Label>
             </div>
             <div class="divDet1">
@@ -70,11 +70,11 @@
                 <p>   <%#Eval("PProductDetails") %>     </p>
                 
             </div>
-            <div >
+            <!--<div >
                 <p><%# ((int)Eval("FreeDelivery")==1)? "Free Delivery":""  %>    </p>
                 <p><%# ((int)Eval("30DayRet")==1)? "30 Days Returns":""  %></p>
                 <p><%# ((int)Eval("COD")==1)? "Cash on Delivery":"" %></p>
-            </div>
+            </div>-->
                     <asp:HiddenField ID="hfCatID" runat="server" Value='<%# Eval("PcategoryID") %>' />
                     <asp:HiddenField ID="hfSubCatID" runat="server" Value='<%# Eval("PSubCatID") %>' />
                     

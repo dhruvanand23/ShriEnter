@@ -4,7 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>UserHome Page</title>
+    <title>Home User</title>
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2>Welcome USER !...</h2>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
@@ -32,11 +37,11 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active" ><a href="first.aspx">HOME</a></li>
+                        <li class="active" ><a href="UserHome.aspx">HOME</a></li>
                         <li ><a href="#">ABOUT</a></li>
                         <li ><a href="ContactUs.aspx">CONTACT US</a></li>                        
                         <li ><a href="Products1.aspx">PRODUCTS</a></li>
-                        <li ><a href="Quotation.aspx">Quotation</a></li>
+                        <li ><a href="Quotation.aspx">Request Quotation</a></li>
                         <!---<li class ="drodown">
                             <a href ="#" class ="dropdown-toggle" data-toggle="dropdown">Products<b class ="caret"></b></a>
                             <ul class ="dropdown-menu ">

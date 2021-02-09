@@ -51,7 +51,7 @@
                 <div>
                     
 
-<asp:Button ID="btnBuyNow" OnClick="btnBuy_Click" CssClass="buyNowbtn" runat="server" Text="BUY NOW" />
+            <!--<asp:Button ID="btnBuyNow" OnClick="btnBuy_Click" CssClass="buyNowbtn" runat="server" Text="BUY NOW" />-->
      
            </div>
  
