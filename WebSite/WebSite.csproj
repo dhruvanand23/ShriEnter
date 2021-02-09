@@ -104,9 +104,12 @@
     <Content Include="ContactUs.aspx" />
     <Content Include="css\custom.css" />
     <Content Include="ForgorPassword.aspx" />
+    <Content Include="imageslider\grillgate.jpg" />
     <Content Include="imageslider\home1.jpg" />
     <Content Include="imageslider\home2.jpg" />
     <Content Include="imageslider\home3.jpg" />
+    <Content Include="imageslider\kitchentrolly2.jpg" />
+    <Content Include="imageslider\slidingwindow1.jpg" />
     <Content Include="images\ceiling pop.jpg" />
     <Content Include="images\ceiling pop1.jpg" />
     <Content Include="images\ceiling pop2.jpg" />
@@ -122,6 +125,8 @@
     <Content Include="images\kitchentrolly3.jpg" />
     <Content Include="images\kitchentrolly4.jpg" />
     <Content Include="images\kitchentrolly5.jpg" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo1.jpeg" />
     <Content Include="images\logo1.png" />
     <Content Include="images\mirror1.jpg" />
     <Content Include="images\mirror2.jpg" />
