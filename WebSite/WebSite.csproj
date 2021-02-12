@@ -157,6 +157,7 @@
     <Content Include="Products1.aspx" />
     <Content Include="ProductView1.aspx" />
     <Content Include="Quotation.aspx" />
+    <Content Include="QuotationDispaly.aspx" />
     <Content Include="User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -285,6 +286,13 @@
     </Compile>
     <Compile Include="Quotation.aspx.designer.cs">
       <DependentUpon>Quotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationDispaly.aspx.cs">
+      <DependentUpon>QuotationDispaly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuotationDispaly.aspx.designer.cs">
+      <DependentUpon>QuotationDispaly.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecovePassword.aspx.cs">
       <DependentUpon>RecovePassword.aspx</DependentUpon>

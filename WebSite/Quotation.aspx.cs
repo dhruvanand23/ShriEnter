@@ -14,7 +14,7 @@ namespace WebSite
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         int UserID1;
-        int bedroom, livingroom, kitchen, wholehouse, office, restaurant, hospital, lobbies;
+        string bedroom, livingroom, kitchen, wholehouse, office, restaurant, hospital, lobbies;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
@@ -51,24 +51,24 @@ namespace WebSite
                 value = RadioButton1.Text;
 
                 if (CheckBox1.Checked == true)
-                    bedroom = 1;
+                    bedroom = "Yes";
                 else
-                    bedroom = 0;
+                    bedroom = "No";
 
                 if (CheckBox2.Checked == true)
-                    livingroom = 1;
+                    livingroom = "Yes";
                 else
-                    livingroom = 0;
+                    livingroom = "No";
 
                 if (CheckBox3.Checked == true)
-                    kitchen = 1;
+                    kitchen = "Yes";
                 else
-                    kitchen = 0;
+                    kitchen = "No";
 
                 if (CheckBox4.Checked == true)
-                    wholehouse = 1;
+                    wholehouse = "Yes";
                 else
-                    wholehouse = 0;
+                    wholehouse = "No";
 
             }
             else
@@ -76,24 +76,24 @@ namespace WebSite
                 value = RadioButton2.Text;
 
                 if (CheckBox6.Checked == true)
-                    office = 1;
+                    office = "Yes";
                 else
-                    office = 0;
+                    office = "No";
 
                 if (CheckBox7.Checked == true)
-                    restaurant = 1;
+                    restaurant = "Yes";
                 else
-                    restaurant = 0;
+                    restaurant = "No";
 
                 if (CheckBox8.Checked == true)
-                    hospital = 1;
+                    hospital = "Yes";
                 else
-                    hospital = 0;
+                    hospital = "No";
 
                 if (CheckBox9.Checked == true)
-                    lobbies = 1;
+                    lobbies = "Yes";
                 else
-                    lobbies = 0;
+                    lobbies = "No";
             }
 
             try
@@ -110,26 +110,31 @@ namespace WebSite
                 if (dr.Read())
                 {
                     Qid = dr.GetValue(0).ToString();
-                    //QuoteId = Convert.ToInt32(Qid);
                     dr.Close();
                 }
             }
             catch (Exception exp) { Response.Write(exp); }
 
-            try
+            if (RadioButton1.Checked == true)
             {
-                cmd = new SqlCommand("Insert into tblQuotationHome(BedRoom,LivingRoom,Kitchen,WholeHouse,Others,QID) Values('" + bedroom + "','" + livingroom + "','" + kitchen + "','" + wholehouse + "','" + TextBox1.Text + "','" + Qid + "')", con);
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e1) { Response.Write(e1); }
+                try
+                {
+                    cmd = new SqlCommand("Insert into tblQuotationHome(BedRoom,LivingRoom,Kitchen,WholeHouse,Others,QID) Values('" + bedroom + "','" + livingroom + "','" + kitchen + "','" + wholehouse + "','" + TextBox1.Text + "','" + Qid + "')", con);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e1) { Response.Write(e1); }
 
-            try
-            {
-                cmd = new SqlCommand("Insert into tblQuotationCom(Office,Restaurant,Hospital,Lobbies,Others,QID) Values('" + office + "','" + restaurant + "','" + hospital + "','" + lobbies + "','" + TextBox2.Text + "','" + Qid + "')", con);
-                cmd.ExecuteNonQuery();
-                cmd.ExecuteNonQuery();
             }
-            catch (Exception e1) { Response.Write(e1); }
+            else if(RadioButton2.Checked == true)
+            {
+                try
+                {
+                    cmd = new SqlCommand("Insert into tblQuotationCom(Office,Restaurant,Hospital,Lobbies,Others,QID) Values('" + office + "','" + restaurant + "','" + hospital + "','" + lobbies + "','" + TextBox2.Text + "','" + Qid + "')", con);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e1) { Response.Write(e1); }
+            }
+
 
         }
 
@@ -143,10 +148,15 @@ namespace WebSite
                 CheckBox4.Enabled = true;
                 TextBox1.Enabled = true;
                 CheckBox6.Enabled = false;
+                CheckBox6.Checked = false;
                 CheckBox7.Enabled = false;
+                CheckBox7.Checked = false;
                 CheckBox8.Enabled = false;
+                CheckBox8.Checked = false;
                 CheckBox9.Enabled = false;
+                CheckBox9.Checked = false;
                 TextBox2.Enabled = false;
+                TextBox2.Text = "";
             }
 
             if (RadioButton2.Checked)
@@ -157,10 +167,15 @@ namespace WebSite
                 CheckBox9.Enabled = true;
                 TextBox2.Enabled = true;
                 CheckBox1.Enabled = false;
+                CheckBox1.Checked = false;
                 CheckBox2.Enabled = false;
+                CheckBox2.Checked = false;
                 CheckBox3.Enabled = false;
+                CheckBox3.Checked = false;
                 CheckBox4.Enabled = false;
+                CheckBox4.Checked = false;
                 TextBox1.Enabled = false;
+                TextBox1.Text= "";
             }
         }
     }
