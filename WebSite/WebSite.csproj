@@ -104,6 +104,7 @@
     <Content Include="Cart.aspx" />
     <Content Include="ContactUs.aspx" />
     <Content Include="css\custom.css" />
+    <Content Include="example.aspx" />
     <Content Include="ForgorPassword.aspx" />
     <Content Include="imageslider\grillgate.jpg" />
     <Content Include="imageslider\home1.jpg" />
@@ -158,6 +159,7 @@
     <Content Include="ProductView1.aspx" />
     <Content Include="Quotation.aspx" />
     <Content Include="QuotationDispaly.aspx" />
+    <Content Include="Supplier.aspx" />
     <Content Include="User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -241,6 +243,13 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="example.aspx.cs">
+      <DependentUpon>example.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="example.aspx.designer.cs">
+      <DependentUpon>example.aspx</DependentUpon>
+    </Compile>
     <Compile Include="first.aspx.cs">
       <DependentUpon>first.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -314,6 +323,13 @@
     </Compile>
     <Compile Include="signup.aspx.designer.cs">
       <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.aspx.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Supplier.aspx.designer.cs">
+      <DependentUpon>Supplier.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
