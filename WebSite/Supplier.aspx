@@ -3,7 +3,7 @@
 
     <style type="text/css">
         .auto-style12 {
-            width: 40%;
+            width: 100%;
             height: 615px;
         }
         .auto-style13 {
@@ -45,6 +45,10 @@
               cursor: pointer;
         }
         
+        .auto-style20 {
+            width: 40px;
+        }
+        
     </style>
 
     <br />
@@ -52,15 +56,23 @@
     <br />
 
     <hr />
-    <h2><b>Supplier</b></h2>
+    <h2><b>Supplier</b></h2>   
     <hr />
-
+   
         <div>
 
             <table class="auto-style12">
                 <tr>
                     <td>
                         <table class="auto-style13">
+                            <tr>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:TextBox ID="Search" runat="server" placeholder="Search Here" ></asp:TextBox>
+                                &nbsp;&nbsp;
+                                <asp:Button ID="Button1" runat="server" Text="Search" />
+                            </tr>
                             <tr>
                                 <td class="auto-style19">
                                 <table class="auto-style14">
@@ -156,13 +168,61 @@
                             
                         </table>
                     </td>
-                    <td>abc</td>                    
+                    <td>&nbsp;&nbsp;&nbsp;</td>
+                    <td class="auto-style20" >
+                        <div class="panel panel-default" >
+               
+                            <asp:repeater ID="rptrSupplier" runat="server" >
+
+                            <HeaderTemplate>
+                                 <table class="table" >
+                                      <thead>
+                                        <tr>
+                                            
+                                            <th>Supplier Name</th>  
+                                            <th>Phone Number</th>  
+                                            <th>Address</th>
+                                            <th>Email</th>
+                                            <th>GST Number</th>
+                                            <th>Bank Name</th>
+                                            <th>Account Number</th> 
+                                            <th>IFSC Code</th> 
+                                            
+                                        </tr>
+                                    </thead>
+                                <tbody>
+                             </HeaderTemplate>
+
+                             <ItemTemplate>             
+                                 <tr>
+                                     
+                                        <td><%# Eval("SupName") %> </td>
+                                        <td><%# Eval("SupPhNo") %></td>
+                                        <td><%# Eval("SupAdd") %></td>
+                                        <td><%# Eval("SupEmail") %>   </td>
+                                        <td><%# Eval("SupGST") %></td>
+                                        <td><%# Eval("SupBank") %></td>
+                                        <td><%# Eval("SupAccNo") %></td>
+                                        <td><%# Eval("SupIFSC") %></td>
+                                     
+                                    </tr>
+
+                             </ItemTemplate>
+
+
+                             <FooterTemplate>
+                                 </tbody>
+
+                                  </table>
+                             </FooterTemplate>
+
+                         </asp:repeater>
+                        </div>
+
+                    </td>                    
                 </tr>                
             </table>
 
         </div>
-
-
-
 
 </asp:Content>
