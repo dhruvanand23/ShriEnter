@@ -70,6 +70,7 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="SupName" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Enter Supplier Name" ControlToValidate="SupName" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -78,6 +79,7 @@
                                         </td>
                                         <td class="auto-style18">
                                             <asp:TextBox ID="SupPhNumber" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Enter Phone Number" ControlToValidate="SupPhNumber" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -86,6 +88,7 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="SupAddress" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Enter Address" ControlToValidate="SupAddress" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -94,6 +97,8 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="SupEmail" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Email" ControlToValidate="SupEmail" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        &nbsp;<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="SupEmail" ErrorMessage="Please Enter Valid Email" Font-Italic="True" Font-Size="Medium" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -102,6 +107,7 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="SupGST" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Please Enter GST Number" ControlToValidate="SupGST" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -110,6 +116,7 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="SupBankName" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Please Enter Bank Name" ControlToValidate="SupBankName" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -118,6 +125,7 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="SupAccNo" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Please Enter Account Number" ControlToValidate="SupAccNo" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -127,6 +135,7 @@
                                         </td>
                                         <td>
                                             <asp:TextBox ID="SupIFSC" runat="server" CssClass="form-control"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ErrorMessage="Please Enter IFSC Code" ControlToValidate="SupIFSC" Font-Italic="True" Font-Overline="False" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                 </table>
