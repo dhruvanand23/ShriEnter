@@ -68,10 +68,10 @@
                             <tr>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:TextBox ID="Search" runat="server" placeholder="Search Here" ></asp:TextBox>
+                                
+                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Supplier Name "></asp:TextBox>
                                 &nbsp;&nbsp;
-                                <asp:Button ID="Button1" runat="server" Text="Search" />
+                                <asp:Button ID="btnSearch" runat="server" Text="Search" onClick="btnSearch_Click" CausesValidation="False" />
                             </tr>
                             <tr>
                                 <td class="auto-style19">
@@ -157,9 +157,9 @@
                                 <td class="auto-style19">
                                     <table class="auto-style15">
                                         <tr>
-                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" /></td>
-                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Edit"/></td>
-                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete"/></td>
+                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
+                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False" OnClick="btnEdit_Click" /></td>
+                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" OnClick="btnDelete_Click" /></td>
                                         </tr>
                                         
                                     </table>

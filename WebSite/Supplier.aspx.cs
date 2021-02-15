@@ -12,6 +12,7 @@ namespace WebSite
 {
     public partial class Supplier : System.Web.UI.Page
     {
+        string SearchName;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         protected void Page_Load(object sender, EventArgs e)
@@ -65,5 +66,67 @@ namespace WebSite
         }
 
         
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text ;
+            cmd = new SqlCommand("Select * from tblSupplier where SupName=@uname", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                 
+                SupName.Text= dr.GetValue(1).ToString();
+                SupPhNumber.Text = dr.GetValue(2).ToString();
+                SupAddress.Text = dr.GetValue(3).ToString();
+                SupEmail.Text = dr.GetValue(4).ToString();
+                SupGST.Text = dr.GetValue(5).ToString();
+                SupBankName.Text = dr.GetValue(6).ToString();
+                SupAccNo.Text = dr.GetValue(7).ToString();
+                SupIFSC.Text = dr.GetValue(8).ToString();
+            }
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+            cmd = new SqlCommand("UPDATE tblSupplier SET SupName = '"+SupName.Text+"', SupPhNo = '"+SupPhNumber.Text+ "', SupAdd = '" + SupAddress.Text + "',SupEmail = '" + SupEmail.Text + "',SupGST = '" + SupGST.Text + "',SupBank = '" + SupBankName.Text + "',SupAccNo = '" + SupAccNo.Text + "',SupIFSC = '" + SupIFSC.Text + "' WHERE SupName=@uname;", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Supplier Updated Successfully ');  </script>");
+
+            con.Close();
+            SupName.Text = "";
+            SupPhNumber.Text = "";
+            SupAddress.Text = "";
+            SupEmail.Text = "";
+            SupGST.Text = "";
+            SupBankName.Text = "";
+            SupAccNo.Text = "";
+            SupIFSC.Text = "";
+            SupName.Focus();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+            cmd = new SqlCommand("DELETE FROM tblSupplier WHERE SupName=@uname", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Supplier Deleted Successfully ');  </script>");
+
+            con.Close();
+            SupName.Text = "";
+            SupPhNumber.Text = "";
+            SupAddress.Text = "";
+            SupEmail.Text = "";
+            SupGST.Text = "";
+            SupBankName.Text = "";
+            SupAccNo.Text = "";
+            SupIFSC.Text = "";
+            SupName.Focus();
+        }
     }
 }
