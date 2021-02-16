@@ -159,6 +159,7 @@
     <Content Include="ProductView1.aspx" />
     <Content Include="Quotation.aspx" />
     <Content Include="QuotationDispaly.aspx" />
+    <Content Include="RawMaterial.aspx" />
     <Content Include="Supplier.aspx" />
     <Content Include="User.Master" />
     <None Include="Web.Debug.config">
@@ -302,6 +303,13 @@
     </Compile>
     <Compile Include="QuotationDispaly.aspx.designer.cs">
       <DependentUpon>QuotationDispaly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RawMaterial.aspx.cs">
+      <DependentUpon>RawMaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RawMaterial.aspx.designer.cs">
+      <DependentUpon>RawMaterial.aspx</DependentUpon>
     </Compile>
     <Compile Include="RecovePassword.aspx.cs">
       <DependentUpon>RecovePassword.aspx</DependentUpon>
