@@ -104,5 +104,38 @@ namespace WebSite
             }
         }
 
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+            cmd = new SqlCommand("UPDATE tblRMaterial SET RM_Name = '" + RMName.Text + "', RM_Price = '" + RMPrice.Text + "', RM_Unit = '" + RMUnit.Text + "',SupID = '" + RMSupplier.SelectedItem.Value + "' WHERE RM_Name=@uname;", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Supplier Updated Successfully ');  </script>");
+
+            con.Close();
+            RMName.Text = "";
+            RMPrice.Text = "";
+            RMUnit.Text = "";
+            RMSupplier.SelectedIndex = 0;
+            RMName.Focus();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+            cmd = new SqlCommand("DELETE FROM tblRMaterial WHERE RM_Name=@uname", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Supplier Deleted Successfully ');  </script>");
+
+            con.Close();
+            RMName.Text = "";
+            RMPrice.Text = "";
+            RMUnit.Text = "";
+            RMSupplier.SelectedIndex = 0;
+            RMName.Focus();
+        }
     }
 }
