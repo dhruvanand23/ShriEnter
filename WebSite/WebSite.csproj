@@ -157,6 +157,7 @@
     <Content Include="AdminMasterPage.Master" />
     <Content Include="Products1.aspx" />
     <Content Include="ProductView1.aspx" />
+    <Content Include="PurcharseOrder.aspx" />
     <Content Include="Quotation.aspx" />
     <Content Include="QuotationDispaly.aspx" />
     <Content Include="RawMaterial.aspx" />
@@ -290,6 +291,13 @@
       <DependentUpon>ProductView1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurcharseOrder.aspx.cs">
+      <DependentUpon>PurcharseOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurcharseOrder.aspx.designer.cs">
+      <DependentUpon>PurcharseOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Quotation.aspx.cs">
       <DependentUpon>Quotation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
