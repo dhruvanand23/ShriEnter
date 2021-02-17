@@ -13,10 +13,12 @@ namespace WebSite
 {
     public partial class RawMaterial : System.Web.UI.Page
     {
+        string SearchName;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         protected void Page_Load(object sender, EventArgs e)
         {
+            BindRMaterial();
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
@@ -25,6 +27,22 @@ namespace WebSite
             if (!IsPostBack)
             {
                 BindSupplier();
+                
+            }
+
+        }
+
+        private void BindRMaterial()
+        {
+            using (cmd = new SqlCommand("Select tblRMaterial.*,tblSupplier.SupName from tblRMaterial, tblSupplier where tblRMaterial.SupID = tblSupplier.SupID ", con))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    rptrRMaterial.DataSource = dt;
+                    rptrRMaterial.DataBind();
+                }
             }
         }
 
@@ -45,5 +63,46 @@ namespace WebSite
 
             }
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cmd = new SqlCommand("Insert into tblRMaterial(RM_Name, RM_Price, RM_Unit, SupID) Values('" + RMName.Text + "','" + RMPrice.Text + "','" + RMUnit.Text + "','" + RMSupplier.SelectedItem.Value + "')", con);
+                cmd.ExecuteNonQuery();
+
+                Response.Write("<script> alert('Raw Material Added Successfully ');  </script>");
+
+                con.Close();
+                RMName.Text = "";
+                RMPrice.Text = "";
+                RMUnit.Text = "";
+                RMSupplier.SelectedIndex = 0;
+                RMName.Focus();
+            }
+            catch (Exception e1)
+            {
+                Response.Write(e1);
+            }
+
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+            cmd = new SqlCommand("Select * from tblRMaterial where RM_Name=@uname", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+
+                RMName.Text = dr.GetValue(1).ToString();
+                RMPrice.Text = dr.GetValue(2).ToString();
+                RMUnit.Text = dr.GetValue(3).ToString();
+                string userID = dr.GetValue(4).ToString();
+                RMSupplier.SelectedIndex = Convert.ToInt32(userID);                
+            }
+        }
+
     }
 }

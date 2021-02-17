@@ -56,7 +56,7 @@
     <br />
 
     <hr />
-    <h2><b>Supplier</b></h2>   
+    <h2><b>Raw Material</b></h2>   
     <hr />
    
         <div>
@@ -69,9 +69,9 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Supplier Name "></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Material Name " ></asp:TextBox>
                                 &nbsp;&nbsp;
-                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" />
+                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" OnClick="btnSearch_Click" />
                             </tr>
                             <tr>
                                 <td class="auto-style19">
@@ -119,7 +119,7 @@
                                 <td class="auto-style19">
                                     <table class="auto-style15">
                                         <tr>
-                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" /></td>
+                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
                                             <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False" /></td>
                                             <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" /> /> /></td>
                                         </tr>
@@ -134,21 +134,18 @@
                     <td class="auto-style20" >
                         <div class="panel panel-default" >
                
-                            <asp:repeater ID="rptrSupplier" runat="server" >
+                            <asp:repeater ID="rptrRMaterial" runat="server" >
 
                             <HeaderTemplate>
                                  <table class="table" >
                                       <thead>
                                         <tr>
                                             
-                                            <th>Supplier Name</th>  
-                                            <th>Phone Number</th>  
-                                            <th>Address</th>
-                                            <th>Email</th>
-                                            <th>GST Number</th>
-                                            <th>Bank Name</th>
-                                            <th>Account Number</th> 
-                                            <th>IFSC Code</th> 
+                                            <th>Material Name</th>  
+                                            <th>Price</th>  
+                                            <th>Unit</th>
+                                            <th>Supplier Name</th>
+                                            
                                             
                                         </tr>
                                     </thead>
@@ -156,16 +153,11 @@
                              </HeaderTemplate>
 
                              <ItemTemplate>             
-                                 <tr>
-                                     
-                                        <td><%# Eval("SupName") %> </td>
-                                        <td><%# Eval("SupPhNo") %></td>
-                                        <td><%# Eval("SupAdd") %></td>
-                                        <td><%# Eval("SupEmail") %>   </td>
-                                        <td><%# Eval("SupGST") %></td>
-                                        <td><%# Eval("SupBank") %></td>
-                                        <td><%# Eval("SupAccNo") %></td>
-                                        <td><%# Eval("SupIFSC") %></td>
+                                 <tr>                                    
+                                        <td><%# Eval("RM_Name") %> </td>
+                                        <td><%# Eval("RM_Price") %></td>
+                                        <td><%# Eval("RM_Unit") %></td>
+                                        <td><%# Eval("SupName") %>   </td>                                        
                                      
                                     </tr>
 
