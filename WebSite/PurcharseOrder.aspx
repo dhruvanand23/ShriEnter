@@ -80,7 +80,7 @@
                                             <asp:Label ID="Label1" runat="server" Text="Date :"></asp:Label>
                                         </td>
                                         <td>
-                                            <asp:Calendar ID="PO_Date" runat="server"></asp:Calendar>
+                                            <asp:Calendar ID="PO_Date" runat="server" VisibleDate="2021-02-18" SelectionMode="DayWeekMonth"></asp:Calendar>
                                         </td>
                                     </tr>
                                     <tr>
@@ -124,7 +124,7 @@
                                 <td class="auto-style19">
                                     <table class="auto-style15">
                                         <tr>
-                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add"  /></td>
+                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click"  /></td>
                                             <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False"  /></td>
                                             <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False"  /></td>
                                         </tr>
@@ -161,14 +161,7 @@
                              <ItemTemplate>             
                                  <tr>
                                      
-                                        <td><%# Eval("SupName") %> </td>
-                                        <td><%# Eval("SupPhNo") %></td>
-                                        <td><%# Eval("SupAdd") %></td>
-                                        <td><%# Eval("SupEmail") %>   </td>
-                                        <td><%# Eval("SupGST") %></td>
-                                        <td><%# Eval("SupBank") %></td>
-                                        <td><%# Eval("SupAccNo") %></td>
-                                        <td><%# Eval("SupIFSC") %></td>
+                                        
                                      
                                     </tr>
 

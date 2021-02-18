@@ -73,6 +73,7 @@ namespace WebSite
 
                 Response.Write("<script> alert('Raw Material Added Successfully ');  </script>");
 
+                BindRMaterial();
                 con.Close();
                 RMName.Text = "";
                 RMPrice.Text = "";
@@ -113,6 +114,8 @@ namespace WebSite
 
             Response.Write("<script> alert('Supplier Updated Successfully ');  </script>");
 
+            BindRMaterial();
+
             con.Close();
             RMName.Text = "";
             RMPrice.Text = "";
@@ -129,6 +132,8 @@ namespace WebSite
             cmd.ExecuteNonQuery();
 
             Response.Write("<script> alert('Supplier Deleted Successfully ');  </script>");
+
+            BindRMaterial();
 
             con.Close();
             RMName.Text = "";

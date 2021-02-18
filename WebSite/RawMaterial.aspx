@@ -46,7 +46,7 @@
         }
         
         .auto-style20 {
-            width: 40px;
+            width: 100%;
         }
         
     </style>
@@ -64,10 +64,11 @@
             <table class="auto-style12">
                 <tr>
                     <td>
-                        <table class="auto-style13">
+                        &nbsp;</td>
+                    <td>&nbsp;&nbsp;&nbsp;<table class="auto-style13">
                             <tr>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
                                 
                                 <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Material Name " ></asp:TextBox>
                                 &nbsp;&nbsp;
@@ -121,7 +122,7 @@
                                         <tr>
                                             <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
                                             <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False" OnClick="btnEdit_Click" /></td>
-                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" OnClick="btnDelete_Click"/> /> /></td>
+                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" OnClick="btnDelete_Click"/> </td>
                                         </tr>
                                         
                                     </table>
