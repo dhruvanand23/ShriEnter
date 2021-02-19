@@ -47,7 +47,16 @@
         .auto-style20 {
             width: 40px;
         }
-        
+         .auto-style21 {
+             width: 173px;
+             height: 163px;
+         }
+         .auto-style22 {
+             height: 163px;
+         }
+         .auto-style23 {
+             height: 47px;
+         }
     </style>
 
     <br />
@@ -56,7 +65,7 @@
 
     <hr />
     <h2><b>Purchase Order</b></h2>   
-    <hr />
+    <hr />    
    
         <div>
 
@@ -72,15 +81,26 @@
                                 &nbsp;&nbsp;
                                 <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" />
                             </tr>
+
+                            
                             <tr>
                                 <td class="auto-style19">
                                 <table class="auto-style14">
+                                    
                                     <tr>
-                                        <td class="auto-style16">
+                                        <td class="auto-style23">
+                                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Add Purchase Order" GroupName="AddSelection" AutoPostBack="True" />
+                                        </td>
+                                        <td class="auto-style23">
+                                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Add Item" GroupName="AddSelection" AutoPostBack="True" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="auto-style21">
                                             <asp:Label ID="Label1" runat="server" Text="Date :"></asp:Label>
                                         </td>
-                                        <td>
-                                            <asp:Calendar ID="PO_Date" runat="server" VisibleDate="2021-02-18" SelectionMode="DayWeekMonth"></asp:Calendar>
+                                        <td class="auto-style22">
+                                            <asp:Calendar ID="PO_Date" runat="server" SelectionMode="DayWeekMonth"></asp:Calendar>
                                         </td>
                                     </tr>
                                     <tr>
@@ -98,8 +118,6 @@
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="PO_ItemName" CssClass ="form-control" runat="server"> </asp:DropDownList>
-                                            <br />
-                                            <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
