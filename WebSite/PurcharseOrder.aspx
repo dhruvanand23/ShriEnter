@@ -98,6 +98,8 @@
                                         </td>
                                         <td>
                                             <asp:DropDownList ID="PO_ItemName" CssClass ="form-control" runat="server"> </asp:DropDownList>
+                                            <br />
+                                            <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>

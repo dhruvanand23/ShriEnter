@@ -16,6 +16,7 @@ namespace WebSite
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd1 = new SqlCommand();
+        SqlCommand cmd2 = new SqlCommand();
         string PO_Id;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -76,7 +77,7 @@ namespace WebSite
         {
             try
             {
-                cmd = new SqlCommand("Insert into tblPurchaseOrder(PO_Date, SupID) Values('" + PO_Date.SelectedDate + "','" + PO_SupName.SelectedIndex + "')", con);
+                cmd = new SqlCommand("Insert into tblPurchaseOrder(PO_Date, SupID) Values('" + PO_Date.SelectedDate + "','" + PO_SupName.SelectedItem.Value + "')", con);
                 cmd.ExecuteNonQuery();
             }
             catch (Exception e1){Response.Write(e1);}
@@ -95,8 +96,8 @@ namespace WebSite
 
             try
             {
-                cmd = new SqlCommand("Insert into tblPOItems(RM_ID, POItem_Price, POItem_Quantity, PO_ID) Values('" + PO_ItemName.SelectedIndex + "','" + PO_Quantity.Text + "','" + PO_Amount.Text + "','" + PO_Id + "')", con);
-                cmd.ExecuteNonQuery();
+                cmd2 = new SqlCommand("Insert into tblPOItems(RM_ID, POItem_Price, POItem_Quantity, PO_ID) Values('" + PO_ItemName.SelectedItem.Value + "','" + PO_Amount.Text + "','" + PO_Quantity.Text + "','" + PO_Id + "')" , con);
+                cmd2.ExecuteNonQuery();
             }
             catch (Exception e1) { Response.Write(e1); }
 
