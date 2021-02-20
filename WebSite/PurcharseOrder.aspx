@@ -11,22 +11,11 @@
         }
         .auto-style14 {
             width: 100%;
-            height: 705px;
+            height: 600px;
         }
         .auto-style15 {
             width: 100%;
             height: 54px;
-        }
-        .auto-style16 {
-            width: 173px;
-        }
-        
-        .auto-style17 {
-            width: 173px;
-            height: 88px;
-        }
-        .auto-style18 {
-            height: 88px;
         }
         .auto-style19 {
             width: 1106px;
@@ -47,15 +36,43 @@
         .auto-style20 {
             width: 40px;
         }
-         .auto-style21 {
-             width: 173px;
-             height: 163px;
-         }
-         .auto-style22 {
-             height: 163px;
-         }
          .auto-style23 {
              height: 47px;
+         }
+         .auto-style24 {
+             width: 173px;
+             height: 73px;
+         }
+         .auto-style25 {
+             height: 73px;
+         }
+         .auto-style26 {
+             width: 173px;
+             height: 43px;
+         }
+         .auto-style27 {
+             height: 43px;
+         }
+         .auto-style28 {
+             width: 173px;
+             height: 45px;
+         }
+         .auto-style29 {
+             height: 45px;
+         }
+         .auto-style30 {
+             width: 173px;
+             height: 28px;
+         }
+         .auto-style31 {
+             height: 28px;
+         }
+         .auto-style32 {
+             width: 173px;
+             height: 6px;
+         }
+         .auto-style33 {
+             height: 6px;
          }
     </style>
 
@@ -89,51 +106,51 @@
                                     
                                     <tr>
                                         <td class="auto-style23">
-                                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Add Purchase Order" GroupName="AddSelection" AutoPostBack="True" />
+                                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Add Purchase Order" GroupName="AddSelection" AutoPostBack="True" OnCheckedChanged="AddSelection_CheckedChanged" />
                                         </td>
                                         <td class="auto-style23">
-                                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Add Item" GroupName="AddSelection" AutoPostBack="True" />
+                                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Add Item" GroupName="AddSelection" AutoPostBack="True" OnCheckedChanged="AddSelection_CheckedChanged" />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="auto-style21">
+                                        <td class="auto-style32">
                                             <asp:Label ID="Label1" runat="server" Text="Date :"></asp:Label>
                                         </td>
-                                        <td class="auto-style22">
-                                            <asp:Calendar ID="PO_Date" runat="server" SelectionMode="DayWeekMonth"></asp:Calendar>
+                                        <td class="auto-style33">
+                                            <asp:Calendar ID="PO_Date" runat="server" SelectionMode="DayWeekMonth" Enabled="False"></asp:Calendar>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="auto-style17">
+                                        <td class="auto-style26">
                                             <asp:Label ID="Label2" runat="server" Text="Supplier Name :"></asp:Label>
                                         </td>
                                         
-                                        <td class="auto-style18">
-                                            <asp:DropDownList ID="PO_SupName" CssClass ="form-control" runat="server"></asp:DropDownList>
+                                        <td class="auto-style27">
+                                            <asp:DropDownList ID="PO_SupName" CssClass ="form-control" runat="server" Enabled="False" OnSelectedIndexChanged="PO_SupName_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="auto-style16">
+                                        <td class="auto-style28">
                                             <asp:Label ID="Label3"  runat="server" Text="Item Name :"></asp:Label>
                                         </td>
-                                        <td>
-                                            <asp:DropDownList ID="PO_ItemName" CssClass ="form-control" runat="server"> </asp:DropDownList>
+                                        <td class="auto-style29">
+                                            <asp:DropDownList ID="PO_ItemName" CssClass ="form-control" runat="server" Enabled="False" OnSelectedIndexChanged="PO_ItemName_SelectedIndexChanged" AutoPostBack="True"> </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="auto-style16">
+                                        <td class="auto-style24">
                                             <asp:Label ID="Label4" runat="server" Text="Quantity :"></asp:Label>
                                         </td>
-                                        <td>
-                                            <asp:TextBox ID="PO_Quantity" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <td class="auto-style25">
+                                            <asp:TextBox ID="PO_Quantity" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Email" ControlToValidate="PO_Quantity" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </tr>
                                     <tr>
-                                        <td class="auto-style16">
+                                        <td class="auto-style30">
                                             <asp:Label ID="Label5" runat="server" Text="Amount :"></asp:Label>
                                         </td>
-                                        <td>
-                                            <asp:TextBox ID="PO_Amount" runat="server" CssClass="form-control"></asp:TextBox>
+                                        <td class="auto-style31">
+                                            <asp:TextBox ID="PO_Amount" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Please Enter GST Number" ControlToValidate="PO_Amount" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
@@ -144,7 +161,7 @@
                                 <td class="auto-style19">
                                     <table class="auto-style15">
                                         <tr>
-                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click"  /></td>
+                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add"  /></td>
                                             <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False"  /></td>
                                             <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False"  /></td>
                                         </tr>

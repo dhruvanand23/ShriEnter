@@ -94,6 +94,7 @@ namespace WebSite
                     lobbies = "Yes";
                 else
                     lobbies = "No";
+
             }
 
             try

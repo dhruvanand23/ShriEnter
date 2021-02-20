@@ -33,7 +33,7 @@ namespace WebSite
                 cmd.ExecuteNonQuery();
 
                 Response.Write("<script> alert('Supplier Added Successfully ');  </script>");
-                
+                BindSupplier();
                 con.Close();
                 SupName.Text = "";
                 SupPhNumber.Text = "";
@@ -95,7 +95,7 @@ namespace WebSite
             cmd.ExecuteNonQuery();
 
             Response.Write("<script> alert('Supplier Updated Successfully ');  </script>");
-
+            BindSupplier();
             con.Close();
             SupName.Text = "";
             SupPhNumber.Text = "";
@@ -116,7 +116,7 @@ namespace WebSite
             cmd.ExecuteNonQuery();
 
             Response.Write("<script> alert('Supplier Deleted Successfully ');  </script>");
-
+            BindSupplier();
             con.Close();
             SupName.Text = "";
             SupPhNumber.Text = "";
