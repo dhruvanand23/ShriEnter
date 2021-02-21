@@ -31,6 +31,10 @@ namespace WebSite
                 BindSupplier();
                 BindRMaterial();
             }
+
+            DateTime today = DateTime.Today;
+            PO_Date.TodaysDate = today;
+            PO_Date.SelectedDate = PO_Date.TodaysDate;
         }
 
 
@@ -104,6 +108,7 @@ namespace WebSite
                 PO_ItemName.Enabled = true;
                 PO_Quantity.Enabled = true;
                 PO_Amount.Enabled = true;
+                PO_SupName.SelectedIndex = 0;
             }
             else if (RadioButton2.Checked == true)
             {
@@ -113,6 +118,76 @@ namespace WebSite
                 PO_Quantity.Enabled = true;
                 PO_Amount.Enabled = true;
             }
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (RadioButton1.Checked == true)
+            {
+                try
+                {
+                    cmd = new SqlCommand("Insert into tblPurchaseOrder(PO_Date, SupID) Values('" + PO_Date.SelectedDate + "','" + PO_SupName.SelectedItem.Value + "')", con);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception e1) { Response.Write(e1); }
+
+                try
+                {
+                    cmd1 = new SqlCommand("SELECT TOP 1 PO_ID FROM tblPurchaseOrder ORDER BY PO_ID DESC", con);
+                    SqlDataReader dr = cmd1.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        PO_Id = dr.GetValue(0).ToString();
+                        dr.Close();
+                    }
+                }
+                catch (Exception exp) { Response.Write(exp); }
+
+                try
+                {
+                    cmd2 = new SqlCommand("Insert into tblPOItems(RM_ID, POItem_Price, POItem_Quantity, PO_ID) Values('" + PO_ItemName.SelectedItem.Value + "','" + PO_Amount.Text + "','" + PO_Quantity.Text + "','" + PO_Id + "')", con);
+                    cmd2.ExecuteNonQuery();
+                }
+                catch (Exception e1) { Response.Write(e1); }
+
+                Response.Write("<script> alert('Purchase Order Added Successfully ');  </script>");
+
+                con.Close();
+                PO_ItemName.SelectedIndex = 0;
+                PO_Quantity.Text = "";
+                PO_Amount.Text = "";
+            }
+            else if (RadioButton2.Checked == true)
+            {
+
+                try
+                {
+                    cmd1 = new SqlCommand("SELECT TOP 1 PO_ID FROM tblPurchaseOrder ORDER BY PO_ID DESC", con);
+                    SqlDataReader dr = cmd1.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        PO_Id = dr.GetValue(0).ToString();
+                        dr.Close();
+                    }
+                }
+                catch (Exception e1) { Response.Write(e1); }
+
+                try
+                {
+                    cmd2 = new SqlCommand("Insert into tblPOItems(RM_ID, POItem_Price, POItem_Quantity, PO_ID) Values('" + PO_ItemName.SelectedItem.Value + "','" + PO_Amount.Text + "','" + PO_Quantity.Text + "','" + PO_Id + "')", con);
+                    cmd2.ExecuteNonQuery();
+                }
+                catch (Exception e1) { Response.Write(e1); }
+
+                Response.Write("<script> alert('Item Added Successfully ');  </script>");
+
+                con.Close();
+                PO_ItemName.SelectedIndex = 0;
+                PO_Quantity.Text = "";
+                PO_Amount.Text = "";
+            }
+
+
         }
     }
 }
