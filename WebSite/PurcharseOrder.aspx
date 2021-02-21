@@ -34,7 +34,7 @@
         }
         
         .auto-style20 {
-            width: 40px;
+            width: 185px;
         }
          .auto-style23 {
              height: 47px;
@@ -72,7 +72,7 @@
              height: 6px;
          }
          .auto-style33 {
-             height: 6px;
+             
          }
     </style>
 
@@ -174,20 +174,19 @@
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
                     <td class="auto-style20" >
-                        <div class="panel panel-default" >
+                       <div class="panel panel-default" >
                
-                            <asp:repeater ID="rptrSupplier" runat="server" >
+                            <asp:repeater ID="rptrPO" runat="server" >
 
                             <HeaderTemplate>
-                                 <table class="table" >
+                                 <table class="table" style="width:600px" >
                                       <thead>
                                         <tr>
                                             
-                                            <th>Supplier Name</th>  
-                                            <th>Item Name</th>  
-                                            <th>Date</th>
+                                            <th>Sr.No.</th>                                               
+                                            <th>Item Name</th>
                                             <th>Quantity</th>
-                                            <th>Amount</th>
+                                            <th>Price</th>
                                             <th>Total</th>                                            
                                             
                                         </tr>
@@ -196,11 +195,14 @@
                              </HeaderTemplate>
 
                              <ItemTemplate>             
-                                 <tr>
+                                 <tr>                                     
+                                        <td>#</td>
+                                        <td><%# Eval("RM_Name") %></td>
+                                        <td><%# Eval("POItem_Quantity") %></td>
+                                        <td><%# Eval("POItem_Price") %>   </td>
+                                        <td>#</td>                                        
                                      
-                                        
-                                     
-                                    </tr>
+                                 </tr>
 
                              </ItemTemplate>
 

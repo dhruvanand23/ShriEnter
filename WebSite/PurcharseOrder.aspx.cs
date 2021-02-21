@@ -30,6 +30,7 @@ namespace WebSite
             {
                 BindSupplier();
                 BindRMaterial();
+                BindPurchaseOrder();
             }
 
             DateTime today = DateTime.Today;
@@ -37,7 +38,19 @@ namespace WebSite
             PO_Date.SelectedDate = PO_Date.TodaysDate;
         }
 
-
+        private void BindPurchaseOrder()
+        {
+            using (SqlCommand cmd = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID", con))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    rptrPO.DataSource = dt;
+                    rptrPO.DataBind();
+                }
+            }
+        }
 
         protected void PO_SupName_SelectedIndexChanged(object sender, EventArgs e) 
         {
