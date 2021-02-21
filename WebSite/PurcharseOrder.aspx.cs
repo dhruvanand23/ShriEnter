@@ -18,7 +18,7 @@ namespace WebSite
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd1 = new SqlCommand();
         SqlCommand cmd2 = new SqlCommand();
-        string PO_Id;
+        string PO_Id, PO_Id2;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
@@ -29,8 +29,7 @@ namespace WebSite
             if (!IsPostBack)
             {
                 BindSupplier();
-                BindRMaterial();
-                BindPurchaseOrder();
+                BindRMaterial();                
             }
 
             DateTime today = DateTime.Today;
@@ -40,7 +39,32 @@ namespace WebSite
 
         private void BindPurchaseOrder()
         {
-            using (SqlCommand cmd = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID", con))
+            try
+            {
+                cmd1 = new SqlCommand("SELECT TOP 1 PO_ID FROM tblPOItems ORDER BY POItem_ID DESC", con);
+                SqlDataReader dr = cmd1.ExecuteReader();
+                if (dr.Read())
+                {
+                    PO_Id2 = dr.GetValue(0).ToString();
+                    dr.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            try
+            {
+                cmd2 = new SqlCommand("select tblPurchaseOrder.*, tblSupplier.SupName from tblPurchaseOrder, tblSupplier where tblPurchaseOrder.SupID = tblSupplier.SupID and tblPurchaseOrder.PO_ID='" + PO_Id2+"'", con);
+                SqlDataReader dr = cmd2.ExecuteReader();
+                if (dr.Read())
+                {
+                    lblDate.Text = dr.GetValue(1).ToString();
+                    lblSupName.Text = dr.GetValue(3).ToString();
+                    dr.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            using (SqlCommand cmd = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID and tblPOItems.PO_ID='" + PO_Id2 +"'", con))
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {
@@ -164,6 +188,7 @@ namespace WebSite
                 catch (Exception e1) { Response.Write(e1); }
 
                 Response.Write("<script> alert('Purchase Order Added Successfully ');  </script>");
+                BindPurchaseOrder();
 
                 con.Close();
                 PO_ItemName.SelectedIndex = 0;
@@ -193,6 +218,7 @@ namespace WebSite
                 catch (Exception e1) { Response.Write(e1); }
 
                 Response.Write("<script> alert('Item Added Successfully ');  </script>");
+                BindPurchaseOrder();
 
                 con.Close();
                 PO_ItemName.SelectedIndex = 0;

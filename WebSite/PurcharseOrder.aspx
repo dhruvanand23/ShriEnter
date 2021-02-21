@@ -74,6 +74,9 @@
          .auto-style33 {
              
          }
+         .auto-style34 {
+             width: 576px;
+         }
     </style>
 
     <br />
@@ -174,7 +177,21 @@
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;</td>
                     <td class="auto-style20" >
-                       <div class="panel panel-default" >
+                        <table style="width:600px">
+                            <tr>
+                                <td class="auto-style23">
+                                    <asp:Label ID="Label8" runat="server" Text="Date:"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblDate" runat="server" Text=""></asp:Label>
+                                </td>
+                                <td class="auto-style23">
+                                    <asp:Label ID="Label6" runat="server" Text="Supplier Name:"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblSupName" runat="server" Text=""></asp:Label>
+                                </td>
+                            </tr>
+                         </table>   
+                             <div class="panel panel-default" >
                
                             <asp:repeater ID="rptrPO" runat="server" >
 
@@ -215,10 +232,10 @@
 
                          </asp:repeater>
                         </div>
-
+                            </tr>
+                         </table>
                     </td>                    
-                </tr>                
-            </table>
+                
 
         </div>
 
