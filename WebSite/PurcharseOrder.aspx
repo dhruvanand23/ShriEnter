@@ -164,7 +164,7 @@
                                         <tr>
                                             <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
                                             <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False" OnClick="btnEdit_Click"  /></td>
-                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False"  /></td>
+                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" OnClick="btnDelete_Click"  /></td>
                                         </tr>
                                         
                                     </table>
@@ -198,11 +198,11 @@
                                       <thead>
                                         <tr>
                                             
-                                            <th>Sr.No.</th>                                               
+                                                                                        
                                             <th>Item Name</th>
                                             <th>Quantity</th>
                                             <th>Price</th>
-                                            <th>Total</th>                                            
+                                                                                        
                                             
                                         </tr>
                                     </thead>
@@ -211,11 +211,11 @@
 
                              <ItemTemplate>             
                                  <tr>                                     
-                                        <td>#</td>
+                                        
                                         <td><%# Eval("RM_Name") %></td>
                                         <td><%# Eval("POItem_Quantity") %></td>
                                         <td><%# Eval("POItem_Price") %>   </td>
-                                        <td>#</td>                                        
+                                                                                
                                      
                                  </tr>
 

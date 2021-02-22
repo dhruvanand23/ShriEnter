@@ -13,7 +13,7 @@ namespace WebSite
 {
     public partial class PurcharseOrder : System.Web.UI.Page
     {
-        string SearchName;
+        string SearchName, poItemID;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd1 = new SqlCommand();
@@ -38,34 +38,55 @@ namespace WebSite
             PO_Date.SelectedDate = PO_Date.TodaysDate;
         }
 
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+
+            cmd2 = new SqlCommand("select POITEM_ID from tblPOItems where PO_ID = '"+SearchName+"' and RM_ID ='"+ PO_ItemName.SelectedItem.Value + "'", con);
+            SqlDataReader dr = cmd2.ExecuteReader();
+            if (dr.Read())
+            {
+                poItemID = dr.GetValue(0).ToString();
+                dr.Close();
+            }
+
+            cmd = new SqlCommand("UPDATE tblPOItems SET POItem_Price = '" + PO_Amount.Text + "', POItem_Quantity = '" + PO_Quantity.Text + "'WHERE POItem_ID ='" + poItemID + "'", con);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Purchase Order Updated Successfully ');  </script>");
+
+            BindPurchaseOrder1();
+            PO_Quantity.Text = "";
+            PO_Amount.Text = "";
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+
+            cmd2 = new SqlCommand("select POITEM_ID from tblPOItems where PO_ID = '" + SearchName + "' and RM_ID ='" + PO_ItemName.SelectedItem.Value + "'", con);
+            SqlDataReader dr = cmd2.ExecuteReader();
+            if (dr.Read())
+            {
+                poItemID = dr.GetValue(0).ToString();
+                dr.Close();
+            }
+
+            cmd = new SqlCommand("DELETE FROM tblPOItems WHERE POITEM_ID='"+ poItemID + "'", con);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Purchase Order Deleted Successfully ');  </script>");
+
+            BindPurchaseOrder1();
+            PO_Quantity.Text = "";
+            PO_Amount.Text = "";
+        }
+
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             SearchName = TextBox1.Text;
 
-            try
-            {
-                cmd2 = new SqlCommand("select tblPurchaseOrder.*, tblSupplier.SupName from tblPurchaseOrder, tblSupplier where tblPurchaseOrder.SupID = tblSupplier.SupID and tblPurchaseOrder.PO_ID='" + SearchName + "'", con);
-                SqlDataReader dr1 = cmd2.ExecuteReader();
-                if (dr1.Read())
-                {
-                    lblDate.Text = dr1.GetValue(1).ToString();
-                    lblSupName.Text = dr1.GetValue(3).ToString();
-                    dr1.Close();
-                }
-            }
-            catch (Exception e1) { Response.Write(e1); }
-
-            using (SqlCommand cmd1 = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID and tblPOItems.PO_ID='" + SearchName + "'", con))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter(cmd1))
-                {
-                    DataTable dt2 = new DataTable();
-                    sda.Fill(dt2);
-                    rptrPO.DataSource = dt2;
-                    rptrPO.DataBind();
-                    dt2.Dispose();
-                }
-            }
+            BindPurchaseOrder1();
 
             cmd = new SqlCommand("select *  from tblPurchaseOrder  where PO_ID=@uname", con);
             cmd.Parameters.AddWithValue("@uname", SearchName);         
@@ -103,7 +124,36 @@ namespace WebSite
             lblMsg.Text = "Please re-enter the quantity.";
         }
 
-        
+        private void BindPurchaseOrder1()
+        {
+            SearchName = TextBox1.Text;
+
+            try
+            {
+                cmd2 = new SqlCommand("select tblPurchaseOrder.*, tblSupplier.SupName from tblPurchaseOrder, tblSupplier where tblPurchaseOrder.SupID = tblSupplier.SupID and tblPurchaseOrder.PO_ID='" + SearchName + "'", con);
+                SqlDataReader dr = cmd2.ExecuteReader();
+                if (dr.Read())
+                {
+                    lblDate.Text = dr.GetValue(1).ToString();
+                    lblSupName.Text = dr.GetValue(3).ToString();
+                    dr.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            using (SqlCommand cmd = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID and tblPOItems.PO_ID='" + SearchName + "'", con))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt7 = new DataTable();
+                    sda.Fill(dt7);
+                    rptrPO.DataSource = dt7;
+                    rptrPO.DataBind();
+                    dt7.Dispose();
+                }
+            }
+        }
+
         private void BindPurchaseOrder()
         {
             try
@@ -139,6 +189,7 @@ namespace WebSite
                     sda.Fill(dt);
                     rptrPO.DataSource = dt;
                     rptrPO.DataBind();
+                    dt.Dispose();
                 }
             }
         }
