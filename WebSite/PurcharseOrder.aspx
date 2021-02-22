@@ -74,10 +74,7 @@
          .auto-style33 {
              
          }
-         .auto-style34 {
-             width: 576px;
-         }
-    </style>
+         </style>
 
     <br />
     <br />
@@ -99,7 +96,7 @@
                                 
                                 <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Supplier Name "></asp:TextBox>
                                 &nbsp;&nbsp;
-                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" />
+                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" OnClick="btnSearch_Click" />
                             </tr>
 
                             
@@ -145,6 +142,7 @@
                                             <asp:Label ID="Label4" runat="server" Text="Quantity :"></asp:Label>
                                         </td>
                                         <td class="auto-style25">
+                                            <asp:Label ID="lblMsg" runat="server" Text="" Font-Bold="True" Font-Size="Larger" ForeColor="Red"></asp:Label>
                                             <asp:TextBox ID="PO_Quantity" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Email" ControlToValidate="PO_Quantity" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </tr>
@@ -165,7 +163,7 @@
                                     <table class="auto-style15">
                                         <tr>
                                             <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
-                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False"  /></td>
+                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False" OnClick="btnEdit_Click"  /></td>
                                             <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False"  /></td>
                                         </tr>
                                         

@@ -13,11 +13,12 @@ namespace WebSite
 {
     public partial class PurcharseOrder : System.Web.UI.Page
     {
-
+        string SearchName;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd1 = new SqlCommand();
         SqlCommand cmd2 = new SqlCommand();
+        SqlCommand cmd3 = new SqlCommand();
         string PO_Id, PO_Id2;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -37,6 +38,72 @@ namespace WebSite
             PO_Date.SelectedDate = PO_Date.TodaysDate;
         }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+
+            try
+            {
+                cmd2 = new SqlCommand("select tblPurchaseOrder.*, tblSupplier.SupName from tblPurchaseOrder, tblSupplier where tblPurchaseOrder.SupID = tblSupplier.SupID and tblPurchaseOrder.PO_ID='" + SearchName + "'", con);
+                SqlDataReader dr1 = cmd2.ExecuteReader();
+                if (dr1.Read())
+                {
+                    lblDate.Text = dr1.GetValue(1).ToString();
+                    lblSupName.Text = dr1.GetValue(3).ToString();
+                    dr1.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            using (SqlCommand cmd1 = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID and tblPOItems.PO_ID='" + SearchName + "'", con))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd1))
+                {
+                    DataTable dt2 = new DataTable();
+                    sda.Fill(dt2);
+                    rptrPO.DataSource = dt2;
+                    rptrPO.DataBind();
+                    dt2.Dispose();
+                }
+            }
+
+            cmd = new SqlCommand("select *  from tblPurchaseOrder  where PO_ID=@uname", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);         
+            SqlDataReader dr3 = cmd.ExecuteReader();
+            if (dr3.Read())
+            {
+                string dateString = dr3.GetValue(1).ToString();
+                DateTime date = Convert.ToDateTime(dateString);
+                PO_Date.TodaysDate = date;
+                PO_Date.SelectedDate = PO_Date.TodaysDate;
+                PO_SupName.SelectedValue = dr3.GetValue(2).ToString();
+                dr3.Close();
+            }
+            
+
+            PO_ItemName.Enabled = true;
+            PO_Quantity.Enabled = true;
+            PO_Amount.Enabled = true;
+
+            cmd3 = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID and PO_ID=@uname", con);
+            cmd3.Parameters.AddWithValue("@uname", SearchName);
+            SqlDataAdapter sda1 = new SqlDataAdapter(cmd3);
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            if (dt1.Rows.Count != 0)
+            {
+                PO_ItemName.DataSource = dt1;
+                PO_ItemName.DataTextField = "RM_Name";
+                PO_ItemName.DataValueField = "RM_ID";
+                PO_ItemName.DataBind();
+                PO_ItemName.Items.Insert(0, new ListItem("-Select-", "0"));
+                dt1.Dispose();
+            }
+
+            lblMsg.Text = "Please re-enter the quantity.";
+        }
+
+        
         private void BindPurchaseOrder()
         {
             try
@@ -84,11 +151,11 @@ namespace WebSite
         protected void PO_ItemName_SelectedIndexChanged(object sender, EventArgs e)
         {
             AmountFetch();
+
         }
 
         private void AmountFetch()
         {
-
             cmd = new SqlCommand("Select RM_Price from tblRMaterial where RM_ID=@uname", con);
             cmd.Parameters.AddWithValue("@uname", PO_ItemName.SelectedItem.Value);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -113,6 +180,7 @@ namespace WebSite
                 PO_SupName.DataValueField = "SupID";
                 PO_SupName.DataBind();
                 PO_SupName.Items.Insert(0, new ListItem("-Select-", "0"));
+                dt.Dispose();
                 
             }
         }
@@ -132,6 +200,7 @@ namespace WebSite
                 PO_ItemName.DataValueField = "RM_ID";
                 PO_ItemName.DataBind();
                 PO_ItemName.Items.Insert(0, new ListItem("-Select-", "0"));
+                dt.Dispose();
 
             }
         }

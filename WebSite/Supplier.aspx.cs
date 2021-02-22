@@ -90,6 +90,7 @@ namespace WebSite
         protected void btnEdit_Click(object sender, EventArgs e)
         {
             SearchName = TextBox1.Text;
+
             cmd = new SqlCommand("UPDATE tblSupplier SET SupName = '"+SupName.Text+"', SupPhNo = '"+SupPhNumber.Text+ "', SupAdd = '" + SupAddress.Text + "',SupEmail = '" + SupEmail.Text + "',SupGST = '" + SupGST.Text + "',SupBank = '" + SupBankName.Text + "',SupAccNo = '" + SupAccNo.Text + "',SupIFSC = '" + SupIFSC.Text + "' WHERE SupName=@uname;", con);
             cmd.Parameters.AddWithValue("@uname", SearchName);
             cmd.ExecuteNonQuery();
