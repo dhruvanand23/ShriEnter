@@ -162,7 +162,7 @@
                                 <td class="auto-style19">
                                     <table class="auto-style15">
                                         <tr>
-                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add"  /></td>
+                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
                                             <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False"   /></td>
                                             <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" /></td>
                                         </tr>
