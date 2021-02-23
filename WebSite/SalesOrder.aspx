@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeFile="PurcharseOrder.aspx.cs" Inherits="WebSite.PurcharseOrder" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeFile="SalesOrder.aspx.cs" Inherits="WebSite.SalesOrder" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <style type="text/css">
+    <style type="text/css">
         .auto-style12 {
             width: 100%;
             height: 615px;
@@ -81,10 +81,10 @@
     <br />
 
     <hr />
-    <h2><b>Purchase Order</b></h2>   
-    <hr />    
-   
-        <div>
+    <h2><b>Sales Order</b></h2>   
+    <hr /> 
+
+    <div>
 
             <table class="auto-style12">
                 <tr>
@@ -94,9 +94,9 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Supplier Name "></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Customer Name "></asp:TextBox>
                                 &nbsp;&nbsp;
-                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" OnClick="btnSearch_Click" />
+                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False"  />
                             </tr>
 
                             
@@ -106,10 +106,10 @@
                                     
                                     <tr>
                                         <td class="auto-style23">
-                                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Add Purchase Order" GroupName="AddSelection" AutoPostBack="True" OnCheckedChanged="AddSelection_CheckedChanged" />
+                                            <asp:RadioButton ID="RadioButton1" runat="server" Text="Add Sales Order" GroupName="AddSales" AutoPostBack="True" OnCheckedChanged="AddSales_CheckedChanged" />
                                         </td>
                                         <td class="auto-style23">
-                                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Add Item" GroupName="AddSelection" AutoPostBack="True" OnCheckedChanged="AddSelection_CheckedChanged" />
+                                            <asp:RadioButton ID="RadioButton2" runat="server" Text="Add Product" GroupName="AddSales" AutoPostBack="True" OnCheckedChanged="AddSales_CheckedChanged" />
                                         </td>
                                     </tr>
                                     <tr>
@@ -117,24 +117,24 @@
                                             <asp:Label ID="Label1" runat="server" Text="Date :"></asp:Label>
                                         </td>
                                         <td class="auto-style33">
-                                            <asp:Calendar ID="PO_Date" runat="server" SelectionMode="DayWeekMonth" Enabled="False"></asp:Calendar>
+                                            <asp:Calendar ID="SO_Date" runat="server" SelectionMode="DayWeekMonth" Enabled="False"></asp:Calendar>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="auto-style26">
-                                            <asp:Label ID="Label2" runat="server" Text="Supplier Name :"></asp:Label>
+                                            <asp:Label ID="Label2" runat="server" Text="Customer Name :"></asp:Label>
                                         </td>
                                         
                                         <td class="auto-style27">
-                                            <asp:DropDownList ID="PO_SupName" CssClass ="form-control" runat="server" Enabled="False" OnSelectedIndexChanged="PO_SupName_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                                            <asp:DropDownList ID="SO_CustomerName" CssClass ="form-control" runat="server" Enabled="False"  AutoPostBack="True"></asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="auto-style28">
-                                            <asp:Label ID="Label3"  runat="server" Text="Item Name :"></asp:Label>
+                                            <asp:Label ID="Label3"  runat="server" Text="Product Name :"></asp:Label>
                                         </td>
                                         <td class="auto-style29">
-                                            <asp:DropDownList ID="PO_ItemName" CssClass ="form-control" runat="server" Enabled="False" OnSelectedIndexChanged="PO_ItemName_SelectedIndexChanged" AutoPostBack="True"> </asp:DropDownList>
+                                            <asp:DropDownList ID="SO_ProductName" CssClass ="form-control" runat="server" Enabled="False"  AutoPostBack="True" OnSelectedIndexChanged="SO_ItemName_SelectedIndexChanged" > </asp:DropDownList>
                                         </td>
                                     </tr>
                                     <tr>
@@ -143,16 +143,16 @@
                                         </td>
                                         <td class="auto-style25">
                                             <asp:Label ID="lblMsg" runat="server" Text="" Font-Bold="True" Font-Size="Larger" ForeColor="Red"></asp:Label>
-                                            <asp:TextBox ID="PO_Quantity" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Quantity" ControlToValidate="PO_Quantity" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:TextBox ID="SO_Quantity" runat="server" CssClass="form-control" Enabled="False" ></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Please Enter Email" ControlToValidate="SO_Quantity" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                     </tr>
                                     <tr>
                                         <td class="auto-style30">
                                             <asp:Label ID="Label5" runat="server" Text="Amount :"></asp:Label>
                                         </td>
                                         <td class="auto-style31">
-                                            <asp:TextBox ID="PO_Amount" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Please Enter Amount" ControlToValidate="PO_Amount" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:TextBox ID="SO_Amount" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Please Enter Amount" ControlToValidate="SO_Amount" Font-Italic="True" Font-Size="Medium" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                       </table>
@@ -162,9 +162,9 @@
                                 <td class="auto-style19">
                                     <table class="auto-style15">
                                         <tr>
-                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
-                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False" OnClick="btnEdit_Click"  /></td>
-                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" OnClick="btnDelete_Click"  /></td>
+                                            <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add"  /></td>
+                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False"   /></td>
+                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" /></td>
                                         </tr>
                                         
                                     </table>
@@ -183,9 +183,9 @@
                                     <asp:Label ID="lblDate" runat="server" Text=""></asp:Label>
                                 </td>
                                 <td class="auto-style23">
-                                    <asp:Label ID="Label6" runat="server" Text="Supplier Name:"></asp:Label>
+                                    <asp:Label ID="Label6" runat="server" Text="Customer Name:"></asp:Label>
                                     <br />
-                                    <asp:Label ID="lblSupName" runat="server" Text=""></asp:Label>
+                                    <asp:Label ID="lblCustomerName" runat="server" Text=""></asp:Label>
                                 </td>
                             </tr>
                          </table>   
@@ -199,7 +199,7 @@
                                         <tr>
                                             
                                                                                         
-                                            <th>Item Name</th>
+                                            <th>Product Name</th>
                                             <th>Quantity</th>
                                             <th>Price</th>
                                                                                         
@@ -212,9 +212,9 @@
                              <ItemTemplate>             
                                  <tr>                                     
                                         
-                                        <td><%# Eval("RM_Name") %></td>
-                                        <td><%# Eval("POItem_Quantity") %></td>
-                                        <td><%# Eval("POItem_Price") %>   </td>
+                                        <td><%# Eval("Product_Name") %></td>
+                                        <td><%# Eval("SOProduct_Quantity") %></td>
+                                        <td><%# Eval("SOProduct_Price") %>   </td>
                                                                                 
                                      
                                  </tr>
@@ -232,9 +232,8 @@
                         </div>
                             </tr>
                          </table>
-                    </td>                    
-                
-
-        </div>
+                    </td>                
+              </div>
 
 </asp:Content>
+

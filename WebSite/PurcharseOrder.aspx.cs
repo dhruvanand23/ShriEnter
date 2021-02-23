@@ -219,7 +219,6 @@ namespace WebSite
 
         private void BindSupplier()
         {
-
             cmd = new SqlCommand("Select * from tblSupplier", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -275,7 +274,7 @@ namespace WebSite
                 PO_Quantity.Enabled = true;
                 PO_Amount.Enabled = true;
             }
-        }
+         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
