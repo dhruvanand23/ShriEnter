@@ -344,8 +344,6 @@ namespace WebSite
                 PO_Quantity.Text = "";
                 PO_Amount.Text = "";
             }
-
-
         }
     }
 }
