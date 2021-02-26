@@ -57,7 +57,7 @@ namespace WebSite
 
             BindPurchaseOrder1();
             PO_Quantity.Text = "";
-            PO_Amount.Text = "";
+            PO_Amount.Text = "";           
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
@@ -145,11 +145,11 @@ namespace WebSite
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {
-                    DataTable dt7 = new DataTable();
-                    sda.Fill(dt7);
-                    rptrPO.DataSource = dt7;
+                    DataTable dt8 = new DataTable();
+                    sda.Fill(dt8);
+                    rptrPO.DataSource = dt8;
                     rptrPO.DataBind();
-                    dt7.Dispose();
+                    dt8.Dispose();
                 }
             }
         }

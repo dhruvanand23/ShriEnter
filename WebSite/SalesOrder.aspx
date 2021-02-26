@@ -96,7 +96,7 @@
                                 
                                 <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Customer Name "></asp:TextBox>
                                 &nbsp;&nbsp;
-                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False"  />
+                                <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" OnClick="btnSearch_Click"  />
                             </tr>
 
                             
@@ -163,8 +163,8 @@
                                     <table class="auto-style15">
                                         <tr>
                                             <td><asp:Button ID="btnAdd" cssclass="button" runat="server" Text="Add" OnClick="btnAdd_Click" /></td>
-                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False"   /></td>
-                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" /></td>
+                                            <td><asp:Button ID="btnEdit" cssclass="button" runat="server" Text="Update" CausesValidation="False" OnClick="btnEdit_Click"  /></td>
+                                            <td><asp:Button ID="btnDelete" cssclass="button" runat="server" Text="Delete" CausesValidation="False" OnClick="btnDelete_Click" /></td>
                                         </tr>
                                         
                                     </table>
@@ -191,7 +191,7 @@
                          </table>   
                              <div class="panel panel-default" >
                
-                            <asp:repeater ID="rptrPO" runat="server" >
+                            <asp:repeater ID="rptrSO" runat="server" >
 
                             <HeaderTemplate>
                                  <table class="table" style="width:600px" >
@@ -212,9 +212,9 @@
                              <ItemTemplate>             
                                  <tr>                                     
                                         
-                                        <td><%# Eval("Product_Name") %></td>
-                                        <td><%# Eval("SOProduct_Quantity") %></td>
-                                        <td><%# Eval("SOProduct_Price") %>   </td>
+                                        <td><%# Eval("PName") %></td>
+                                        <td><%# Eval("SOItem_Quantity") %></td>
+                                        <td><%# Eval("SOItem_Price") %>   </td>
                                                                                 
                                      
                                  </tr>

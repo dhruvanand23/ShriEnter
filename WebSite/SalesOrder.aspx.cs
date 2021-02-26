@@ -111,7 +111,7 @@ namespace WebSite
             }
         }
 
-        /*private void BindSalesOrder1()
+        private void BindSalesOrder1()
         {
             SearchName = TextBox1.Text;
 
@@ -132,14 +132,54 @@ namespace WebSite
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {
-                    DataTable dt8 = new DataTable();
-                    sda.Fill(dt8);
-                    rptrPO.DataSource = dt8;
-                    rptrPO.DataBind();
-                    dt8.Dispose();
+                    DataTable dt9 = new DataTable();
+                    sda.Fill(dt9);
+                    rptrSO.DataSource = dt9;
+                    rptrSO.DataBind();
+                    dt9.Dispose();
                 }
             }
-        }*/
+        }
+
+        private void BindSalesOrder()
+        {
+            try
+            {
+                cmd1 = new SqlCommand("SELECT TOP 1 SO_ID FROM tblSOProduct ORDER BY SOPro_ID DESC", con);
+                SqlDataReader dr = cmd1.ExecuteReader();
+                if (dr.Read())
+                {
+                    SO_Id2 = dr.GetValue(0).ToString();
+                    dr.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            try
+            {
+                cmd2 = new SqlCommand("select tblSalesOrder.*, tblUsers.Name from tblUsers, tblSalesOrder where tblSalesOrder.Uid = tblUsers.Uid and tblSalesOrder.SO_ID='" + SO_Id2 + "'", con);
+                SqlDataReader dr = cmd2.ExecuteReader();
+                if (dr.Read())
+                {
+                    lblDate.Text = dr.GetValue(1).ToString();
+                    lblCustomerName.Text = dr.GetValue(3).ToString();
+                    dr.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            using (SqlCommand cmd = new SqlCommand("select tblSOProduct.*, tblProducts.PName from tblSOProduct, tblProducts where tblSOProduct.PID = tblProducts.PID and tblSOProduct.SO_ID='" + SO_Id2 + "'", con))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    rptrSO.DataSource = dt;
+                    rptrSO.DataBind();
+                    dt.Dispose();
+                }
+            }
+        }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
@@ -172,7 +212,7 @@ namespace WebSite
                 catch (Exception e1) { Response.Write(e1); }
 
                 Response.Write("<script> alert('Sales Order Added Successfully ');  </script>");
-                //BindSalesOrder();
+                BindSalesOrder();
 
                 con.Close();
                 SO_ProductName.SelectedIndex = 0;
@@ -196,13 +236,13 @@ namespace WebSite
 
                 try
                 {
-                    cmd2 = new SqlCommand("Insert into tblSOProduct(SOPro_ID, SOItem_Price, SOItem_Quantity, SO_ID) Values('" + SO_ProductName.SelectedItem.Value + "','" + SO_Amount.Text + "','" + SO_Quantity.Text + "','" + SO_Id + "')", con);
+                    cmd2 = new SqlCommand("Insert into tblSOProduct(PID, SOItem_Price, SOItem_Quantity, SO_ID) Values('" + SO_ProductName.SelectedItem.Value + "','" + SO_Amount.Text + "','" + SO_Quantity.Text + "','" + SO_Id + "')", con);
                     cmd2.ExecuteNonQuery();
                 }
                 catch (Exception e1) { Response.Write(e1); }
 
                 Response.Write("<script> alert('Item Added Successfully ');  </script>");
-                //BindPurchaseOrder();
+                BindSalesOrder();
 
                 con.Close();
                 SO_ProductName.SelectedIndex = 0;
@@ -215,7 +255,7 @@ namespace WebSite
         {
             SearchName = TextBox1.Text;
 
-            //BindPurchaseOrder1();
+            BindSalesOrder1();
 
             cmd = new SqlCommand("select *  from tblSalesOrder  where SO_ID=@uname", con);
             cmd.Parameters.AddWithValue("@uname", SearchName);
@@ -226,7 +266,7 @@ namespace WebSite
                 DateTime date = Convert.ToDateTime(dateString);
                 SO_Date.TodaysDate = date;
                 SO_Date.SelectedDate = SO_Date.TodaysDate;
-                SO_ProductName.SelectedValue = dr3.GetValue(2).ToString();
+                SO_CustomerName.SelectedValue = dr3.GetValue(2).ToString();
                 dr3.Close();
             }
 
@@ -234,23 +274,67 @@ namespace WebSite
             SO_ProductName.Enabled = true;
             SO_Quantity.Enabled = true;
             SO_Amount.Enabled = true;
-            /*start here*/
-            cmd3 = new SqlCommand("select tblPOItems.*, tblRMaterial.RM_Name from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID and PO_ID=@uname", con);
+            
+            cmd3 = new SqlCommand("select tblSOProduct.*, tblProducts.PName from tblSOProduct, tblProducts where tblSOProduct.PID = tblProducts.PID and SO_ID=@uname", con);
             cmd3.Parameters.AddWithValue("@uname", SearchName);
             SqlDataAdapter sda1 = new SqlDataAdapter(cmd3);
             DataTable dt1 = new DataTable();
             sda1.Fill(dt1);
             if (dt1.Rows.Count != 0)
             {
-                PO_ItemName.DataSource = dt1;
-                PO_ItemName.DataTextField = "RM_Name";
-                PO_ItemName.DataValueField = "RM_ID";
-                PO_ItemName.DataBind();
-                PO_ItemName.Items.Insert(0, new ListItem("-Select-", "0"));
+                SO_ProductName.DataSource = dt1;
+                SO_ProductName.DataTextField = "PName";
+                SO_ProductName.DataValueField = "PID";
+                SO_ProductName.DataBind();
+                SO_ProductName.Items.Insert(0, new ListItem("-Select-", "0"));
                 dt1.Dispose();
             }
 
             lblMsg.Text = "Please re-enter the quantity.";
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+
+            cmd2 = new SqlCommand("select SOPro_ID from tblSOProduct where SO_ID = '" + SearchName + "' and PID ='" + SO_ProductName.SelectedItem.Value + "'", con);
+            SqlDataReader dr = cmd2.ExecuteReader();
+            if (dr.Read())
+            {
+                SO_ProDuctID = dr.GetValue(0).ToString();
+                dr.Close();
+            }
+
+            cmd = new SqlCommand("UPDATE tblSOProduct SET SOItem_Price = '" + SO_Amount.Text + "', SOItem_Quantity = '" + SO_Quantity.Text + "'WHERE SOPro_ID ='" + SO_ProDuctID + "'", con);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Sales Order Updated Successfully ');  </script>");
+
+            BindSalesOrder1();
+            SO_Quantity.Text = "";
+            SO_Amount.Text = "";
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            SearchName = TextBox1.Text;
+
+            cmd2 = new SqlCommand("select SOPro_ID from tblSOProduct where SO_ID = '" + SearchName + "' and PID ='" + SO_ProductName.SelectedItem.Value + "'", con);
+            SqlDataReader dr = cmd2.ExecuteReader();
+            if (dr.Read())
+            {
+                SO_ProDuctID = dr.GetValue(0).ToString();
+                dr.Close();
+            }
+
+            cmd = new SqlCommand("DELETE FROM tblSOProduct WHERE SOPro_ID='" + SO_ProDuctID + "'", con);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Sales Order Item Deleted Successfully ');  </script>");
+
+            BindSalesOrder1();
+            SO_Quantity.Text = "";
+            SO_Amount.Text = "";
         }
 
     }
