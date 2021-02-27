@@ -92,6 +92,8 @@ namespace WebSite
 
         protected void AddSales_CheckedChanged(Object sender, EventArgs e)
         {
+            TextBox1.Enabled = false;
+            btnSearch.Enabled = false;
             if (RadioButton1.Checked == true)
             {
                 SO_Date.Enabled = true;
@@ -121,6 +123,7 @@ namespace WebSite
                 SqlDataReader dr = cmd2.ExecuteReader();
                 if (dr.Read())
                 {
+                    lblSOId.Text = dr.GetValue(0).ToString();
                     lblDate.Text = dr.GetValue(1).ToString();
                     lblCustomerName.Text = dr.GetValue(3).ToString();
                     dr.Close();
@@ -161,6 +164,7 @@ namespace WebSite
                 SqlDataReader dr = cmd2.ExecuteReader();
                 if (dr.Read())
                 {
+                    lblSOId.Text = dr.GetValue(0).ToString();
                     lblDate.Text = dr.GetValue(1).ToString();
                     lblCustomerName.Text = dr.GetValue(3).ToString();
                     dr.Close();
@@ -335,6 +339,12 @@ namespace WebSite
             BindSalesOrder1();
             SO_Quantity.Text = "";
             SO_Amount.Text = "";
+        }
+
+        protected void TextBox1_TextChanged(Object sender, EventArgs e)
+        {
+            RadioButton1.Enabled = false;
+            RadioButton2.Enabled = false;
         }
 
     }

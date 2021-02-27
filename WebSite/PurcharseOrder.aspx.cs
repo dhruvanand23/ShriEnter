@@ -134,6 +134,7 @@ namespace WebSite
                 SqlDataReader dr = cmd2.ExecuteReader();
                 if (dr.Read())
                 {
+                    lblPOId.Text = dr.GetValue(0).ToString();
                     lblDate.Text = dr.GetValue(1).ToString();
                     lblSupName.Text = dr.GetValue(3).ToString();
                     dr.Close();
@@ -174,6 +175,7 @@ namespace WebSite
                 SqlDataReader dr = cmd2.ExecuteReader();
                 if (dr.Read())
                 {
+                    lblPOId.Text = dr.GetValue(0).ToString();
                     lblDate.Text = dr.GetValue(1).ToString();
                     lblSupName.Text = dr.GetValue(3).ToString();
                     dr.Close();
@@ -257,6 +259,8 @@ namespace WebSite
 
         protected void AddSelection_CheckedChanged(Object sender, EventArgs e)
         {
+            TextBox1.Enabled = false;
+            btnSearch.Enabled = false;
             if (RadioButton1.Checked == true)
             {
                 PO_Date.Enabled = true;
@@ -345,5 +349,12 @@ namespace WebSite
                 PO_Amount.Text = "";
             }
         }
+
+        protected void TextBox1_TextChanged(Object sender, EventArgs e)
+        {
+            RadioButton1.Enabled = false;
+            RadioButton2.Enabled = false;
+        }
+
     }
 }

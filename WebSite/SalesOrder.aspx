@@ -94,7 +94,7 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Customer Name "></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Customer Name " OnTextChanged="TextBox1_TextChanged" AutoPostBack="True"></asp:TextBox>
                                 &nbsp;&nbsp;
                                 <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" OnClick="btnSearch_Click"  />
                             </tr>
@@ -177,6 +177,11 @@
                     <td class="auto-style20" >
                         <table style="width:600px">
                             <tr>
+                                <td class="auto-style23">
+                                    <asp:Label ID="Label7" runat="server" Text="S.O.Id:"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblSOId" runat="server" Text=""></asp:Label>
+                                </td>
                                 <td class="auto-style23">
                                     <asp:Label ID="Label8" runat="server" Text="Date:"></asp:Label>
                                     <br />
