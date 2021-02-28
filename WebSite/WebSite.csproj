@@ -158,6 +158,8 @@
     <Content Include="Products1.aspx" />
     <Content Include="ProductView1.aspx" />
     <Content Include="PurcharseOrder.aspx" />
+    <Content Include="PurchaseOrderView.aspx" />
+    <Content Include="PurchaseOrderView1.aspx" />
     <Content Include="Quotation.aspx" />
     <Content Include="QuotationDispaly.aspx" />
     <Content Include="RawMaterial.aspx" />
@@ -298,6 +300,20 @@
     </Compile>
     <Compile Include="PurcharseOrder.aspx.designer.cs">
       <DependentUpon>PurcharseOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderView.aspx.cs">
+      <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseOrderView.aspx.designer.cs">
+      <DependentUpon>PurchaseOrderView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseOrderView1.aspx.cs">
+      <DependentUpon>PurchaseOrderView1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseOrderView1.aspx.designer.cs">
+      <DependentUpon>PurchaseOrderView1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Quotation.aspx.cs">
       <DependentUpon>Quotation.aspx</DependentUpon>
