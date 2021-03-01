@@ -7,6 +7,7 @@
     <hr />
     <h2><b>Purchase Order List View</b></h2>  
     <hr />
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
     <div class="panel panel-default" >
         <asp:Repeater ID="Repeater1" runat="server"></asp:Repeater>

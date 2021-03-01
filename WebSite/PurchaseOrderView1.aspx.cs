@@ -11,6 +11,9 @@ namespace WebSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Int64 PO_Id = Convert.ToInt64(Request.QueryString["PO_ID"]);
+            string PO_Id2 = PO_Id.ToString();
+            Label1.Text = PO_Id2;
             if (Request.QueryString["PO_ID"] != null)
             {
                 if (!IsPostBack)

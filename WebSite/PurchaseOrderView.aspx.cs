@@ -43,10 +43,7 @@ namespace WebSite
             }
         }
 
-        protected void btnView_Click(object sender, EventArgs e)
-        {
-            Response.Redirect()
-        }
+        
 
     }
 }
