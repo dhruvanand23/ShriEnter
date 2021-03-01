@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.IO;
+using System.Drawing;
 
 namespace WebSite
 {
@@ -15,8 +16,11 @@ namespace WebSite
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
+        SqlCommand cmd1 = new SqlCommand();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
@@ -25,6 +29,33 @@ namespace WebSite
             if (!IsPostBack)
             {
                 BindPurchaseOrder();
+                BindStatus();
+            }
+
+
+        }
+
+        private void BindStatus()
+        {
+            cmd = new SqlCommand("select PO_Status from tblPurchaseOrder", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                string Po_status = dr.GetValue(0).ToString();
+                
+                if(Po_status == "live")
+                {
+                    Button btnStatus = (Button)FindControl("btnStatus");
+
+                    btnStatus.Text = "Dead";
+                }
+                else if(Po_status == "dead")
+                {
+                    Button btnStatus = (Button)FindControl("btnStatus");
+                    btnStatus.Text = "Live";
+                }
+
+                dr.Close();
             }
         }
 
@@ -43,7 +74,20 @@ namespace WebSite
             }
         }
 
-        
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            string PO_Id2 = ((Button)sender).CommandArgument.ToString();
+
+            cmd = new SqlCommand("DELETE FROM tblPOItems WHERE PO_ID='" + PO_Id2 + "'", con);
+            cmd.ExecuteNonQuery();
+
+            cmd1 = new SqlCommand("DELETE FROM tblPurchaseOrder WHERE PO_ID='" + PO_Id2 + "'", con);
+            cmd1.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Purchase Order Deleted Successfully ');  </script>");
+            BindPurchaseOrder();
+        }
+
 
     }
 }

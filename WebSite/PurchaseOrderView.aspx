@@ -10,7 +10,6 @@
           color: #fff;
           background-color: #4CAF50;
           border: none;
-          
           box-shadow: 0 9px #999;
         }
 
@@ -53,7 +52,7 @@
 
                              <ItemTemplate>             
                                  <tr>                               
-                                     <td><a href="PurchaseOrderView1.aspx?PO_Id=<%# Eval("PO_ID") %>" style="text-decoration:none;"><%# Eval("PO_ID") %></td>
+                                     <td><a href="PurchaseOrderView1.aspx?PO_Id=<%# Eval("PO_ID") %>" style="text-decoration:none;"><%# Eval("PO_ID") %></a></td>
                                      
                                      <td ><%# Eval("SupName") %></td>
                                      
@@ -61,11 +60,11 @@
                                      
                                      <td>
                                          <asp:Button ID="btnUpdate" runat="server" Text="Edit" CssClass="button" />
-                                     </td>
-                                     
+                                     </td>                                    
+                                    
                                      <td>
-                                         <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="button" />
-                                     </td>
+                                         <asp:Button  ID="btnDelete" runat="server" Text="Delete" CssClass="button"  OnClick="btnDelete_Click" CommandArgument='<%# Eval("PO_ID") %>' />
+                                     </td> 
                                       
                                      <td>
                                          <asp:Button ID="btnStatus" runat="server" Text="Status" CssClass="button" />
@@ -84,4 +83,5 @@
                          </asp:repeater>
                         </div>
 
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>

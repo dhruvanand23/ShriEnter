@@ -84,6 +84,11 @@ namespace WebSite
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+
+            RadioButton1.Enabled = false;
+            RadioButton2.Enabled = false;
+            btnAdd.Enabled = false;
+
             SearchName = TextBox1.Text;
 
             BindPurchaseOrder1();
@@ -136,7 +141,7 @@ namespace WebSite
                 {
                     lblPOId.Text = dr.GetValue(0).ToString();
                     lblDate.Text = dr.GetValue(1).ToString();
-                    lblSupName.Text = dr.GetValue(3).ToString();
+                    lblSupName.Text = dr.GetValue(4).ToString();
                     dr.Close();
                 }
             }
@@ -177,7 +182,7 @@ namespace WebSite
                 {
                     lblPOId.Text = dr.GetValue(0).ToString();
                     lblDate.Text = dr.GetValue(1).ToString();
-                    lblSupName.Text = dr.GetValue(3).ToString();
+                    lblSupName.Text = dr.GetValue(4).ToString();
                     dr.Close();
                 }
             }
@@ -349,12 +354,7 @@ namespace WebSite
                 PO_Amount.Text = "";
             }
         }
-
-        protected void TextBox1_TextChanged(Object sender, EventArgs e)
-        {
-            RadioButton1.Enabled = false;
-            RadioButton2.Enabled = false;
-        }
+        
 
     }
 }

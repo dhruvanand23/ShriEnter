@@ -257,6 +257,10 @@ namespace WebSite
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
+            RadioButton1.Enabled = false;
+            RadioButton2.Enabled = false;
+            btnAdd.Enabled = false;
+
             SearchName = TextBox1.Text;
 
             BindSalesOrder1();
@@ -340,12 +344,5 @@ namespace WebSite
             SO_Quantity.Text = "";
             SO_Amount.Text = "";
         }
-
-        protected void TextBox1_TextChanged(Object sender, EventArgs e)
-        {
-            RadioButton1.Enabled = false;
-            RadioButton2.Enabled = false;
-        }
-
     }
 }
