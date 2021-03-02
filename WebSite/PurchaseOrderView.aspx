@@ -45,6 +45,7 @@
                                             <th>Edit</th>
                                             <th>Delete</th>
                                             <th>Status</th>
+                                            <th>Change Status</th>
                                         </tr>
                                     </thead>
                                 <tbody>
@@ -59,16 +60,24 @@
                                      <td><%# Eval("PO_Date") %></td>
                                      
                                      <td>
-                                         <asp:Button ID="btnUpdate" runat="server" Text="Edit" CssClass="button" />
+                                         
+                                         <asp:Button ID="btnUpdate" runat="server" Text="Edit" CssClass="button" OnClick="btnUpdate_Click" CommandArgument='<%# Eval("PO_ID") %>'/>
+                                         
                                      </td>                                    
                                     
                                      <td>
                                          <asp:Button  ID="btnDelete" runat="server" Text="Delete" CssClass="button"  OnClick="btnDelete_Click" CommandArgument='<%# Eval("PO_ID") %>' />
                                      </td> 
-                                      
-                                     <td>
-                                         <asp:Button ID="btnStatus" runat="server" Text="Status" CssClass="button" />
+                                         
+                                     <td> 
+                                        <%# Eval("PO_Status") %>
+                                         
                                      </td>
+                                     <td>
+                                         
+                                         <asp:Button ID="btnUpdate1" runat="server" Text="Change Status" CssClass="button" OnClick="btnUpdate1_Click" CommandArgument='<%# Eval("PO_ID") %>' />
+                                     </td>
+
                                  </tr>
 
                              </ItemTemplate>

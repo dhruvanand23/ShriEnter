@@ -94,7 +94,7 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Supplier Name " OnTextChanged="TextBox1_TextChanged" AutoPostBack="True"></asp:TextBox>
+                                <asp:TextBox ID="TextBox1" runat="server" placeholder="Enter Supplier Name "  AutoPostBack="True"></asp:TextBox>
                                 &nbsp;&nbsp;
                                 <asp:Button ID="btnSearch" runat="server" Text="Search"  CausesValidation="False" OnClick="btnSearch_Click" />
                             </tr>

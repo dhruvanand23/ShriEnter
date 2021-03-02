@@ -17,7 +17,7 @@ namespace WebSite
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         SqlCommand cmd1 = new SqlCommand();
-
+        string PO_Id3;
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -28,36 +28,12 @@ namespace WebSite
             con.Open();
             if (!IsPostBack)
             {
-                BindPurchaseOrder();
-                BindStatus();
+                BindPurchaseOrder();    
             }
-
 
         }
 
-        private void BindStatus()
-        {
-            cmd = new SqlCommand("select PO_Status from tblPurchaseOrder", con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                string Po_status = dr.GetValue(0).ToString();
-                
-                if(Po_status == "live")
-                {
-                    Button btnStatus = (Button)FindControl("btnStatus");
 
-                    btnStatus.Text = "Dead";
-                }
-                else if(Po_status == "dead")
-                {
-                    Button btnStatus = (Button)FindControl("btnStatus");
-                    btnStatus.Text = "Live";
-                }
-
-                dr.Close();
-            }
-        }
 
         private void BindPurchaseOrder()
         {
@@ -73,19 +49,62 @@ namespace WebSite
                 }
             }
         }
+        
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             string PO_Id2 = ((Button)sender).CommandArgument.ToString();
+            
 
             cmd = new SqlCommand("DELETE FROM tblPOItems WHERE PO_ID='" + PO_Id2 + "'", con);
             cmd.ExecuteNonQuery();
+            
 
             cmd1 = new SqlCommand("DELETE FROM tblPurchaseOrder WHERE PO_ID='" + PO_Id2 + "'", con);
             cmd1.ExecuteNonQuery();
 
             Response.Write("<script> alert('Purchase Order Deleted Successfully ');  </script>");
             BindPurchaseOrder();
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string PO_Id2 = ((Button)sender).CommandArgument.ToString();
+            Response.Redirect("PurcharseOrder.aspx?PO_Id="+PO_Id2);
+        }
+
+        protected void btnUpdate1_Click(object sender, EventArgs e)
+        {
+            string PO_Id2 = ((Button)sender).CommandArgument.ToString();
+            
+
+
+            try
+            {
+                cmd1 = new SqlCommand("SELECT PO_Status FROM tblPurchaseOrder where PO_ID='" + PO_Id2 + "'", con);
+                SqlDataReader dr = cmd1.ExecuteReader();
+                if (dr.Read())
+                {
+                    PO_Id3 = dr.GetValue(0).ToString();
+                    dr.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            if(PO_Id3 == "Dead")
+            {
+                cmd = new SqlCommand("UPDATE tblPurchaseOrder SET PO_Status = 'Live' where PO_ID='" + PO_Id2 + "'", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (PO_Id3 == "Live")
+            {
+                cmd = new SqlCommand("UPDATE tblPurchaseOrder SET PO_Status = 'Dead' where PO_ID='" + PO_Id2 + "'", con);
+                cmd.ExecuteNonQuery();
+            }
+
+            Response.Write("<script> alert('Purchase Order Status Updated Successfully ');  </script>");
+            BindPurchaseOrder();
+
         }
 
 

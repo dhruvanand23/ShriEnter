@@ -20,8 +20,16 @@ namespace WebSite
         SqlCommand cmd2 = new SqlCommand();
         SqlCommand cmd3 = new SqlCommand();
         string PO_Id, PO_Id2;
+
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            Int64 PO_Id3 = Convert.ToInt64(Request.QueryString["PO_ID"]);
+            string PO_Id4 = PO_Id3.ToString();
+            TextBox1.Text = PO_Id4;
+
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
@@ -291,7 +299,7 @@ namespace WebSite
             {
                 try
                 {
-                    cmd = new SqlCommand("Insert into tblPurchaseOrder(PO_Date, SupID) Values('" + PO_Date.SelectedDate + "','" + PO_SupName.SelectedItem.Value + "')", con);
+                    cmd = new SqlCommand("Insert into tblPurchaseOrder(PO_Date, SupID , PO_Status) Values('" + PO_Date.SelectedDate + "','" + PO_SupName.SelectedItem.Value + "', 'Live')", con);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1) { Response.Write(e1); }
