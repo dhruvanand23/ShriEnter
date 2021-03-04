@@ -14,7 +14,7 @@
                 <td style ="width:300px; margin:10px; border: 1px solid black;">   
                     <table >
                         <tr><td style="height: 20px">Date: <asp:Label ID="lblDate" runat="server" Text=""></asp:Label></td></tr>
-                        <tr><td>POId: <asp:Label ID="lblPOId" runat="server" Text=""></asp:Label></td></tr>
+                        <tr><td>POId: <a<a href="Supplier.aspx">Supplier.aspx</a>sp:Label ID="lblPOId" runat="server" Text=""></asp:Label></td></tr>
                      </table>
                 </td>                
             </tr>

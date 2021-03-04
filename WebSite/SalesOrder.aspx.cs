@@ -191,7 +191,7 @@ namespace WebSite
             {
                 try
                 {
-                    cmd = new SqlCommand("Insert into tblSalesOrder(SO_Date, Uid) Values('" + SO_Date.SelectedDate + "','" + SO_CustomerName.SelectedItem.Value + "')", con);
+                    cmd = new SqlCommand("Insert into tblSalesOrder(SO_Date, Uid,SO_Status) Values('" + SO_Date.SelectedDate + "','" + SO_CustomerName.SelectedItem.Value + "','Live')", con);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1) { Response.Write(e1); }
