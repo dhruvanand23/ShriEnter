@@ -61,7 +61,7 @@
                                      
                                      <td>
                                          
-                                         <asp:Button ID="btnUpdate" runat="server" Text="Edit" CssClass="button" OnClick="btnUpdate_Click" CommandArgument='<%# Eval("PO_ID") %>'/>
+                                         <asp:Button ID="btnUpdate" runat="server" Text="Edit" CssClass="button" OnClick="btnUpdate_Click" />
                                          
                                      </td>                                    
                                     

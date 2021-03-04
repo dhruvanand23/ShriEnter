@@ -26,9 +26,7 @@ namespace WebSite
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Int64 PO_Id3 = Convert.ToInt64(Request.QueryString["PO_ID"]);
-            string PO_Id4 = PO_Id3.ToString();
-            TextBox1.Text = PO_Id4;
+            
 
             if (con.State == ConnectionState.Open)
             {
@@ -159,11 +157,11 @@ namespace WebSite
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
                 {
-                    DataTable dt8 = new DataTable();
-                    sda.Fill(dt8);
-                    rptrPO.DataSource = dt8;
+                    DataTable dt9 = new DataTable();
+                    sda.Fill(dt9);
+                    rptrPO.DataSource = dt9;
                     rptrPO.DataBind();
-                    dt8.Dispose();
+                    dt9.Dispose();
                 }
             }
         }

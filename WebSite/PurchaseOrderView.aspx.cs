@@ -69,8 +69,8 @@ namespace WebSite
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            string PO_Id2 = ((Button)sender).CommandArgument.ToString();
-            Response.Redirect("PurcharseOrder.aspx?PO_Id="+PO_Id2);
+            
+            Response.Redirect("PurcharseOrder.aspx");
         }
 
         protected void btnUpdate1_Click(object sender, EventArgs e)
