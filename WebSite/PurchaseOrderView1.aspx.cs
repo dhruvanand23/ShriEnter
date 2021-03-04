@@ -26,7 +26,7 @@ namespace WebSite
 
             Int64 PO_Id = Convert.ToInt64(Request.QueryString["PO_ID"]);
             PO_Id2 = PO_Id.ToString();
-            Label1.Text = PO_Id2;
+            
 
             if (Request.QueryString["PO_ID"] != null)
             {
@@ -34,6 +34,8 @@ namespace WebSite
                 {
                     BindDateID();
                     BindSupInfo();
+                    BindPOTable();
+                    BindGTotal();
                 }
             }
             else
@@ -72,5 +74,30 @@ namespace WebSite
             }
         }
 
+        private void BindPOTable()
+        {
+            using (cmd = new SqlCommand("select tblPOItems.*, tblRMaterial.*, CAST(tblPOItems.POItem_Price as int)*CAST(tblPOItems.POItem_Quantity as int) Total from tblPOItems, tblRMaterial where tblPOItems.RM_ID = tblRMaterial.RM_ID and tblPOItems.PO_ID='" + PO_Id2 + "'", con))
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    rptrPODetails.DataSource = dt;
+                    rptrPODetails.DataBind();
+                    dt.Dispose();
+                }
+            }
+        }
+
+        private void BindGTotal()
+        {
+            cmd = new SqlCommand("select Sum(CAST(POItem_Price as int)*CAST(POItem_Quantity as int)) from tblPOItems where PO_ID='" + PO_Id2 + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                lblGTotal.Text = dr.GetValue(0).ToString();
+                dr.Close();
+            }
+        }
     }
 }
