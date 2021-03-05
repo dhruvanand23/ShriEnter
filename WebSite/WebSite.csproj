@@ -164,6 +164,8 @@
     <Content Include="QuotationDispaly.aspx" />
     <Content Include="RawMaterial.aspx" />
     <Content Include="SalesOrder.aspx" />
+    <Content Include="SalesOrderView.aspx" />
+    <Content Include="SalesOrderView1.aspx" />
     <Content Include="Supplier.aspx" />
     <Content Include="User.Master" />
     <None Include="Web.Debug.config">
@@ -349,6 +351,20 @@
     </Compile>
     <Compile Include="SalesOrder.aspx.designer.cs">
       <DependentUpon>SalesOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderView.aspx.cs">
+      <DependentUpon>SalesOrderView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesOrderView.aspx.designer.cs">
+      <DependentUpon>SalesOrderView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SalesOrderView1.aspx.cs">
+      <DependentUpon>SalesOrderView1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesOrderView1.aspx.designer.cs">
+      <DependentUpon>SalesOrderView1.aspx</DependentUpon>
     </Compile>
     <Compile Include="signin.aspx.cs">
       <DependentUpon>signin.aspx</DependentUpon>

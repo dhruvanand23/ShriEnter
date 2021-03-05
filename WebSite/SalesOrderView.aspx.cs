@@ -46,5 +46,59 @@ namespace WebSite
             }
         }
 
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            string SO_Id2 = ((Button)sender).CommandArgument.ToString();
+
+
+            cmd = new SqlCommand("DELETE FROM tblSOProduct WHERE SO_ID='" + SO_Id2 + "'", con);
+            cmd.ExecuteNonQuery();
+
+
+            cmd1 = new SqlCommand("DELETE FROM tblSalesOrder WHERE SO_ID='" + SO_Id2 + "'", con);
+            cmd1.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Sales Order Deleted Successfully ');  </script>");
+            BindSalesOrder();
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("SalesOrder.aspx");
+        }
+
+        protected void btnUpdate1_Click(object sender, EventArgs e)
+        {
+            string SO_Id2 = ((Button)sender).CommandArgument.ToString();
+            try
+            {
+                cmd1 = new SqlCommand("SELECT SO_Status FROM tblSalesOrder where SO_ID='" + SO_Id2 + "'", con);
+                SqlDataReader dr = cmd1.ExecuteReader();
+                if (dr.Read())
+                {
+                    SO_Id3 = dr.GetValue(0).ToString();
+                    dr.Close();
+                }
+            }
+            catch (Exception e1) { Response.Write(e1); }
+
+            if (SO_Id3 == "Dead")
+            {
+                cmd = new SqlCommand("UPDATE tblSalesOrder SET SO_Status = 'Live' where SO_ID='" + SO_Id2 + "'", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (SO_Id3 == "Live")
+            {
+                cmd = new SqlCommand("UPDATE tblSalesOrder SET SO_Status = 'Dead' where SO_ID='" + SO_Id2 + "'", con);
+                cmd.ExecuteNonQuery();
+            }
+
+            Response.Write("<script> alert('Sales Order Status Updated Successfully ');  </script>");
+            BindSalesOrder();
+
+        }
+
+
     }
 }

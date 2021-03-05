@@ -69,7 +69,7 @@
                                      </td>                                    
                                     
                                      <td>
-                                         <asp:Button  ID="btnDelete" runat="server" Text="Delete" CssClass="button"  OnClick="btnDelete_Click" CommandArgument='<%# Eval("SO_ID") %>' />
+                                         <asp:Button  ID="btnDelete" runat="server" Text="Delete" CssClass="button"  OnClick="btnDelete_Click" CommandArgument='<%# Eval("SO_ID") %>'  />
                                      </td> 
                                          
                                      <td> 

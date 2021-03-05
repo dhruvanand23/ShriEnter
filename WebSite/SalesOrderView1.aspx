@@ -1,20 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeFile="PurchaseOrderView1.aspx.cs" Inherits="WebSite.PurchaseOrderView1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.Master" AutoEventWireup="true" CodeFile="SalesOrderView1.aspx.cs" Inherits="WebSite.SalesOrderView1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <br />
     <br />
     <br />
     <hr />
-    <h2><b>Purchase Order Detail View</b></h2>  
+    <h2><b>Sales Order Detail View</b></h2>  
     <hr />
 
         <table style="border: 1px solid black;">
             <tr>                
-                <td style ="width:1000px; margin:10px; border: 1px solid black;"><center><h1>Purchase Order</h1></center></td>                
+                <td style ="width:1000px; margin:10px; border: 1px solid black;"><center><h1>Sales Order</h1></center></td>                
                 <td style ="width:300px; margin:10px; border: 1px solid black;">   
                     <table >
                         <tr><td style="height: 20px">Date: <asp:Label ID="lblDate" runat="server" Text=""></asp:Label></td></tr>
-                        <tr><td>POId: <asp:Label ID="lblPOId" runat="server" Text=""></asp:Label></td></tr>
+                        <tr><td>SOId: <asp:Label ID="lblSOId" runat="server" Text=""></asp:Label></td></tr>
                      </table>
                 </td>                
             </tr>
@@ -49,7 +49,7 @@
 
         <div class="panel panel-default" >
                
-                            <asp:repeater ID="rptrPODetails" runat="server" >
+                            <asp:repeater ID="rptrSODetails" runat="server" >
 
                             <HeaderTemplate>
                                  <table class="table"  >
@@ -57,9 +57,8 @@
                                         <tr>
                                             
                                                                                         
-                                            <th>Item ID</th>
+                                            <th>Product ID</th>
                                             <th>Name</th>
-                                            <th>Unit</th>
                                             <th>Quantity</th>
                                             <th>Price</th>
                                             <th>Total</th>
@@ -72,11 +71,10 @@
 
                              <ItemTemplate>             
                                  <tr> 
-                                        <td><%# Eval("RM_ID") %></td>
-                                        <td><%# Eval("RM_Name") %></td>
-                                        <td><%# Eval("RM_Unit") %>   </td>
-                                        <td><%# Eval("POItem_Quantity") %>   </td>
-                                        <td><%# Eval("POItem_Price") %>   </td>
+                                        <td><%# Eval("PID") %></td>
+                                        <td><%# Eval("PName") %></td>
+                                        <td><%# Eval("SOItem_Quantity") %>   </td>
+                                        <td><%# Eval("SOItem_Price") %>   </td>
                                         <td><%# Eval("Total") %></td>   
                                      
                                  </tr>

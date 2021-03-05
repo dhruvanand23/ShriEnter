@@ -75,10 +75,7 @@ namespace WebSite
 
         protected void btnUpdate1_Click(object sender, EventArgs e)
         {
-            string PO_Id2 = ((Button)sender).CommandArgument.ToString();
-            
-
-
+            string PO_Id2 = ((Button)sender).CommandArgument.ToString();           
             try
             {
                 cmd1 = new SqlCommand("SELECT PO_Status FROM tblPurchaseOrder where PO_ID='" + PO_Id2 + "'", con);
