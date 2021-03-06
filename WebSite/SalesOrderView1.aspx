@@ -34,7 +34,7 @@
                 <td style ="width:750px; margin:10px; border: 1px solid black;">
                     <asp:Label ID="Label2" runat="server" Text="Supplier Information:" Font-Bold="True" Font-Italic="True" Font-Size="Medium"></asp:Label>
                     <p><b>
-                        <asp:Label ID="lblSupName" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="lblCustName" runat="server" Text=""></asp:Label>
                        </b><br />
                         Address: <asp:Label ID="lblAddress" runat="server" Text=""></asp:Label><br />
                         Phone No.: <asp:Label ID="lblPhNo" runat="server" Text=""></asp:Label><br />
