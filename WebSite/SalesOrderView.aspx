@@ -31,6 +31,15 @@
     <h2><b>Sales Order List View</b></h2>  
     <hr />
 
+    <table style="width:400px">
+        <tr>
+            <td><asp:RadioButton ID="btnAll" runat="server" Text="  All"  GroupName="FilterSelect" AutoPostBack="True" OnCheckedChanged="FilterSelect_CheckedChanged" Font-Bold="True" Font-Size="Large" /></td>
+            <td><asp:RadioButton ID="btnLive" runat="server" Text="  Live"  GroupName="FilterSelect" AutoPostBack="True" OnCheckedChanged="FilterSelect_CheckedChanged" Font-Bold="True" Font-Size="Large" /></td>
+            <td><asp:RadioButton ID="btnDead" runat="server" Text="  Dead"  GroupName="FilterSelect" AutoPostBack="True" OnCheckedChanged="FilterSelect_CheckedChanged" Font-Bold="True" Font-Size="Large" /></td>
+        </tr>
+    </table>
+    <br />
+
      <div class="panel panel-default" >
                
                             <asp:repeater ID="rptrSOView" runat="server" >

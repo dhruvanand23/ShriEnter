@@ -99,6 +99,41 @@ namespace WebSite
 
         }
 
+        protected void FilterSelect_CheckedChanged(Object sender, EventArgs e)
+        {
+            if(btnAll.Checked== true)
+            {
+                BindSalesOrder();
+            }
+            else if(btnLive.Checked== true)
+            {
+                using (SqlCommand cmd = new SqlCommand("select tblSalesOrder.*, tblUsers.Name from tblSalesOrder, tblUsers where tblSalesOrder.Uid = tblUsers.Uid and SO_Status='Live' Order by SO_ID", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptrSOView.DataSource = dt;
+                        rptrSOView.DataBind();
+                        dt.Dispose();
+                    }
+                }
+            }
+            else if (btnDead.Checked == true)
+            {
+                using (SqlCommand cmd = new SqlCommand("select tblSalesOrder.*, tblUsers.Name from tblSalesOrder, tblUsers where tblSalesOrder.Uid = tblUsers.Uid and SO_Status='Dead' Order by SO_ID", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptrSOView.DataSource = dt;
+                        rptrSOView.DataBind();
+                        dt.Dispose();
+                    }
+                }
+            }
+        }
 
     }
 }

@@ -104,6 +104,44 @@ namespace WebSite
 
         }
 
+        protected void FilterSelect_CheckedChanged(Object sender, EventArgs e)
+        {
+            if(btnAll.Checked==true)
+            {
+                BindPurchaseOrder();
+            }
+            else if(btnLive.Checked==true)
+            {
+                using (SqlCommand cmd = new SqlCommand("select tblPurchaseOrder.*, tblSupplier.SupName from tblPurchaseOrder, tblSupplier where tblPurchaseOrder.SupID = tblSupplier.SupID and PO_Status='Live' Order by PO_ID ", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptrPOView.DataSource = dt;
+                        rptrPOView.DataBind();
+                        dt.Dispose();
+                    }
+                }
+            }
+            else if(btnDead.Checked==true)
+            {
+                using (SqlCommand cmd = new SqlCommand("select tblPurchaseOrder.*, tblSupplier.SupName from tblPurchaseOrder, tblSupplier where tblPurchaseOrder.SupID = tblSupplier.SupID and PO_Status='Dead' Order by PO_ID ", con))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        rptrPOView.DataSource = dt;
+                        rptrPOView.DataBind();
+                        dt.Dispose();
+                    }
+                }
+            }
+
+
+        }
+
 
     }
 }
