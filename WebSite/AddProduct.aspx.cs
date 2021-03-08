@@ -14,6 +14,7 @@ namespace WebSite
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
+        string SearchName;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
@@ -22,32 +23,12 @@ namespace WebSite
             }
             con.Open();
             if (!IsPostBack)
-            {
-                BindBrand();
-                BindCategory();
-                ddlSubCategory.Enabled = false;
+            {                
+                BindCategory();               
             }
-        }
+        }      
 
-        private void BindBrand()
-        {
-
-                cmd = new SqlCommand("Select * from tblBrands", con);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-            if (dt.Rows.Count != 0)
-            {
-                ddlBrand.DataSource = dt;
-                ddlBrand.DataTextField = "Name";
-                ddlBrand.DataValueField = "BrandID";
-                ddlBrand.DataBind();
-                ddlBrand.Items.Insert(0, new ListItem("-Select-", "0"));
-
-            }
-        }
-
-        private void BindCategory()
+       private void BindCategory()
         {
              cmd = new SqlCommand("Select * from tblCategory", con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -70,38 +51,10 @@ namespace WebSite
             SqlCommand cmd = new SqlCommand("sp_InsertProduct", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@PName", txtProductName.Text);
-            cmd.Parameters.AddWithValue("@PPrice", txtPrice.Text);
-            cmd.Parameters.AddWithValue("@PSelPrice", txtsellPrice.Text);            
-            cmd.Parameters.AddWithValue("@PBrandID", ddlBrand.SelectedItem.Value);
-            cmd.Parameters.AddWithValue("@PCategoryID", ddlCategory.SelectedItem.Value);
-            cmd.Parameters.AddWithValue("@PSubCatID", ddlSubCategory.SelectedItem.Value);            
+            cmd.Parameters.AddWithValue("@PSelPrice", txtsellPrice.Text); 
+            cmd.Parameters.AddWithValue("@PCategoryID", ddlCategory.SelectedItem.Value);                        
             cmd.Parameters.AddWithValue("@PDescription", txtDescription.Text);
-            cmd.Parameters.AddWithValue("@PProductDetails", txtPDetail.Text);            
-            if (chFD.Checked == true)
-            {
-                cmd.Parameters.AddWithValue("@FreeDelivery", "1");
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("@FreeDelivery", "0");
-            }
-
-            if (ch30Ret.Checked == true)
-            {
-                cmd.Parameters.AddWithValue("@30DayRet", "1");
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("@30DayRet", "0");
-            }
-            if (cbCOD.Checked == true)
-            {
-                cmd.Parameters.AddWithValue("@COD", "1");
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("@COD", "0");
-            }
+            cmd.Parameters.AddWithValue("@PProductDetails", txtPDetail.Text); 
 
             Int64 PID = Convert.ToInt64(cmd.ExecuteScalar());
 
@@ -184,34 +137,29 @@ namespace WebSite
             }
             Response.Write("<script> alert('Product Added Successfully');  </script>");
             txtDescription.Text = " ";
-            txtPDetail.Text = " ";
-            txtPrice.Text = " ";
+            txtPDetail.Text = " ";            
             txtProductName.Text = " ";
             txtsellPrice.Text = " ";
-            ddlBrand.SelectedIndex = 0;
-            ddlCategory.SelectedIndex = 0;
-            ddlSubCategory.SelectedIndex = 0;
-            chFD.Checked = false;
-            ch30Ret.Checked = false;
-            cbCOD.Checked = false;
+            ddlCategory.SelectedIndex = 0;            
         }
 
-        protected void ddlCategory_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnSearch_Click(object sender, EventArgs e)
         {
-            ddlSubCategory.Enabled = true;
-            int MainCategoryID = Convert.ToInt32(ddlCategory.SelectedItem.Value);
-            
-            SqlCommand cmd = new SqlCommand("Select * from tblSubCategory where MainCatID='" + ddlCategory.SelectedItem.Value + "'", con);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows.Count != 0)
+            SearchName = TextBox1.Text;
+            cmd = new SqlCommand("Select * from tblSupplier where SupName=@uname", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
             {
-                ddlSubCategory.DataSource = dt;
-                ddlSubCategory.DataTextField = "SubCatName";
-                ddlSubCategory.DataValueField = "SubCatID";
-                ddlSubCategory.DataBind();
-                ddlSubCategory.Items.Insert(0, new ListItem("-Select-", "0"));
+
+                SupName.Text = dr.GetValue(1).ToString();
+                SupPhNumber.Text = dr.GetValue(2).ToString();
+                SupAddress.Text = dr.GetValue(3).ToString();
+                SupEmail.Text = dr.GetValue(4).ToString();
+                SupGST.Text = dr.GetValue(5).ToString();
+                SupBankName.Text = dr.GetValue(6).ToString();
+                SupAccNo.Text = dr.GetValue(7).ToString();
+                SupIFSC.Text = dr.GetValue(8).ToString();
             }
         }
     }

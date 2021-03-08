@@ -34,6 +34,7 @@ namespace WebSite
                         sda.Fill(dt);
                         rptrProducts.DataSource = dt;
                         rptrProducts.DataBind();
+                        dt.Dispose();
                     }
                 }
             }
