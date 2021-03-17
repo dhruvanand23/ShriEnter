@@ -55,7 +55,7 @@
                 <ItemTemplate>
             <div class="divDet1">
                  <h1 class="proNameView"><%# Eval("PName") %> </h1>
-                <span class="proOgPriceView">Rs.<%#Eval("PPrice") %></span><span class="proPriceDiscountView"><%# string.Format("{0}",Convert.ToInt64(Eval("PPrice"))-Convert.ToInt64(Eval("PSelPrice"))) %></span><p class="proPriceView">Rs. <%#Eval("PSelPrice") %></p>
+                <p class="proPriceView">Rs. <%#Eval("PSelPrice") %></p>
             </div>
            
             <div class="divDet1">
@@ -70,16 +70,9 @@
                 <p>   <%#Eval("PProductDetails") %>     </p>
                 
             </div>
-            <!--<div >
-                <p><%# ((int)Eval("FreeDelivery")==1)? "Free Delivery":""  %>    </p>
-                <p><%# ((int)Eval("30DayRet")==1)? "30 Days Returns":""  %></p>
-                <p><%# ((int)Eval("COD")==1)? "Cash on Delivery":"" %></p>
-            </div>-->
+            
                     <asp:HiddenField ID="hfCatID" runat="server" Value='<%# Eval("PcategoryID") %>' />
-                    <asp:HiddenField ID="hfSubCatID" runat="server" Value='<%# Eval("PSubCatID") %>' />
-                    
-
-                    <asp:HiddenField ID="hfBrandID" runat="server" Value='<%# Eval("PBrandID") %>' />
+                 
 
 </ItemTemplate>
 </asp:Repeater>

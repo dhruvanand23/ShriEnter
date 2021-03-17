@@ -83,9 +83,9 @@ namespace WebSite
         {
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
-                string BrandID = (e.Item.FindControl("hfBrandID") as HiddenField).Value;
+                
                 string CatID = (e.Item.FindControl("hfCatID") as HiddenField).Value;
-                string SubCatID = (e.Item.FindControl("hfSubCatID") as HiddenField).Value;    
+                
             }
         }
 

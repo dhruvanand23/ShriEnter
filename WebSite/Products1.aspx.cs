@@ -25,7 +25,7 @@ namespace WebSite
         {
             using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True"))
             {
-                using (SqlCommand cmd = new SqlCommand("procBindAllProducts", con))
+                using (SqlCommand cmd = new SqlCommand("procBindAllProducts1", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     using (SqlDataAdapter sda = new SqlDataAdapter(cmd))

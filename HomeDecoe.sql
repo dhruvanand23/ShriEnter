@@ -44,30 +44,22 @@ Constraint [FK_tblProducts_ToTable2] FOREIGN KEY ([PSubCatID]) REFERENCES [tblSu
 Create procedure sp_InsertProduct
 (
 @PName nvarchar(MAX),
-@PPrice money,
-@PSelPrice money,
-@PBrandID int,
+@PSelPrice varchar(MAX),
 @PCategoryID int,
-@PSubCatID int,
 @PDescription nvarchar(MAX),
-@PProductDetails nvarchar(MAX),
-@FreeDelivery int,
-@30DayRet int,
-@COD int
+@PProductDetails nvarchar(MAX)
 )
 AS
 
-insert into tblProducts values(@PName,@PPrice,@PSelPrice,@PBrandID,@PCategoryID,@PSubCatID,@PDescription,
-@PProductDetails,@FreeDelivery,@30DayRet,@COD) 
+insert into tblProducts values(@PName,@PSelPrice,@PCategoryID,@PDescription,@PProductDetails) 
 select SCOPE_IDENTITY()
 Return 0
 
 select * from tblProducts;
 
-create procedure procBindAllProducts
+create procedure procBindAllProducts1
 AS
-select A.*,B.*,C.Name ,A.PPrice-A.PSelPrice as DiscAmount,B.Name as ImageName, C.Name as BrandName from tblProducts A
-inner join tblBrands C on C.BrandID =A.PBrandID
+select A.*,B.* ,B.Name as ImageName from tblProducts A
 cross apply(
 select top 1 * from tblProductImages B where B.PID= A.PID order by B.PID desc
 )B
@@ -117,4 +109,66 @@ Lobbies int,
 Others varchar(max),
 QID int,
 FOREIGN KEY (QID) REFERENCES tblQuotationType(QID)
+);
+
+create table tblSupplier
+(
+	SupID int identity(1,1) primary key,
+	SupName varchar(max),
+	SupPhNo varchar(max),
+	SupAdd varchar(max),
+	SupEmail varchar(max),
+	SupGST varchar(max),
+	SupBank varchar(max),
+	SupAccNo varchar(max),
+	SupIFSC varchar(max),
+);
+
+create table tblRMaterial
+(
+RM_ID int identity(1,1) primary key,
+RM_Name varchar(max),
+RM_Price varchar(max),
+RM_Unit varchar(max),
+SupID int,
+FOREIGN KEY (SupID) REFERENCES tblSupplier(SupID)
+);
+
+create table tblPurchaseOrder
+(
+PO_ID int identity(1,1) primary key,
+PO_Date varchar(max),
+SupID int,
+FOREIGN KEY (SupID) REFERENCES tblSupplier(SupID)
+);
+
+create table tblPOItems
+(
+POItem_ID int identity(1,1) primary key,
+RM_ID int,
+POItem_Price varchar(max),
+POItem_Quantity varchar(max),
+PO_ID int,
+FOREIGN KEY ([PO_ID]) REFERENCES [tblPurchaseOrder] ([PO_ID]),
+FOREIGN KEY ([RM_ID]) REFERENCES [tblRMaterial] ([RM_ID]),
+);
+
+
+create table tblSalesOrder
+(
+SO_ID int identity(1,1) primary key,
+SO_Date varchar(max),
+Uid int,
+FOREIGN KEY (Uid) REFERENCES tblUsers(Uid)
+);
+
+create table tblSOProduct
+(
+SOPro_ID int identity(1,1) primary key,
+PID int,
+SOItem_Price varchar(max),
+SOItem_Quantity varchar(max),
+SO_ID int,
+FOREIGN KEY (SO_ID) REFERENCES [tblSalesOrder] ([SO_ID]),
+FOREIGN KEY (PID) REFERENCES [tblProducts] (PID),
 );

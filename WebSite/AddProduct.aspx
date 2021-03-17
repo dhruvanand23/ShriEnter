@@ -13,7 +13,7 @@
            <div class ="form-group">
                <asp:TextBox ID="Search" runat="server" placeholder="Enter Product Name "></asp:TextBox>
                <div class ="col-md-3">
-                    <asp:Button ID="btnSearch" runat="server" Text="Search Here" onClick="btnSearch_Click" CausesValidation="False" />              
+                    <asp:Button ID="btnSearch" runat="server" Text="Search Here" onClick="btnSearch_Click"  CausesValidation="False" />              
                 </div>
            </div>
            
@@ -92,9 +92,9 @@
                     <div class ="col-md-6 ">
                         <asp:Button ID="btnAdd" CssClass ="btn btn-success " runat="server" Text="ADD" OnClick="btnAdd_Click"  />
                         &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnUpdate" CssClass ="btn btn-success " runat="server" Text="Update" OnClick="btnUpdate_Click" />
+                        <asp:Button ID="btnUpdate" CssClass ="btn btn-success " runat="server" Text="Update" OnClick="btnEdit_Click"  />
                         &nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="btnDelete" CssClass ="btn btn-success " runat="server" Text="Delete" />
+                        <asp:Button ID="btnDelete" CssClass ="btn btn-success " runat="server" Text="Delete" OnClick="btnDelete_Click" />
                     </div>          
            </div>
 

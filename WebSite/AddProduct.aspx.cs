@@ -15,6 +15,7 @@ namespace WebSite
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         string SearchName;
+        string Pid1;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
@@ -145,22 +146,68 @@ namespace WebSite
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchName = TextBox1.Text;
-            cmd = new SqlCommand("Select * from tblSupplier where SupName=@uname", con);
+            SearchName = Search.Text;
+            cmd = new SqlCommand("Select * from tblProducts where PName=@uname", con);
             cmd.Parameters.AddWithValue("@uname", SearchName);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
 
-                SupName.Text = dr.GetValue(1).ToString();
-                SupPhNumber.Text = dr.GetValue(2).ToString();
-                SupAddress.Text = dr.GetValue(3).ToString();
-                SupEmail.Text = dr.GetValue(4).ToString();
-                SupGST.Text = dr.GetValue(5).ToString();
-                SupBankName.Text = dr.GetValue(6).ToString();
-                SupAccNo.Text = dr.GetValue(7).ToString();
-                SupIFSC.Text = dr.GetValue(8).ToString();
+                txtProductName.Text = dr.GetValue(1).ToString();
+                txtsellPrice.Text = dr.GetValue(2).ToString();
+                ddlCategory.Text = dr.GetValue(3).ToString();
+                txtDescription.Text = dr.GetValue(4).ToString();
+                txtPDetail.Text = dr.GetValue(5).ToString();                
             }
         }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            SearchName = Search.Text;
+
+            cmd = new SqlCommand("UPDATE tblProducts SET PName = '" + txtProductName.Text + "', PSelPrice = '" + txtsellPrice.Text + "', PCategoryID = '" + ddlCategory.SelectedItem.Value + "',PDescription = '" + txtDescription.Text + "',PProductDetails = '" + txtPDetail.Text + "' WHERE PName=@uname;", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Product Updated Successfully ');  </script>");
+            
+            con.Close();
+            txtProductName.Text = "";
+            txtsellPrice.Text = "";
+            txtPDetail.Text = "";
+            txtDescription.Text = "";
+            ddlCategory.SelectedIndex = 0;            
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            SearchName = Search.Text;
+
+            cmd = new SqlCommand("select PID from tblProducts where PName = '" + Search.Text + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Pid1 = dr.GetValue(0).ToString();
+                dr.Close();
+            }
+
+            cmd = new SqlCommand("DELETE FROM tblProductImages WHERE PID='" + Pid1 + "'", con);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand("DELETE FROM tblProducts WHERE PName=@uname", con);
+            cmd.Parameters.AddWithValue("@uname", SearchName);
+            cmd.ExecuteNonQuery();
+
+            Response.Write("<script> alert('Product Deleted Successfully ');  </script>");            
+
+            con.Close();
+            txtProductName.Text = "";
+            txtsellPrice.Text = "";
+            txtPDetail.Text = "";
+            txtDescription.Text = "";
+            ddlCategory.SelectedIndex = 0;
+            txtProductName.Focus();
+        }
+
     }
 }

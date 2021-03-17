@@ -22,7 +22,7 @@
                         <div class="media-body">
                             <h5 class="media-heading proNameViewCart"><%#Eval("PName") %></h5>
                             <span class="proPriceView"><%#Eval("PSelPrice","{0:c}") %></span>
-                            <span class="proOgPriceView"><%#Eval("PPrice","{0:0,00}") %></span>
+                            
                             <p>
                                 <asp:Button CommandArgument='<%#Eval("PID")%>' ID="btnRemoveItem" OnClick="btnRemoveItem_Click" CssClass="RemoveButton1" runat="server" Text="REMOVE" />
                             </p>
