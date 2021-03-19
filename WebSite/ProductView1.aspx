@@ -20,6 +20,12 @@
       <li data-target="#carousel-example-generic" data-slide-to="4"></li>
 
   </ol>
+  <div class ="form-group">
+               <asp:Label ID="Label5" runat="server" CssClass ="col-md-2 control-label" Text="Category"></asp:Label>
+               <div class ="col-md-3">
+                   <asp:DropDownList ID="ddlCategory" CssClass ="form-control" runat="server"  AutoPostBack="true" ></asp:DropDownList>
+               </div>
+  </div>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">

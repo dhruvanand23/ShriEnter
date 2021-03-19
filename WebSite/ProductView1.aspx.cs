@@ -12,7 +12,9 @@ namespace WebSite
 {
     public partial class ProductView1 : System.Web.UI.Page
     {
-       protected void Page_Load(object sender, EventArgs e)
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GQMSKCM\SQLEXPRESS;Initial Catalog=mydata1;Integrated Security=True");
+        SqlCommand cmd = new SqlCommand();
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["PID"] != null)
             {
@@ -20,12 +22,30 @@ namespace WebSite
                 {
                     BindProductImage();
                     BindProductDetails();
+                    BindCategory();
                 }
             }
             else
             {
                 Response.Redirect("~/Products1.aspx");
             }
+        }
+
+        private void BindCategory()
+        {
+            cmd = new SqlCommand("Select * from tblCategory", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count != 0)
+            {
+                ddlCategory.DataSource = dt;
+                ddlCategory.DataTextField = "CatName";
+                ddlCategory.DataValueField = "CatID";
+                ddlCategory.DataBind();
+                ddlCategory.Items.Insert(0, new ListItem("-Select-", "0"));
+            }
+
         }
 
         private void BindProductImage()

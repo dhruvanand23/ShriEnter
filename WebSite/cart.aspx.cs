@@ -48,7 +48,7 @@ namespace WebSite
                                 }
                             }
                         }
-                        CartTotal += Convert.ToInt64(dt.Rows[i]["PPrice"]);
+                        
                         Total += Convert.ToInt64(dt.Rows[i]["PSelPrice"]);
                     }
                     rptrCartProducts.DataSource = dt;
@@ -56,7 +56,7 @@ namespace WebSite
                     divpricedetails.Visible = true;
                     spanCartTotal.InnerText = CartTotal.ToString();
                     spanTotal.InnerText = "Rs. " + Total.ToString();
-                    spanDiscount.InnerText = "- " + (CartTotal - Total).ToString();
+                    
                 }
                 else
                 {
