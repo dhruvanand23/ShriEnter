@@ -149,6 +149,7 @@
     <Content Include="images\slidingwindow.png" />
     <Content Include="images\slidingwindow1.jpg" />
     <Content Include="images\wall hanging1.jpg" />
+    <Content Include="InventoryManagement.aspx" />
     <Content Include="order.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -273,6 +274,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryManagement.aspx.cs">
+      <DependentUpon>InventoryManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InventoryManagement.aspx.designer.cs">
+      <DependentUpon>InventoryManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="order.aspx.cs">
       <DependentUpon>order.aspx</DependentUpon>
