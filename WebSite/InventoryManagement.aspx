@@ -13,13 +13,13 @@
     <asp:DropDownList ID="ddlSupplier" runat="server" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlSupplier_SelectedIndexChanged"></asp:DropDownList>
     <br />
     Choose an Item: 
-    <asp:DropDownList ID="ddlRawMaterial" runat="server" AutoPostBack="true" CssClass="form-control"></asp:DropDownList>
+    <asp:DropDownList ID="ddlRawMaterial" runat="server" AutoPostBack="true" CssClass="form-control" OnSelectedIndexChanged="ddlRawMaterial_SelectedIndexChanged"></asp:DropDownList>
     <br />
     <br />
 
     <center>
         <asp:Label ID="Label1" runat="server" Text="Quantity In Stock:"></asp:Label>
-        <asp:Label ID="qtyDisplay" runat="server" Text="98" Font-Size="XX-Large" ForeColor="#0033CC" Font-Bold="True"></asp:Label>
+        <asp:Label ID="qtyDisplay" runat="server" Text="" Font-Size="XX-Large" ForeColor="#0033CC" Font-Bold="True"></asp:Label>
     </center>
     
     <br />
@@ -47,7 +47,7 @@
             </td>
             <td>
                 <center>
-                    <asp:Button ID="btnEditQty" runat="server" Text="Edit Quantity" />
+                    <asp:Button ID="btnEditQty" runat="server" Text="Edit Quantity" OnClick="btnEditQty_Click" />
                 </center>
             </td>
         </tr>

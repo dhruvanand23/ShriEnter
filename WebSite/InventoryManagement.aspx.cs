@@ -70,5 +70,41 @@ namespace WebSite
         {
             BindRMaterial();
         }
+
+        protected void ddlRawMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fetchQty();
+        }
+
+        protected void btnEditQty_Click(object sender, EventArgs e)
+        {
+            using ( con )
+            {
+                
+                SqlCommand cmd = new SqlCommand("Insert into tblItemInventory(RM_ID, IQty, IDate) Values('" + ddlRawMaterial.SelectedItem.Value+ "','"+ quantity.Text + "','"+ date.Text + "')", con);
+                cmd.ExecuteNonQuery();
+
+                Response.Write("<script> alert('Inventory Updated Successfully ');  </script>");
+
+                fetchQty();
+                con.Close();
+
+
+                quantity.Text = "";
+                date.Text = "";
+            }
+        }
+
+        private void fetchQty()
+        {
+            
+            cmd = new SqlCommand("Select sum(IQty) from [tblItemInventory] where RM_ID = @uname", con);
+            cmd.Parameters.AddWithValue("@uname", ddlRawMaterial.SelectedItem.Value);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                qtyDisplay.Text = dr.GetValue(0).ToString();
+            }
+        }
     }
 }
